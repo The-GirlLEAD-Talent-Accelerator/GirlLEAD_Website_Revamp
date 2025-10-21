@@ -1,2 +1,2 @@
 # GirlLEAD_Website_Project
-GirlLEAD Talent Accelerator Website Project
+GirlLEAD Talent Accelerator Website Project (Frontend)
