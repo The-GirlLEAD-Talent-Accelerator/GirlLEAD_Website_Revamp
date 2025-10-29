@@ -1,7 +1,7 @@
 # GirlLEAD Talent Accelerator 🌍
 
 <div align="center">
-  <img src="./.github/assets/hero-preview.jpg" alt="GirlLEAD Website Preview" width="100%" />
+  <img src="./src/assets/hero-preview.jpg" alt="GirlLEAD Website Preview" width="100%" />
 </div>
 
 The GirlLEAD Talent Accelerator is a transformative initiative focused on empowering women in Africa through technology education and skill development. This repository contains the frontend codebase for our official website.
