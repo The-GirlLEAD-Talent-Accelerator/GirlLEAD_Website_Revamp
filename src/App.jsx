@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Main from "./components/Main"
+import Main from "./components/Main";
+import Testimonial from "./components/testimonial";
+import Actions from "./components/actions";
 import './App.css'
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <Hero />
         </div>
         <Main />
+        <Testimonial />
+        <Actions />
       </main>
     </>
   )
