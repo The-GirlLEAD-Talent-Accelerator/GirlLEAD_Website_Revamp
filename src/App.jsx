@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Main from "./components/Main";
 import Testimonial from "./components/testimonial";
 import Actions from "./components/actions";
+import MissionSection from "./components/MissionSection";
 import './App.css'
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
           <Hero />
         </div>
         <Main />
+        
         <Testimonial />
+        <MissionSection />
         <Actions />
       </main>
     </>
