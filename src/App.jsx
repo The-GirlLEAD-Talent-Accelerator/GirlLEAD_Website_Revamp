@@ -4,6 +4,10 @@ import Main from "./components/Main";
 import Testimonial from "./components/testimonial";
 import Actions from "./components/actions";
 import MissionSection from "./components/MissionSection";
+import Hero from "./components/home/Hero";
+import Main from "./components/home/Main"
+import Testimonial from "./components/Testimonial";
+import Actions from "./components/Actions";
 import './App.css'
 
 function App() {
