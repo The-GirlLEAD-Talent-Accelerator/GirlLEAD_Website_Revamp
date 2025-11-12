@@ -1,9 +1,9 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Main from "./components/Main";
-import MissionSection from "./components/MissionSection";
-import Testimonial from "./components/Testimonial";
-import Actions from "./components/Actions";
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Main from "./components/Main.jsx";
+import MissionSection from "./components/MissionSection.jsx";
+import Testimonial from "./components/Testimonial.jsx";
+import Actions from "./components/Actions .jsx";
 import './App.css'
 
 function App() {
