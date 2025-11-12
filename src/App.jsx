@@ -1,10 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Main from "./components/Main";
-import Testimonial from "./components/testimonial";
 import MissionSection from "./components/MissionSection";
-import Hero from "./components/home/Hero";
-import Main from "./components/home/Main"
 import Testimonial from "./components/Testimonial";
 import Actions from "./components/Actions";
 import './App.css'
