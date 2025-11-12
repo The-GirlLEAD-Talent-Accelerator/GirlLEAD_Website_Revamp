@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/home/Hero";
-import Main from "./components/home/Main"
+import Main from "./components/home/Main";
+import MissionSection from "./components/MissionSection";
 import Testimonial from "./components/Testimonial";
 import Actions from "./components/Actions";
 import './App.css'
@@ -17,7 +18,9 @@ function App() {
           <Hero />
         </div>
         <Main />
+        
         <Testimonial />
+        <MissionSection />
         <Actions />
       </main>
     </>
