@@ -1,9 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/home/Hero";
-import Main from "./components/home/Main"
+import Main from "./components/home/Main";
 import Testimonial from "./components/Testimonial";
-import Actions from "./components/Actions";
-import './App.css'
+import Actions from "./components/actions";
+import Contact from "./components/Contact";
+import './App.css';
 
 function App() {
 
@@ -19,9 +20,10 @@ function App() {
         <Main />
         <Testimonial />
         <Actions />
+        <Contact />
       </main>
     </>
   )
 }
 
-export default App
+export default App;
