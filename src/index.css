@@ -34,3 +34,9 @@
 .slide-right {
   animation: slideRight 1s ease-in-out forwards;
 }
+
+@layer utilities {
+  .custom-shadow {
+    box-shadow: 0px 7px 10px 0px #0474811A, 0px -7px 10px 0px #04748105;
+  }
+}

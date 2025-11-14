@@ -6,6 +6,8 @@ import Testimonial from "./components/Testimonial";
 import Actions from "./components/Actions";
 import PartnersSection from "./components/PartnersSection";
 import './App.css'
+import Contact from "./components/Contact";
+import './App.css';
 
 function App() {
 
@@ -24,9 +26,10 @@ function App() {
         <MissionSection />
         <PartnersSection />
         <Actions />
+        <Contact />
       </main>
     </>
   )
 }
 
-export default App
+export default App;
