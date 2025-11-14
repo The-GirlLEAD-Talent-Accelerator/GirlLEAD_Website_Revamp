@@ -43,7 +43,7 @@ const PartnersSection = () => {
             {/* Scrolling logos container */}
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={50}
+              spaceBetween={10}
               slidesPerView={3}
 
               loop={true}
@@ -51,19 +51,19 @@ const PartnersSection = () => {
               breakpoints={{
                 320: {
                   slidesPerView: 1,
-                  spaceBetween: 12,
+                  spaceBetween: 5,
                 },
                 640: {
                   slidesPerView: 2,
-                  spaceBetween: 16,
+                  spaceBetween: 8,
                 },
                 768: {
                   slidesPerView: 3,
-                  spaceBetween: 18,
+                  spaceBetween: 10,
                 },
                 1024: {
                   slidesPerView: 4,
-                  spaceBetween: 20,
+                  spaceBetween: 12,
                 },
               }}
               className="pb-6"
