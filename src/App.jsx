@@ -4,6 +4,7 @@ import Main from "./components/home/Main";
 import MissionSection from "./components/MissionSection";
 import Testimonial from "./components/Testimonial";
 import Actions from "./components/Actions";
+import PartnersSection from "./components/PartnersSection";
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         
         <Testimonial />
         <MissionSection />
+        <PartnersSection />
         <Actions />
       </main>
     </>
