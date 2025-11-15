@@ -60,12 +60,12 @@ export default function Hero() {
             <div className="bg-[#EDFAFA] md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
               <HiMiniGift className="text-[#137d89] md:w-10 md:h-10 w-5 h-5" />
             </div>
-            <h3 className="lg:text-3xl font-bold dark:text-[#137d89]">
+            <h3 className="lg:text-3xl font-bold dark:text-gray-800">
               {inView && (
                 <CountUp start={500} end={2000} duration={7} suffix="+" />
               )}
             </h3>
-            <p className="text-xs dark:text-[#42919a] md:text-base font-medium md:mt-1">
+            <p className="text-xs dark:text-gray-800 md:text-base font-medium md:mt-1">
               Women and Girls Trained
             </p>
           </div>
