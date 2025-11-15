@@ -1,5 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { HiMiniGift } from "react-icons/hi2";
+import { PiHandshakeLight } from "react-icons/pi";
+import { LuGraduationCap } from "react-icons/lu";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import RotatingTextCircle from "./RotatingTextCircle";
@@ -60,32 +62,32 @@ export default function Hero() {
             </div>
             <h3 className="lg:text-3xl font-bold dark:text-[#137d89]">
               {inView && (
-                <CountUp start={100} end={1000} duration={3} suffix="+" />
+                <CountUp start={500} end={2000} duration={7} suffix="+" />
               )}
             </h3>
             <p className="text-xs dark:text-[#42919a] md:text-base font-medium md:mt-1">
-              Girls Trained
+              Women and Girls Trained
             </p>
           </div>
 
           <div className="bg-teal-100/40 dark:bg-teal-900 py-8 px-4 border-r border-gray-300 dark:border-gray-700 items-center flex-col flex gap-[10px]">
             <div className="bg-teal-900 dark:bg-[#EDFAFA] md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
-              <HiMiniGift className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
+              <LuGraduationCap className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
             </div>
             <h3 className="lg:text-3xl font-bold text-teal-800 dark:text-teal-300">
-              {inView && <CountUp start={200} end={320} duration={3} />}
+              {inView && <CountUp start={1} end={5} duration={3} suffix="+" />}
             </h3>
             <p className="text-xs md:text-base font-medium md:mt-1 tracking-tighter">
-              Employed Alumni
+              Program Cohorts
             </p>
           </div>
 
           <div className="bg-teal-100/40 dark:bg-teal-900 py-8 px-4 items-center flex-col flex gap-[10px]">
             <div className="bg-teal-900 dark:bg-[#EDFAFA] md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
-              <HiMiniGift className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
+              <PiHandshakeLight className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
             </div>
             <h3 className="lg:text-3xl font-bold text-teal-800 dark:text-teal-300">
-              {inView && <CountUp start={1} end={8} duration={5} />}
+              {inView && <CountUp start={1} end={5} duration={5} suffix="+" />}
             </h3>
             <p className="text-xs md:text-base font-medium md:mt-1">Partners</p>
           </div>
