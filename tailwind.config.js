@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       keyframes: {
         spinSlow: {
           '0%': { transform: 'rotate(0deg)' },
