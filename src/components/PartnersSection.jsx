@@ -36,53 +36,50 @@ const PartnersSection = () => {
 
           {/* Carousel Container */}
           <div className="relative overflow-hidden">
-            {/* Gradient overlays for smooth edges */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent z-10"></div>
 
-            {/* Scrolling logos container */}
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={10}
+              spaceBetween={30}
               slidesPerView={3}
-
               loop={true}
               autoplay={{ delay: 0, disableOnInteraction: false }}
               breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 5,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 8,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 10,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 12,
-                },
+                320: { slidesPerView: 1, spaceBetween: 10 },
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 30 },
+                1024: { slidesPerView: 4, spaceBetween: 40 },
               }}
               className="pb-6"
-              speed={8000}
+              speed={1500} // Fast speed
             >
-              {partners.map((partner, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    className="flex-shrink-0 mx-8 flex items-center justify-center"
-                    style={{ width: '180px', height: '80px' }}
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="max-w-full max-h-full object-contain hover:grayscale transition-all duration-300 opacity-100 hover:opacity-70"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
+              {partners.map((partner, index) => {
+                // Check if the current partner is specifically GirlLearn Africa
+                const isTargetLogo = partner.name === 'GirlLearn Africa';
+
+                return (
+                  <SwiperSlide key={index}>
+                    <div
+                      className="flex-shrink-0 mx-auto flex items-center justify-center"
+                      style={{
+                        // If it is GirlLearn, make it 320px/160px. Otherwise use the standard 240px/120px
+                        width: isTargetLogo ? '320px' : '240px',
+                        height: isTargetLogo ? '160px' : '120px',
+                      }}
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        // Added scale-110 specifically for the target logo to give it an extra zoom
+                        className={`max-w-full max-h-full object-contain hover:grayscale transition-all duration-300 opacity-100 hover:opacity-70 ${
+                          isTargetLogo ? 'scale-110' : ''
+                        }`}
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
 
@@ -92,7 +89,6 @@ const PartnersSection = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };
