@@ -5,7 +5,7 @@ const Main = () => {
     <>
       <section className="bg-[#EDFAFA] dark:bg-gray-950 relative w-full flex flex-col justify-center items-center pt-64 pb-10 px-4 ">
         <section className="max-w-4xl mx-auto w-full flex flex-col items-center">
-          <div className="self-start hidden sm:block h-0.5 w-[345px] text-left border-t-4 border-dashed border-[#7EDCE2] animate-[slideLeft_1s_ease-in-out_forwards]"></div>
+          <div className="self-start hidden sm:block h-0.5 w-[345px] text-left border-t-2 border-dashed border-teal-600 dark:border-teal-400 animate-[slideLeft_1s_ease-in-out_forwards]"></div>
 
           <div className="flex items-center justify-center text-center w-full max-w-5xl my-6 px-2">
             <p className="text-gray-700 dark:text-white text-sm md:text-base lg:text-[20px] font-medium leading-relaxed max-w-[800px]">
@@ -16,7 +16,7 @@ const Main = () => {
           </div>
 
           {/* Bottom dashed line */}
-          <div className="self-end hidden sm:block w-[345px] h-0.5 border-t-4 border-dashed border-[#7EDCE2] animate-[slideRight_1s_ease-in-out_forwards]"></div>
+          <div className="self-end hidden sm:block w-[345px] h-0.5 border-t-2 border-dashed border-teal-600 dark:border-teal-400 animate-[slideRight_1s_ease-in-out_forwards]"></div>
         </section>
         
         {/* Decorative Circles */}
@@ -30,7 +30,7 @@ const Main = () => {
             className="absolute top-[450px] md:top-80 -left-36 md:-left-24 -translate-y-20 md:-translate-y-28 
                     w-[250px] sm:w-[300px] md:w-[400px] 
                     h-[250px] sm:h-[300px] md:h-[400px] 
-                    border-4 border-[#7EDCE2]/80 border-dashed rounded-full 
+                    border-2 border-teal-600 dark:border-teal-400 border-dashed rounded-full 
                     animate-spinSlow blur-[0.5px]"
                 ></div>
 
@@ -39,7 +39,7 @@ const Main = () => {
             className="absolute top-[450px] md:top-96 -left-20 md:-left-32 -translate-y-20 md:-translate-y-28 
                   w-[150px] sm:w-[240px] md:w-[300px] 
                   h-[150px] sm:h-[240px] md:h-[300px] 
-                  border-4 border-[#7EDCE2]/60 border-dashed rounded-full 
+                  border-2 border-teal-600 dark:border-teal-400 border-dashed rounded-full 
                   animate-spinReverse blur-[0.5px]"
                   ></div>
 
