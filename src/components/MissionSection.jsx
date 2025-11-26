@@ -10,9 +10,7 @@ const MissionSection = () => {
         
         {/* Main Text Content */}
         <p className="text-gray-700 dark:text-gray-300 text-lg text-center px-4 mb-8">
-          We deliver programs that combine training, mentorship, and real-world experiences 
-          supported by a community of volunteers, mentors, and partners across Africa and 
-          the diaspora.
+          Every GirlLEAD fellow is offered an <b>immersive technical</b> and <b>leadership training</b>, professional <b>mentorship</b> and <b>real-world experience</b>, and the support of a vibrant <b>community</b> of women in tech.
         </p>
         
         {/* Bottom Decorative Divider */}

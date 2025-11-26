@@ -52,7 +52,7 @@ const PartnersSection = () => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const scrollSpeed = 2.5;
+    const scrollSpeed = 6;
 
     const animate = () => {
       if (!isHovered && !manualControlRef.current) {
