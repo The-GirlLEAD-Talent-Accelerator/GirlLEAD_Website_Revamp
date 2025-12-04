@@ -9,9 +9,8 @@ const Main = () => {
 
           <div className="flex items-center justify-center text-center w-full max-w-5xl my-6 px-2">
             <p className="text-gray-700 dark:text-white text-sm md:text-base lg:text-[20px] font-medium leading-relaxed max-w-[800px]">
-              "GirlLEAD exists to bridge the gender gap in tech and
-              entrepreneurship by equipping African girls and women with the
-              skills, confidence, and community to lead."
+              "We provide women and girls in Africa professional opportunities in tech, leadership and social entrepreneurship to build transformative careers and drive impactful changes in their communities.
+."
             </p>
           </div>
 
