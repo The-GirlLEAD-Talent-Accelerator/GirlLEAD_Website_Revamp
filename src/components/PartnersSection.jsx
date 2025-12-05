@@ -52,7 +52,7 @@ const PartnersSection = () => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const scrollSpeed = 6;
+    const scrollSpeed = 3.5; // pixels per frame
 
     const animate = () => {
       if (!isHovered && !manualControlRef.current) {
