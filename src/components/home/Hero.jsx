@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       className="relative w-full h-[95vh] flex flex-col justify-center text-white dark:text-gray-100 transition-colors bg-center bg-cover bg-no-repeat"
-      style={{ backgroundImage:   "url('/hero.png')" }}
+      style={{ backgroundImage:  "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero.png')" }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 mt-30 md:mt-36">
         <Motion.h3
