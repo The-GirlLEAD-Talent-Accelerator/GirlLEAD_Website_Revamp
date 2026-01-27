@@ -1,35 +1,19 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/home/Hero";
-import Main from "./components/home/Main";
-import MissionSection from "./components/MissionSection";
-import Testimonial from "./components/Testimonial";
-import Actions from "./components/Actions";
-import PartnersSection from "./components/PartnersSection";
-import './App.css'
-import Contact from "./components/Contact";
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Programs from "./pages/Programs";
+import About from "./pages/About";
 
 function App() {
-
   return (
-    <>
-      <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col">
-        <div className="h-[7vh]">
-          <Navbar />
-        </div>
-        <div className="flex-1 ">
-          <Hero />
-        </div>
-        <Main />
-        
-        <Testimonial />
-        <MissionSection />
-        <PartnersSection />
-        <Actions />
-        <Contact />
-      </main>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
