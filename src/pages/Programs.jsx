@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
+import TechnologySection from "../components/pragrams/TechnologySection";
+import HowWeWork from "../components/pragrams/HowToWork";
 
 export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -97,6 +99,9 @@ export default function Programs() {
           </div> */}
         </div>
       </section>
+
+      <TechnologySection />
+      <HowWeWork />
     </main>
   );
 }
