@@ -1,6 +1,7 @@
 // will come back to this later
 import { motion as Motion } from "framer-motion";
 import { BsArrowDown } from "react-icons/bs";
+import { MdArrowOutward } from "react-icons/md";
 
 export default function RotatingTextCircle({
   text = "LEARN MORE • ",
@@ -62,7 +63,8 @@ export default function RotatingTextCircle({
           height: size * 0.35,
         }}
       >
-        <BsArrowDown className="w-4 h-4 md:w-5 md:h-5" />
+        <MdArrowOutward className="w-4 h-4 md:w-6 md:h-6" />
+        {/* <BsArrowDown className="w-4 h-4 md:w-5 md:h-5" /> */}
       </div>
     </div>
   );

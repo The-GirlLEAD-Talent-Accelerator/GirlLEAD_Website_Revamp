@@ -12,7 +12,10 @@ export default function Hero() {
   return (
     <section
       className="relative w-full h-[95vh] flex flex-col justify-center text-white dark:text-gray-100 transition-colors bg-center bg-cover bg-no-repeat"
-      style={{ backgroundImage:  "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero.png')" }}
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero.png')",
+      }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 mt-30 md:mt-36">
         <Motion.h3
@@ -47,9 +50,10 @@ export default function Hero() {
           </a>
         </Motion.div>
       </div>
-      <div className="absolute bottom-10 right-6 md:bottom-16 md:right-12 lg:right-24 z-20">
+      <div className="hidden md:block absolute bottom-10 right-6 md:bottom-16 md:right-12 lg:right-24 z-20">
         <RotatingTextCircle text="LEARN MORE • " size={140} />
       </div>
+
       {/* Stats Section */}
       <div
         ref={ref}
@@ -75,7 +79,7 @@ export default function Hero() {
               <LuGraduationCap className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
             </div>
             <h3 className="lg:text-3xl font-bold text-teal-800 dark:text-teal-300">
-              {inView && <CountUp start={1} end={5} duration={3} suffix="+" />}
+              {inView && <CountUp start={1} end={10} duration={3} suffix="+" />}
             </h3>
             <p className="text-xs md:text-base font-medium md:mt-1 tracking-tighter">
               Program Cohorts

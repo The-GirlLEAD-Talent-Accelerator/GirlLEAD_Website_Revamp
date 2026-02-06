@@ -1,6 +1,10 @@
 import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
+import TechnologySection from "../components/pragrams/TechnologySection";
+import HowWeWork from "../components/pragrams/HowToWork";
+import ProgramCard from "../components/pragrams/ProgramCard";
+import WhatWeDo from "../components/pragrams/WhatWeDo";
 
 export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -58,45 +62,22 @@ export default function Programs() {
           </h2>
 
           <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
-            Our programs equip women and girls with leadership, entrepreneurial, and technology skills through practical training, mentorship, and opportunities that help them unlock their potential, create solutions, and thrive in their communities.
+            Our programs equip women and girls with leadership, entrepreneurial,
+            and technology skills through practical training, mentorship, and
+            opportunities that help them unlock their potential, create
+            solutions, and thrive in their communities.
           </p>
 
           <p className="pt-5 text-sm">
-            Here&#39;s a list of all our programs with links to register or details about when they will be open for registration.
+            Here&#39;s a list of all our programs with links to register or
+            details about when they will be open for registration.
           </p>
-
-          {/* Program Cards */}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
-            <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold mb-3">
-                Leadership Bootcamp
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Intensive training focused on confidence, leadership, and
-                real-world impact.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold mb-3">
-                Tech Skills Program
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Hands-on digital and tech skill development for future careers.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold mb-3">
-                Mentorship Circle
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Connecting participants with mentors and industry leaders.
-              </p>
-            </div>
-          </div> */}
         </div>
       </section>
+
+      <TechnologySection />
+      <WhatWeDo />
+      <HowWeWork />
     </main>
   );
 }
