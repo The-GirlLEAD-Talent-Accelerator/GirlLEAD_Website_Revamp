@@ -5,43 +5,43 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const testimonials = [
   {
-    quote: "Receiving the Datacamp x GirlLEAD Women in Data scholarship was a turning point in my academic and professional life. The scholarship provided financial support, mentorship and networking opportunities that opened doors for me. By developing my skills in data science, I landed a full-time position with a Tech NGO in Libya",
+    quote: "Receiving the Datacamp x GirlLEAD Women in Data scholarship was a turning point in my academic and professional journey. It provided financial support, mentorship, and networking opportunities that strengthened my skills in data science and helped me secure a full-time role with a Tech NGO in Libya",
     name: "Mawada A.",
     role: "GirlLEAD x Datacamp",
     year: "2023"
   },
   {
-    quote: "The GirlLEAD Women in Data program helped me gain admission to a master's program in applied data science. It expanded my thinking and improved my productivity at work.",
+    quote: "The GirlLEAD Women in Data program helped me gain admission to a master's program in applied data science. It broadened my perspective, sharpened my analytical thinking and improved my productivity and confidence at work.",
     name: "Natascha M.",
     role: "GirlLEAD x Datacamp",
     year: "2023"
   },
   {
-    quote: "I would describe my experience with GirlLEAD as a journey of discovery. At that time, I didn't know exactly what I wanted to do. GirlLEAD offered me the space to explore different fields and see where I could fit. While I initially thought programming might be for me, I quickly realized it wasn't. Instead, I found myself gravitating towards the Social Entrepreneurship class, where I felt more at home with business-related topics.",
+    quote: "My experience with GirlLEAD has been a journey of discovery and clarity. I wasn’t sure what path suited me, but the program allowed me to explore different fields. While programming wasn’t my fit, social entrepreneurship stood out and aligned naturally with my interest in business-focused problem solving.",
     name: "Anthonia I.",
     role: "GirlLEAD Bootcamp",
     year: "3.0"
   },
   {
-    quote: "Through GirlLEAD, I was introduced to something I never really knew much about and that has given me a new ground in my field. Data science is useful in various aspects of human activities. I am a final-year student and am currently writing my project on computational Linguistics which is a big ground that my school could not give me insight on. Without this bootcamp, I know for sure that I might not even get to know anything about this field at all and that would be what I would term \"DISASTROUS\". Thank you GirlLEAD!",
+    quote: "Through GirlLEAD, I was introduced to data science, a field I previously knew little about, but one that now shapes my academic direction. As a final-year student working on computational linguistics, this exposure filled a critical gap my school could not provide. Without it, the outcome would have been disastrous. Thank you GirlLEAD!",
     name: "Osasere O.",
     role: "GirlLEAD Bootcamp",
     year: "3.0"
   },
   {
-    quote: "When I joined GirlLEAD, I had no idea what social entrepreneurship was about, but after 14 weeks of extensive learning, I not only know what it means but also have been able to build a plan for my own social enterprise.",
+    quote: "When I joined GirlLEAD, I had little understanding of social entrepreneurship. After fourteen weeks of structured learning, I gained clarity, confidence, and practical skills. I now fully understand the concept and have successfully developed a clear and realistic plan for my own social enterprise idea.",
     name: "Success O.",
     role: "GirlLEAD Bootcamp",
     year: "3.0"
   },
   {
-    quote: "I learnt the basic aspects of programming which are HTML and CSS. It was indeed wonderful. I also got to meet wonderful and amazing people, it's an experience to remember! GirlLEAD is a wonderful initiative to empower girls. I for one, I'm happy to have found myself on the GirlLEAD Project.",
+    quote: "Through GirlLEAD, I learned the basics of programming, including HTML and CSS, and truly enjoyed the learning process. Beyond the technical skills, I met inspiring people and built meaningful connections. It is a powerful initiative for empowering girls, and I am genuinely grateful to be part of the GirlLEAD project.",
     name: "Chinaza A.",
     role: "GirlLEAD Enugu 1.0,",
     year: "2023"
   },
   {
-    quote: "The Girls in STEM bootcamp helped me build knowledge, expanded my mind and exposed me to opportunities.  It's a good place for me to start as a secondary school student - due to this exposure, I now have a job even before entering university!",
+    quote: "The Girls in STEM bootcamp helped me build foundational knowledge, broaden my thinking, and discover exciting opportunities. As a secondary school student, it was the perfect starting point. Because of this exposure, I now have a job even before entering university, which feels truly empowering!",
     name: "Amarachi",
     role: "Girls in STEM Benin City,",
     year: "2024"

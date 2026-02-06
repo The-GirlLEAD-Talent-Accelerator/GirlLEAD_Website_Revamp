@@ -58,7 +58,7 @@ export default function Programs() {
       <section className="md:py-20 py-10 px-6">
         <div className="md:max-w-7xl w-full mx-auto">
           <h2 className="text-xl sm:text-4xl md:text-3xl font-bold mb-6">
-            Interested In Joining The Programs
+            Interested In Joining The Programs?
           </h2>
 
           <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
