@@ -11,7 +11,7 @@ const testimonials = [
     year: "2023"
   },
   {
-    quote: "The GirlLEAD Women in Data program helped me gain admission to a master's program in applied data science. It broadened my perspective, sharpened my analytical thinking and improved my productivity and confidence at work.",
+    quote: "The GirlLEAD Women in Data program played a major role in helping me gain admission into a master’s program in applied data science. It broadened my perspective, sharpened my analytical thinking, and significantly improved my productivity and confidence in my professional work environment.",
     name: "Natascha M.",
     role: "GirlLEAD x Datacamp",
     year: "2023"
@@ -23,7 +23,7 @@ const testimonials = [
     year: "3.0"
   },
   {
-    quote: "Through GirlLEAD, I was introduced to data science, a field I previously knew little about, but one that now shapes my academic direction. As a final-year student working on computational linguistics, this exposure filled a critical gap my school could not provide. Without it, the outcome would have been disastrous. Thank you GirlLEAD!",
+    quote: "GirlLEAD introduced me to data science, a field I previously knew little about, but one that now shapes my academic direction. As a final-year student working on computational linguistics, this exposure filled a critical gap my school could not provide. Without it, the outcome would have been disastrous. Thank you GirlLEAD!",
     name: "Osasere O.",
     role: "GirlLEAD Bootcamp",
     year: "3.0"
@@ -35,7 +35,7 @@ const testimonials = [
     year: "3.0"
   },
   {
-    quote: "Through GirlLEAD, I learned the basics of programming, including HTML and CSS, and truly enjoyed the learning process. Beyond the technical skills, I met inspiring people and built meaningful connections. It is a powerful initiative for empowering girls, and I am genuinely grateful to be part of the GirlLEAD project.",
+    quote: "I learned the basics of programming, including HTML and CSS, and truly enjoyed the learning process. Beyond the technical skills, I met inspiring people and built meaningful connections. It is a powerful initiative for empowering girls, and I am genuinely grateful to be part of the GirlLEAD project.",
     name: "Chinaza A.",
     role: "GirlLEAD Enugu 1.0,",
     year: "2023"
