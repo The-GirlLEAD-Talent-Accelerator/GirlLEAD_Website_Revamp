@@ -23,7 +23,7 @@ const testimonials = [
     year: "3.0"
   },
   {
-    quote: "GirlLEAD introduced me to data science, a field I previously knew little about, but one that now shapes my academic direction. As a final-year student working on computational linguistics, this exposure filled a critical gap my school could not provide. Without it, the outcome would have been disastrous. Thank you GirlLEAD!",
+    quote: "GirlLEAD introduced me to data science, a field I knew little about, but one that now shapes my academic direction. As a final-year student working on computational linguistics, this exposure filled a critical gap my school could not provide. Without it, the outcome would have been disastrous. Thank you GirlLEAD!",
     name: "Osasere O.",
     role: "GirlLEAD Bootcamp",
     year: "3.0"
