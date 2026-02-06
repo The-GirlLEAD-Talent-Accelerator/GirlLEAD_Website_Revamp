@@ -184,47 +184,46 @@
 //   );
 // }
 
-
 import { useState } from "react";
 import Tabs from "../../components/tabs/Tabs";
 import Carousel from "../carousel/Carousel";
 import ProgramCard from "../pragrams/ProgramCard";
-import { TABS, TAB_CONTENT, CAROUSEL_IMAGES } from "../../constants/technologyData";
+import {
+  TABS,
+  TAB_CONTENT,
+  CAROUSEL_IMAGES,
+} from "../../constants/technologyData";
 
 export default function TechnologySection() {
-const [activeTab, setActiveTab] = useState("Technology");
-const { description, programs } = TAB_CONTENT[activeTab as keyof typeof TAB_CONTENT];
+  const [activeTab, setActiveTab] = useState("Technology");
+  const { description, programs } =
+    TAB_CONTENT[activeTab as keyof typeof TAB_CONTENT];
 
+  return (
+    <section className="bg-[#F4FBFB] py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
 
-return (
-<section className="bg-[#F4FBFB] py-16 px-4">
-<div className="max-w-6xl mx-auto">
-<Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
+        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 text-sm sm:text-base">
+          {description}
+        </p>
 
+        <Carousel images={CAROUSEL_IMAGES} />
 
-<p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 text-sm sm:text-base">
-{description}
-</p>
+        <h3 className="text-center text-gray-700 mb-8 text-sm sm:text-base">
+          These are the programs under this track:
+        </h3>
 
-
-<Carousel images={CAROUSEL_IMAGES} />
-
-
-<h3 className="text-center text-gray-700 mb-8 text-sm sm:text-base">
-These are the programs under this track:
-</h3>
-
-
-<div
-className={`grid gap-6 ${
-programs.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
-}`}
->
-{programs.map((program) => (
-<ProgramCard key={program.title} {...program} />
-))}
-</div>
-</div>
-</section>
-);
+        <div
+          className={`grid gap-6 ${
+            programs.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+          }`}
+        >
+          {programs.map((program) => (
+            <ProgramCard key={program.title} {...program} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
