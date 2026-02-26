@@ -1,10 +1,14 @@
 import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
-import TechnologySection from "../components/pragrams/TechnologySection";
-import HowWeWork from "../components/pragrams/HowToWork";
-import ProgramCard from "../components/pragrams/ProgramCard";
-import WhatWeDo from "../components/pragrams/WhatWeDo";
+import TechnologySection from "../components/programs/TechnologySection";
+import HowWeWork from "../components/programs/HowToWork";
+// import ProgramCard from "../components/programs/ProgramCard";
+import WhatWeDo from "../components/programs/WhatWeDo";
+import FaqSection from "../components/programs/FaqSection";
+import Testimonial from "../components/Testimonial";
+import MapSection from "../components/programs/MapSection";
+import Contact from "../components/Contact";
 
 export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -23,9 +27,8 @@ export default function Programs() {
           alt="Programs hero"
           loading="lazy"
           onLoad={() => setHeroLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            heroLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"
+            }`}
         />
 
         {/* Content */}
@@ -78,6 +81,10 @@ export default function Programs() {
       <TechnologySection />
       <WhatWeDo />
       <HowWeWork />
+      <FaqSection />
+      <Testimonial className="bg-teal-100 dark:bg-teal-900" />
+      <MapSection />
+      <Contact />
     </main>
   );
 }

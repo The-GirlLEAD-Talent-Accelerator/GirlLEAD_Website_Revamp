@@ -187,7 +187,7 @@
 import { useState } from "react";
 import Tabs from "../../components/tabs/Tabs";
 import Carousel from "../carousel/Carousel";
-import ProgramCard from "../pragrams/ProgramCard";
+import ProgramCard from "../programs/ProgramCard";
 import {
   TABS,
   TAB_CONTENT,
@@ -215,9 +215,8 @@ export default function TechnologySection() {
         </h3>
 
         <div
-          className={`grid gap-6 ${
-            programs.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
-          }`}
+          className={`grid gap-6 ${programs.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+            }`}
         >
           {programs.map((program) => (
             <ProgramCard key={program.title} {...program} />

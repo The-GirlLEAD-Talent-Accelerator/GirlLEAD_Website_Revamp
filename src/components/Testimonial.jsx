@@ -79,7 +79,7 @@ const TestimonialCard = ({ testimonial, index, isMobile }) => (
   </Motion.div>
 );
 
-const Testimonial = () => {
+const Testimonial = ({ className }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -99,8 +99,8 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="bg-[#EDFAFA] dark:bg-gray-950 w-full m-auto py-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className={`${className || "bg-[#EDFAFA] dark:bg-gray-950"} w-full m-auto py-12 overflow-hidden`}>
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <Motion.h2
           className="text-3xl font-extrabold text-center text-gray-900 dark:text-white mb-12"
           initial={{ opacity: 0, y: -30 }}
