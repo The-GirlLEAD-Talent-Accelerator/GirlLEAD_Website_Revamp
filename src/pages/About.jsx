@@ -41,7 +41,6 @@ export default function About() {
                 transition={{ duration: 0.8 }}
                 className="text-xs md:text-base uppercase tracking-widest mb-4 text-gray-200"
               >
-                Impact so far
               </Motion.h3>
 
               <Motion.h1
@@ -50,7 +49,6 @@ export default function About() {
                 transition={{ duration: 1 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white"
               >
-                Our Programs
               </Motion.h1>
             </div>
           </div>
