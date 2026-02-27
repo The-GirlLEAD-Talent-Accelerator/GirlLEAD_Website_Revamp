@@ -14,21 +14,23 @@ export default function About() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
-      <div className="h-[7vh]">
-        <Navbar />
-      </div>
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-10">
 
-      {/* HERO SECTION */}
-      <section className="bg-white py-16 md:py-20">
-       <div
+      {/* Outer card: flex row, rounded corners, clips children */}
+      <div
+        className="w-full max-w-4xl rounded-3xl overflow-hidden shadow-md flex"
+        style={{ minHeight: "300px" }}
+      >
+
+        {/* LEFT — white text panel */}
+        <div
           className="bg-white flex flex-col justify-center px-10 py-10"
           style={{ width: "45%", flexShrink: 0 }}
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Who we are;
           </h2>
-          <p className="text-gray-1000 text-sm leading-relaxed">
+          <p className="text-gray-500 text-sm leading-relaxed">
             At GirlLEAD, we create learning opportunities for women across
             Africa to learn more about the opportunities in STEM, Social
             entrepreneurship and leadership, providing them with access to
@@ -40,41 +42,13 @@ export default function About() {
         {/* RIGHT — photo panel */}
         <div className="flex-1 overflow-hidden">
           <img
-            src="/WhoWeAre.png"
-            alt="Who GirlLEAD are"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80"
+            alt="Women in a learning session"
             className="w-full h-full object-cover object-center"
           />
         </div>
-      </section>
 
-      {/* PROGRAMS CONTENT */}
-      <section className="md:py-20 py-10 px-6">
-        <div className="md:max-w-7xl w-full mx-auto">
-          <h2 className="text-xl sm:text-4xl md:text-3xl font-bold mb-6">
-            Interested In Joining The Programs?
-          </h2>
-
-          <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
-            Our programs equip women and girls with leadership, entrepreneurial,
-            and technology skills through practical training, mentorship, and
-            opportunities that help them unlock their potential, create
-            solutions, and thrive in their communities.
-          </p>
-
-          <p className="pt-5 text-sm">
-            Here&#39;s a list of all our programs with links to register or
-            details about when they will be open for registration.
-          </p>
-        </div>
-      </section>
-
-      <TechnologySection />
-      <WhatWeDo />
-      <HowWeWork />
-      <FaqSection />
-      <Testimonial className="bg-teal-100 dark:bg-teal-900" />
-      <MapSection />
-      <Contact />
-    </main>
+      </div>
+    </div>
   );
 }
