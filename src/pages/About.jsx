@@ -21,47 +21,29 @@ export default function About() {
 
       {/* HERO SECTION */}
       <section className="bg-white py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+       <div
+          className="bg-white flex flex-col justify-center px-10 py-10"
+          style={{ width: "45%", flexShrink: 0 }}
+        >
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Who we are;
+          </h2>
+          <p className="text-gray-500 text-sm leading-relaxed">
+            At GirlLEAD, we create learning opportunities for women across
+            Africa to learn more about the opportunities in STEM, Social
+            entrepreneurship and leadership, providing them with access to
+            guidance after their training to properly develop and apply all they
+            have learnt to effect meaningful changes in their worlds.
+          </p>
+        </div>
 
-          {/* Text Card */}
-          <div className="reveal bg-white rounded-2xl shadow-lg p-8 md:p-10">
-            <h2 className="font-display text-3xl md:text-4xl text-[#1a2e2a] mb-4">
-              Who we are;
-            </h2>
-            <p className="text-[#4a5568] text-sm md:text-base leading-relaxed">
-              At GirlLEAD, we create learning opportunities for women across Africa to learn
-              more about the opportunities in STEM, Social entrepreneurship and leadership,
-              providing them with access to guidance after their training to properly develop
-              and apply all they have learnt to effect meaningful changes in their worlds.
-            </p>
-          </div>
-
-          {/* Single photo with dual rounded-mask effect */}
-          <div
-            className="reveal relative h-80 md:h-[420px]"
-            style={{ transitionDelay: "0.15s" }}
-          >
-            {/* Top-right window — shows upper part of photo */}
-            <div className="absolute top-0 right-0 w-[78%] h-[72%] rounded-3xl overflow-hidden shadow-xl">
-              <img
-                src="/WhoWeAre.png"
-                alt="GirlLEAD participants engaged in a leadership and technology workshop"
-                className="w-full h-full object-cover object-top"
-                loading="lazy"
-              />
-            </div>
-
-            {/* Bottom-left window — shows lower part of same photo */}
-            <div className="absolute bottom-0 left-0 w-[62%] h-[72%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-              <img
-                src="/WhoWeAre.png"
-                alt="GirlLEAD women collaborating and learning together"
-                className="w-full h-full object-cover object-bottom"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
+        {/* RIGHT — photo panel */}
+        <div className="flex-1 overflow-hidden">
+          <img
+            src="/WhoWeAre.png"
+            alt="Who GirlLEAD are"
+            className="w-full h-full object-cover object-center"
+          />
         </div>
       </section>
 
