@@ -28,7 +28,7 @@ export default function About() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Who we are;
           </h2>
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-1000 text-sm leading-relaxed">
             At GirlLEAD, we create learning opportunities for women across
             Africa to learn more about the opportunities in STEM, Social
             entrepreneurship and leadership, providing them with access to
