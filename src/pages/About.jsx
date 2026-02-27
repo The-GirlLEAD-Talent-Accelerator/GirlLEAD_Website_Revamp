@@ -21,6 +21,15 @@ export default function About() {
 
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
+        <h2 className="font-display text-3xl md:text-4xl text-[#1a2e2a] mb-4">
+              Who we are;
+            </h2>
+            <p className="text-[#4a5568] text-sm md:text-base leading-relaxed">
+              At GirlLEAD, we create learning opportunities for women across Africa to learn
+              more about the opportunities in STEM, Social entrepreneurship and leadership,
+              providing them with access to guidance after their training to properly develop
+              and apply all they have learnt to effect meaningful changes in their worlds.
+            </p>
         {/* Lazy-loaded background image */}
         <img
           src="/WhoWeAre.png"
