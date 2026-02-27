@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import WhoWeAre from "../components/about/WhoWeAre";
