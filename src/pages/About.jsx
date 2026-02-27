@@ -42,7 +42,7 @@ export default function About() {
         {/* RIGHT — photo panel */}
         <div className="flex-1 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80"
+            src="/WhoWeAre.png"
             alt="Women in a learning session"
             className="w-full h-full object-cover object-center"
           />
