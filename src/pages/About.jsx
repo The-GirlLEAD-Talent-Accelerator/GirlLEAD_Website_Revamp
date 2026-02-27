@@ -10,7 +10,7 @@ import Testimonial from "../components/Testimonial";
 import MapSection from "../components/programs/MapSection";
 import Contact from "../components/Contact";
 
-export default function Programs() {
+export default function About() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
@@ -23,8 +23,8 @@ export default function Programs() {
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
         {/* Lazy-loaded background image */}
         <img
-          src="/programs-hero.png"
-          alt="Programs hero"
+          src="/WhoWeAre.png"
+          alt="Who We Are"
           loading="lazy"
           onLoad={() => setHeroLoaded(true)}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"
