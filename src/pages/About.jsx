@@ -11,8 +11,6 @@ import MapSection from "../components/programs/MapSection";
 import Contact from "../components/Contact";
 
 export default function About() {
-  const [heroLoaded, setHeroLoaded] = useState(false);
-
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center p-10">
 
