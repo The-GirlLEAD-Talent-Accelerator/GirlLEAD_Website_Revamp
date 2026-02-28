@@ -1,9 +1,12 @@
 import React from "react";
+import buildIcon from "../../assets/build.png";
+import communityIcon from "../../assets/community-engagement.png";
+import earthIcon from "../../assets/earth.png";
 
 function CubesIcon() {
   return (
     <img 
-      src="/src/assets/build.png"
+      src={buildIcon}
       alt="Build Foundation Cubes" 
       style={{ width: "110px", height: "auto" }} 
     />
@@ -13,7 +16,7 @@ function CubesIcon() {
 function CommunityIcon() {
   return (
     <img 
-      src="/src/assets/community-engagement.png" 
+      src={communityIcon}
       alt="Community Engagement" 
       style={{ width: "130px", height: "auto", marginTop: "20px" }} 
     />
@@ -23,7 +26,7 @@ function CommunityIcon() {
 function GlobeIcon() {
   return (
     <img 
-      src="/src/assets/earth.png" 
+      src={earthIcon}
       alt="Earth Globe" 
       style={{ width: "110px", height: "auto" }} 
     />
@@ -33,15 +36,45 @@ function GlobeIcon() {
 export default function HowWeWork() {
   return (
     <section
-      style={{ fontFamily: "'DM Sans', sans-serif", background: "#e8f5f2" }}
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-[#e8f5f2] dark:bg-slate-900"
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
-        .hww-title { font-size: 2rem; font-weight: 700; color: #1a2e2a; margin: 0 0 4px; }
-        .hww-label { font-size: 13px; color: #3a7a6a; font-weight: 500; margin-bottom: 8px; }
-        .hww-desc { font-size: 14px; color: #4a6a64; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+        .hww-title { 
+          font-size: 2rem; 
+          font-weight: 700; 
+          color: #1a2e2a;
+          margin: 0 0 4px;
+        }
+
+        :global(.dark) .hww-title {
+          color: #e0f2f1;
+        }
+
+        .hww-label { 
+          font-size: 13px; 
+          color: #3a7a6a; 
+          font-weight: 500; 
+          margin-bottom: 8px; 
+        }
+
+        :global(.dark) .hww-label {
+          color: #4fd1c5;
+        }
+
+        .hww-desc { 
+          font-size: 14px; 
+          color: #4a6a64; 
+          max-width: 520px; 
+          margin: 0 auto; 
+          line-height: 1.6; 
+        }
+
+        :global(.dark) .hww-desc {
+          color: #4fd1c5;
+        }
 
         .hww-row {
           display: flex;
@@ -68,6 +101,12 @@ export default function HowWeWork() {
           margin: 0 -14px;
         }
 
+        :global(.dark) .hww-badge {
+          background: #26726f;
+          color: #b2dfdb;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
         .hww-card {
           background: #014451;
           border-radius: 20px;
@@ -78,6 +117,10 @@ export default function HowWeWork() {
           justify-content: space-between;
           min-width: 0;
           position: relative;
+        }
+
+        :global(.dark) .hww-card {
+          background: #1a3a3a;
         }
 
         .hww-card-side {
@@ -126,6 +169,10 @@ export default function HowWeWork() {
           color: #a0c8c2;
           line-height: 1.65;
           margin: 0;
+        }
+
+        :global(.dark) .hww-card-desc {
+          color: #80cbc4;
         }
 
         @media (max-width: 640px) {
