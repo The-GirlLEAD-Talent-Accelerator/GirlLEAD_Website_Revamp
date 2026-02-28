@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+// import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { FiX, FiMenu } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
@@ -29,6 +32,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-sm z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
         <Link to="/">
           <img
             src="/girl-lead-logo.png"
@@ -36,6 +41,13 @@ export default function Navbar() {
             className="w-14 h-10 scale-150 object-contain"
           />
         </Link>
+
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center space-x-8 font-medium text-gray-700 dark:text-gray-200">
+          <li><Link to="/" className="hover:text-teal-600 dark:hover:text-teal-400">Home</Link></li>
+          <li><a href="#programs" className="hover:text-teal-600 dark:hover:text-teal-400">Programs</a></li>
+          <li><Link to="/about" className="hover:text-teal-600 dark:hover:text-teal-400">About Us</Link></li>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-8 font-medium">
@@ -73,6 +85,11 @@ export default function Navbar() {
 
       {/* MOBILE BLUR OVERLAY */}
       {open && (
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-md border-t border-gray-200 dark:border-gray-700 transition-colors">
+          <ul className="flex flex-col items-center py-4 space-y-4 font-medium text-gray-700 dark:text-gray-200">
+            <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
+            <li><a href="#programs" onClick={() => setOpen(false)}>Programs</a></li>
+            <li><Link to="/about" onClick={() => setOpen(false)}>About Us</Link></li>
         <div
           className="
             md:hidden
