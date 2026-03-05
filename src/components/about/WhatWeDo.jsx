@@ -35,7 +35,7 @@ export default function WhatWeDo() {
   return (
     <section
       style={{ fontFamily: "'DM Sans', sans-serif" }}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-[#e8f5f2]"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-[#e8f5f2] dark:bg-slate-900"
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
@@ -54,6 +54,21 @@ export default function WhatWeDo() {
           transform: translateY(-6px);
           box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
+
+        :global(.dark) .program-card {
+          background: #1a4a42;
+          color: #fff;
+        }
+
+        :global(.dark) .program-card .card-title,
+        :global(.dark) .program-card .card-desc {
+          color: #fff;
+        }
+
+        :global(.dark) .program-card .butterfly-icon {
+          color: #a8e6d9;
+        }
+
         .program-card.dark-card {
           background: #1a4a42;
           color: #fff;
@@ -69,23 +84,45 @@ export default function WhatWeDo() {
           font-size: 32px;
           color: #1a7a62;
         }
+
+        :global(.dark) .butterfly-icon {
+          color: #4fd1c5;
+        }
+
         .card-title {
           font-size: 20px;
           font-weight: 700;
           color: #1a3030;
           margin: 0;
         }
+
+        :global(.dark) .card-title {
+          color: #e0f2f1;
+        }
+
         .card-desc {
           font-size: 14px;
           line-height: 1.65;
           color: #3a5a54;
           margin: 0;
         }
+
+        :global(.dark) .card-desc {
+          color: #4fd1c5;
+        }
+
+        h2.dark\:text-\[\#e0f2f1\] {
+          color: #1a2e2a;
+        }
+
+        :global(.dark) h2 {
+          color: #e0f2f1 !important;
+        }
       `}</style>
 
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "2.4rem", color: "#1a2e2a" }}>
+          <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "2.4rem", color: "#1a2e2a" }} className="dark:text-[#e0f2f1]">
             What We Do
           </h2>
         </div>
