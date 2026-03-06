@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
-import { useState } from "react";
 import TechnologySection from "../components/programs/TechnologySection";
 import HowWeWork from "../components/programs/HowToWork";
 // import ProgramCard from "../components/programs/ProgramCard";
@@ -11,8 +10,6 @@ import MapSection from "../components/programs/MapSection";
 import Contact from "../components/Contact";
 
 export default function About() {
-  const [heroLoaded, setHeroLoaded] = useState(false);
-
   return (
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       <div className="h-[7vh]">
