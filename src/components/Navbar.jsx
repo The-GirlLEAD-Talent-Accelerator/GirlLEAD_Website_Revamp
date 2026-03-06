@@ -44,11 +44,6 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-8 font-medium">
           <li>
-            <NavLink to="/" className={navLinkClass}>
-              Home
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/programs" className={navLinkClass}>
               Programs
             </NavLink>
@@ -86,15 +81,6 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden fixed left-0 right-0 h-[calc(100vh-7vh)] z-40 backdrop-blur-lg bg-white/60 dark:bg-black/50 border-t border-white/20 flex flex-col items-center justify-start pt-44">
           <ul className="flex flex-col items-center space-y-6 font-medium">
-            <li>
-              <NavLink
-                to="/"
-                onClick={() => setOpen(false)}
-                className={navLinkClass}
-              >
-                Home
-              </NavLink>
-            </li>
             <li>
               <NavLink
                 to="/programs"
