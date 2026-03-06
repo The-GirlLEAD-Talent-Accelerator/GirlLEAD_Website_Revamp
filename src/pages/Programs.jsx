@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import TechnologySection from "../components/programs/TechnologySection";
@@ -14,11 +13,7 @@ export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
-      <div className="h-[7vh]">
-        <Navbar />
-      </div>
-
+    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-[7vh]">
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
         {/* Lazy-loaded background image */}
