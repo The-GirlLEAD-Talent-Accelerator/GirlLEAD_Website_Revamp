@@ -24,7 +24,7 @@ const Button = ({
     outline: "bg-transparent border border-text-onBrand text-text-onBrand hover:bg-bg-mute hover:text-brand-deep rounded-lg",
     outlinePrimary: "bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-text-onBrand rounded-lg",
     ghost: "text-text-muted hover:text-brand-primary bg-transparent",
-    icon: "p-3 rounded-full bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand",
+    icon: "p-3 rounded-full bg-bg-mute text-brand-primary hover:bg-brand-primary hover:text-text-onBrand",
   };
 
   const sizes = {
