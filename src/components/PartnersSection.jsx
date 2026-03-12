@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 
 const PartnersSection = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [slidesPerView, setSlidesPerView] = useState(4);
   const [itemWidth, setItemWidth] = useState(0);
   const scrollRef = useRef(null);
   const animationRef = useRef(null);
@@ -32,10 +31,6 @@ const PartnersSection = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 640) setSlidesPerView(1);
-      else if (width < 768) setSlidesPerView(2);
-      else if (width < 1024) setSlidesPerView(3);
-      else setSlidesPerView(4);
 
       if (scrollRef.current) {
         setItemWidth(scrollRef.current.offsetWidth / (width < 640 ? 1 : width < 768 ? 2 : width < 1024 ? 3 : 4));
@@ -94,7 +89,6 @@ const PartnersSection = () => {
     let newPosition = targetItemIndex * itemWidth;
     
     // Handle wrap-around for infinite loop
-    const containerWidth = container.scrollWidth / 3;
     if (newPosition < 0) {
       const totalItems = infinitePartners.length / 3;
       newPosition = (totalItems + targetItemIndex) * itemWidth;
@@ -146,23 +140,23 @@ const PartnersSection = () => {
   };
 
   return (
-    <section className="w-full bg-gray-100 dark:bg-gray-900 py-16 px-6">
+    <section className="w-full bg-bg-soft py-16 px-6 transition-colors">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-8">
-          <div className="w-[85%] h-0 border-t-2 border-dashed border-teal-600 dark:border-teal-400"></div>
+          <div className="w-[85%] h-0 border-t-2 border-dashed border-brand-primary"></div>
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-text-main text-center mb-12">
           Partners and Recognitions
         </h2>
 
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-bg-soft to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-bg-soft to-transparent z-10 pointer-events-none"></div>
 
           <button
             onClick={handlePrev}
-            className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 hover:bg-teal-600 hover:text-white text-teal-600 p-3 rounded-full shadow-md transition-colors duration-300 cursor-pointer flex items-center justify-center border border-gray-200 dark:border-gray-700"
+            className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand text-brand-primary p-3 rounded-full shadow-md transition-colors duration-300 cursor-pointer flex items-center justify-center border border-border-soft"
             aria-label="Previous Slide"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
@@ -172,7 +166,7 @@ const PartnersSection = () => {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 hover:bg-teal-600 hover:text-white text-teal-600 p-3 rounded-full shadow-md transition-colors duration-300 cursor-pointer flex items-center justify-center border border-gray-200 dark:border-gray-700"
+            className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand text-brand-primary p-3 rounded-full shadow-md transition-colors duration-300 cursor-pointer flex items-center justify-center border border-border-soft"
             aria-label="Next Slide"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
@@ -194,7 +188,7 @@ const PartnersSection = () => {
                 return (
                   <div
                     key={index}
-                    className="flex-shrink-0 px-4"
+                    className="shrink-0 px-4"
                     style={{ minWidth: itemWidth ? `${itemWidth}px` : '280px' }}
                   >
                     <div className="mx-auto flex items-center justify-center h-[120px]">
@@ -214,7 +208,7 @@ const PartnersSection = () => {
         </div>
 
         <div className="flex justify-center mt-12">
-          <div className="w-[85%] h-0 border-t-2 border-dashed border-teal-600 dark:border-teal-400"></div>
+          <div className="w-[85%] h-0 border-t-2 border-dashed border-brand-primary"></div>
         </div>
       </div>
     </section>

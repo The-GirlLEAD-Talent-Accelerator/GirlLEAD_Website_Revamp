@@ -14,7 +14,7 @@ export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+    <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       <div className="h-[7vh]">
         <Navbar />
       </div>
@@ -39,7 +39,7 @@ export default function Programs() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-xs md:text-base uppercase tracking-widest mb-4 text-gray-200"
+                className="text-xs md:text-base uppercase tracking-widest mb-4 text-text-onBrand opacity-80"
               >
                 Impact so far
               </Motion.h3>
@@ -48,7 +48,7 @@ export default function Programs() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-text-onBrand"
               >
                 Our Programs
               </Motion.h1>
@@ -64,7 +64,7 @@ export default function Programs() {
             Interested In Joining The Programs
           </h2>
 
-          <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-sm sm:text-lg text-text-muted">
             Our programs equip women and girls with leadership, entrepreneurial,
             and technology skills through practical training, mentorship, and
             opportunities that help them unlock their potential, create
@@ -82,7 +82,7 @@ export default function Programs() {
       <WhatWeDo />
       <HowWeWork />
       <FaqSection />
-      <Testimonial className="bg-teal-100 dark:bg-teal-900" />
+      <Testimonial className="bg-bg-pill" />
       <MapSection />
       <Contact />
     </main>

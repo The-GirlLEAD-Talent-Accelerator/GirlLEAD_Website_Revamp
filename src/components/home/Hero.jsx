@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full h-[95vh] flex flex-col justify-center text-white dark:text-gray-100 transition-colors bg-center bg-cover bg-no-repeat"
+      className="relative w-full h-[95vh] flex flex-col justify-center text-text-onBrand transition-colors bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero.png')",
@@ -44,7 +44,7 @@ export default function Hero() {
         >
           <a
             href="#about"
-            className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors"
+            className="inline-block bg-brand-primary text-text-onBrand px-6 py-3 rounded-lg hover:bg-brand-deep transition-colors"
           >
             About Us
           </a>
@@ -57,28 +57,28 @@ export default function Hero() {
       {/* Stats Section */}
       <div
         ref={ref}
-        className="hidden md:block z-30 md:absolute md:-bottom-40 left-1/2 transform -translate-x-1/2 h-44 md:h-auto w-[50%] md:w-[50%] lg:w-[55%] bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden transition-colors"
+        className="hidden md:block z-30 md:absolute md:-bottom-40 left-1/2 transform -translate-x-1/2 h-44 md:h-auto w-[50%] md:w-[50%] lg:w-[55%] bg-bg-mute rounded-xl shadow-lg overflow-hidden transition-colors"
       >
-        <div className="grid md:grid-cols-3 grid-cols-1  text-center text-gray-800 dark:text-gray-200">
-          <div className="bg-teal-800 dark:bg-teal-300 text-white py-8 px-4 items-center flex-col flex gap-[10px]">
-            <div className="bg-[#EDFAFA] md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
-              <HiMiniGift className="text-[#137d89] md:w-10 md:h-10 w-5 h-5" />
+        <div className="grid md:grid-cols-3 grid-cols-1  text-center text-text-main">
+          <div className="bg-brand-deep text-text-onBrand py-8 px-4 items-center flex-col flex gap-[10px]">
+            <div className="bg-bg-soft md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
+              <HiMiniGift className="text-text-iconAccent md:w-10 md:h-10 w-5 h-5" />
             </div>
-            <h3 className="lg:text-3xl font-bold dark:text-gray-800">
+            <h3 className="lg:text-3xl font-bold">
               {inView && (
                 <CountUp start={500} end={2000} duration={7} suffix="+" />
               )}
             </h3>
-            <p className="text-xs dark:text-gray-800 md:text-base font-medium md:mt-1">
+            <p className="text-xs md:text-base font-medium md:mt-1">
               Women and Girls Trained
             </p>
           </div>
 
-          <div className="bg-teal-100/40 dark:bg-teal-900 py-8 px-4 border-r border-gray-300 dark:border-gray-700 items-center flex-col flex gap-[10px]">
-            <div className="bg-teal-900 dark:bg-[#EDFAFA] md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
-              <LuGraduationCap className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
+          <div className="bg-bg-card py-8 px-4 border-r border-border-soft items-center flex-col flex gap-[10px]">
+            <div className="bg-brand-hero md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
+              <LuGraduationCap className="text-text-onBrand md:w-10 md:h-10 w-5 h-5" />
             </div>
-            <h3 className="lg:text-3xl font-bold text-teal-800 dark:text-teal-300">
+            <h3 className="lg:text-3xl font-bold text-brand-primary">
               {inView && <CountUp start={1} end={10} duration={3} suffix="+" />}
             </h3>
             <p className="text-xs md:text-base font-medium md:mt-1 tracking-tighter">
@@ -86,11 +86,11 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="bg-teal-100/40 dark:bg-teal-900 py-8 px-4 items-center flex-col flex gap-[10px]">
-            <div className="bg-teal-900 dark:bg-[#EDFAFA] md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
-              <PiHandshakeLight className="text-[#F9FBFB] dark:text-[#137D89] md:w-10 md:h-10 w-5 h-5" />
+          <div className="bg-bg-card py-8 px-4 items-center flex-col flex gap-[10px]">
+            <div className="bg-brand-hero md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
+              <PiHandshakeLight className="text-text-onBrand md:w-10 md:h-10 w-5 h-5" />
             </div>
-            <h3 className="lg:text-3xl font-bold text-teal-800 dark:text-teal-300">
+            <h3 className="lg:text-3xl font-bold text-brand-primary">
               {inView && <CountUp start={1} end={5} duration={5} suffix="+" />}
             </h3>
             <p className="text-xs md:text-base font-medium md:mt-1">Partners</p>

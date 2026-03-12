@@ -7,10 +7,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navLinkClass = ({ isActive }) =>
-    `transition-colors ${
-      isActive
-        ? "text-teal-700 dark:text-teal-400 font-semibold"
-        : "text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400"
+    `transition-colors ${isActive
+      ? "text-brand-primary font-semibold"
+      : "text-text-muted hover:text-brand-primary"
     }`;
 
   // Prevent body scroll when mobile menu is open
@@ -27,7 +26,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-sm z-50">
+    <nav className="fixed top-0 left-0 w-full bg-bg-mute shadow-sm z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/">
           <img
@@ -56,7 +55,7 @@ export default function Navbar() {
 
           <a
             href="#donate"
-            className="hidden md:inline-block bg-teal-700 text-white px-5 py-2 rounded-lg"
+            className="hidden md:inline-block bg-brand-primary text-text-onBrand px-5 py-2 rounded-lg hover:bg-brand-deep transition-colors"
           >
             Donate Now
           </a>
@@ -64,7 +63,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-gray-700 dark:text-gray-200 z-50 relative"
+            className="md:hidden text-text-main z-50 relative"
           >
             {open ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
@@ -82,9 +81,8 @@ export default function Navbar() {
             h-[calc(100vh-7vh)]  /* full height minus navbar */
             z-40
             backdrop-blur-lg
-            bg-white/60
-            dark:bg-black/50
-            border-t border-white/20
+            bg-bg-mute/60
+            border-t border-border-soft/20
             flex
             flex-col
             items-center
@@ -127,7 +125,7 @@ export default function Navbar() {
               <a
                 href="#donate"
                 onClick={() => setOpen(false)}
-                className="bg-teal-700 text-white px-6 py-3 rounded-lg"
+                className="bg-brand-primary text-text-onBrand px-6 py-3 rounded-lg hover:bg-brand-deep transition-colors"
               >
                 Donate Now
               </a>

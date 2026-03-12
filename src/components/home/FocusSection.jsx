@@ -147,7 +147,7 @@ const FocusSection = () => {
   };
 
   return (
-    <section className="w-full lg:px-4 py-20 flex flex-col items-center overflow-hidden dark:bg-gray-950 transition-colors duration-700">
+    <section className="w-full lg:px-4 py-20 flex flex-col items-center overflow-hidden bg-bg-soft transition-colors duration-700">
       {/* Title */}
       <Motion.h2
         className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center"
@@ -183,7 +183,7 @@ const FocusSection = () => {
         ].map((item, i) => (
           <Motion.div
             key={i}
-            className="group relative rounded-b-2xl overflow-hidden shadow-md hover:shadow-2xl transform-gpu cursor-pointer transition-all duration-500 dark:bg-gray-900 border border-gray-200 dark:border-gray-700"
+            className="group relative rounded-b-2xl overflow-hidden shadow-md hover:shadow-2xl transform-gpu cursor-pointer transition-all duration-500 bg-bg-card border border-border-soft"
             style={{ perspective: "1000px" }}
             initial="hidden"
             whileInView="visible"
@@ -206,7 +206,7 @@ const FocusSection = () => {
               />
             </Motion.div>
 
-            <div className="bg-[#014451] md:h-32 dark:bg-teal-800 w-full lg:p-5 p-3 rounded-b-2xl text-white relative z-10 transition-colors duration-700">
+            <div className="bg-brand-darker md:h-32 w-full lg:p-5 p-3 rounded-b-2xl text-text-onBrand relative z-10 transition-colors duration-700">
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 group-hover:text-teal-300 transition-colors duration-300 leading-tight">
                 {item.title}
               </h3>
@@ -216,7 +216,7 @@ const FocusSection = () => {
             </div>
 
             {/* Glow Effect */}
-            <div className="absolute inset-0 rounded-b-2xl bg-gradient-to-br from-teal-400/20 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition duration-700 blur-lg" />
+            <div className="absolute inset-0 rounded-b-2xl bg-linear-to-br from-teal-400/20 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition duration-700 blur-lg" />
           </Motion.div>
         ))}
       </div>

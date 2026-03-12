@@ -22,7 +22,7 @@ export default function Carousel({ images }) {
         {/* Controls */}
         <button
           onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full transition"
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-bg-mute/70 hover:bg-bg-mute p-2 rounded-full transition text-text-main"
         >
           <FiChevronLeft size={20} />
         </button>
@@ -30,7 +30,7 @@ export default function Carousel({ images }) {
 
         <button
           onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full transition"
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-bg-mute/70 hover:bg-bg-mute p-2 rounded-full transition text-text-main"
         >
           <FiChevronRight size={20} />
         </button>

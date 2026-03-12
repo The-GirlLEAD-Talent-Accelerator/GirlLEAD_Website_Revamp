@@ -10,7 +10,7 @@ const Main = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
   return (
     <>
-      <section className="bg-[#EDFAFA] dark:bg-gray-950 relative w-full flex flex-col justify-center items-center md:pt-64 pb-10 px-4 ">
+      <section className="bg-bg-soft relative w-full flex flex-col justify-center items-center md:pt-64 pb-10 px-4 ">
         <section className="max-w-4xl mx-auto w-full flex flex-col items-center">
           <div
             ref={ref}
@@ -18,9 +18,9 @@ const Main = () => {
           >
             <div className="grid grid-cols-1 gap-1 text-gray-800 dark:text-gray-200">
               {/* CARD 1 */}
-              <div className="bg-teal-800 dark:bg-teal-300 text-white py-5 px-4 flex items-center gap-6 rounded-t-lg">
-                <div className="shrink-0 bg-[#EDFAFA] w-10 h-10 rounded-full flex items-center justify-center">
-                  <HiMiniGift className="text-[#137d89] w-5 h-5" />
+              <div className="bg-brand-deep text-text-onBrand py-5 px-4 flex items-center gap-6 rounded-t-lg">
+                <div className="shrink-0 bg-bg-soft w-10 h-10 rounded-full flex items-center justify-center">
+                  <HiMiniGift className="text-text-iconAccent w-5 h-5" />
                 </div>
 
                 <div className="flex flex-col justify-center">
@@ -37,9 +37,9 @@ const Main = () => {
               </div>
 
               {/* CARD 2 */}
-              <div className="bg-[#D5F5F6] dark:bg-teal-300 text-teal-800 py-5 px-4 flex items-center gap-6">
-                <div className="shrink-0 bg-teal-900 dark:bg-[#EDFAFA] w-10 h-10 rounded-full flex items-center justify-center">
-                  <LuGraduationCap className="text-[#F9FBFB] dark:text-[#137D89] w-5 h-5" />
+              <div className="bg-bg-card text-teal-800 py-5 px-4 flex items-center gap-6">
+                <div className="shrink-0 bg-teal-900 w-10 h-10 rounded-full flex items-center justify-center">
+                  <LuGraduationCap className="text-text-onBrand w-5 h-5" />
                 </div>
 
                 <div className="flex flex-col justify-center">
@@ -56,9 +56,9 @@ const Main = () => {
               </div>
 
               {/* CARD 3 */}
-              <div className="bg-[#D5F5F6] dark:bg-teal-300 text-teal-800 py-5 px-4 flex items-center gap-6 rounded-b-lg">
-                <div className="shrink-0 bg-teal-900 dark:bg-[#EDFAFA] w-10 h-10 rounded-full flex items-center justify-center">
-                  <PiHandshakeLight className="text-[#F9FBFB] dark:text-[#137D89] w-5 h-5" />
+              <div className="bg-bg-card text-teal-800 py-5 px-4 flex items-center gap-6 rounded-b-lg">
+                <div className="shrink-0 bg-teal-900 w-10 h-10 rounded-full flex items-center justify-center">
+                  <PiHandshakeLight className="text-text-onBrand w-5 h-5" />
                 </div>
 
                 <div className="flex flex-col justify-center">

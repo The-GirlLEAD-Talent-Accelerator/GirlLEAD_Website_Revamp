@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col">
+      <main className="min-h-screen flex flex-col">
         <div className="h-[7vh]">
           <Navbar />
         </div>
@@ -20,7 +20,6 @@ export default function Home() {
           <Hero />
         </div>
         <Main />
-        
         <Testimonial />
         <MissionSection />
         <PartnersSection />

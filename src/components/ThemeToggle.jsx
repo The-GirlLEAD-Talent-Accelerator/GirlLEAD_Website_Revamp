@@ -22,7 +22,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      className="p-2 rounded-full bg-bg-pill hover:bg-bg-card transition-colors text-text-main"
     >
       {theme === "light" ? <LuMoon size={20} /> : <LuSun size={20} />}
     </button>

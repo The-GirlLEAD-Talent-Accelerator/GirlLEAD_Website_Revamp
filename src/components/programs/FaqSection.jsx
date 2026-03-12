@@ -54,9 +54,9 @@ export default function FaqSection() {
     };
 
     return (
-        <section className="bg-[#F4FBFB] py-16 px-4 md:px-6">
+        <section className="bg-bg-mute py-16 px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 text-center mb-10">
+                <h2 className="text-3xl sm:text-4xl font-semibold text-text-main text-center mb-10">
                     Faqs
                 </h2>
 
@@ -69,20 +69,20 @@ export default function FaqSection() {
                         return (
                             <div
                                 key={index}
-                                className="border-b border-gray-200/60 pb-4 last:border-b-0"
+                                className="border-b border-border-soft pb-4 last:border-b-0"
                             >
                                 <button
                                     className="w-full flex justify-between items-center text-left py-2 focus:outline-none"
                                     onClick={() => toggleAccordion(index)}
                                 >
                                     <span
-                                        className={`font-medium text-sm sm:text-base transition-colors duration-200 ${isOpen ? "text-[#0D9488]" : "text-gray-600"
+                                        className={`font-medium text-sm sm:text-base transition-colors duration-200 ${isOpen ? "text-brand-primary" : "text-text-muted"
                                             }`}
                                     >
                                         {faq.question}
                                     </span>
                                     <span
-                                        className={`ml-4 flex-shrink-0 transition-colors duration-200 ${isOpen ? "text-[#0D9488]" : "text-gray-400"
+                                        className={`ml-4 shrink-0 transition-colors duration-200 ${isOpen ? "text-brand-primary" : "text-text-muted opacity-50"
                                             }`}
                                     >
                                         {isOpen ? (
@@ -104,8 +104,8 @@ export default function FaqSection() {
                                         >
                                             <div
                                                 className={`mt-4 p-4 text-sm sm:text-base leading-relaxed ${isHighlightedContent
-                                                    ? "bg-[#047481] text-white rounded-md"
-                                                    : "text-gray-500"
+                                                    ? "bg-brand-primary text-text-onBrand rounded-md"
+                                                    : "text-text-muted opacity-90"
                                                     }`}
                                             >
                                                 {faq.answer}
