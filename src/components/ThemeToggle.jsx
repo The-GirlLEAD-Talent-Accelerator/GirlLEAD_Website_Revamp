@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-// import { Moon, Sun } from "lucide-react";
 import { LuMoon, LuSun } from "react-icons/lu";
+import Button from "./common/Button";
 
 
 export default function ThemeToggle() {
@@ -20,11 +20,11 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button
+    <Button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-bg-pill hover:bg-bg-card transition-colors text-text-main"
-    >
-      {theme === "light" ? <LuMoon size={20} /> : <LuSun size={20} />}
-    </button>
+      variant="icon"
+      icon={theme === "light" ? LuMoon : LuSun}
+      aria-label="Toggle theme"
+    />
   );
 }

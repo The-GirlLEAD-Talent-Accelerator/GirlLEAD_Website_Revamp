@@ -99,7 +99,7 @@
 //         ))}
 //       </div>
 
-      
+
 //       <Motion.button
 //         className="mt-16 px-8 py-3 bg-teal-600 dark:bg-teal-500 text-white text-sm md:text-base font-medium rounded-full shadow-md hover:bg-teal-700 dark:hover:bg-teal-400 transition-transform"
 //         initial={{ opacity: 0, scale: 0.8 }}
@@ -121,6 +121,7 @@
 
 "use client";
 import { motion as Motion } from "framer-motion";
+import Button from "../common/Button";
 
 const FocusSection = () => {
   const floatingAnimation = {
@@ -221,19 +222,14 @@ const FocusSection = () => {
         ))}
       </div>
 
-      <Motion.button
-        className="mt-16 px-8 py-3 bg-brand-primary text-text-onBrand text-sm md:text-base font-medium rounded-full shadow-md hover:bg-brand-deep transition-all"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        whileHover={{
-          scale: 1.07,
-          boxShadow: "0 10px 20px var(--color-shadow-brand-strong)",
-        }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        viewport={{ once: true }}
+      <Button
+        variant="primary"
+        size="lg"
+        className="mt-16"
+        animate={true}
       >
         Start Your Journey
-      </Motion.button>
+      </Button>
     </section>
   );
 };

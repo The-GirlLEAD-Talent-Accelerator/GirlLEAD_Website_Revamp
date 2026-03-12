@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import RotatingTextCircle from "./RotatingTextCircle";
+import Button from "../common/Button";
 
 export default function Hero() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -42,12 +43,9 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
           className="mt-8"
         >
-          <a
-            href="#about"
-            className="inline-block bg-brand-primary text-text-onBrand px-6 py-3 rounded-lg hover:bg-brand-deep transition-colors"
-          >
+          <Button href="#about" variant="primary">
             About Us
-          </a>
+          </Button>
         </Motion.div>
       </div>
       <div className="hidden md:block absolute bottom-10 right-6 md:bottom-16 md:right-12 lg:right-24 z-20">

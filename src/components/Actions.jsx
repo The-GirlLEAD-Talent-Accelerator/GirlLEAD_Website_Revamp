@@ -1,5 +1,6 @@
 import { motion as Motion } from "framer-motion";
-import { FaUsers,  FaGift } from "react-icons/fa";
+import { FaUsers, FaGift } from "react-icons/fa";
+import Button from "./common/Button";
 
 const Actions = () => {
     // helper to open a URL in a new tab safely
@@ -49,20 +50,16 @@ const Actions = () => {
                     >
                         With your gift, we can do more. Support a woman to begin her tech journey today.
                     </Motion.p>
-                    <Motion.button
-                        type="button"
+                    <Button
                         onClick={() => openInNewTab('https://paystack.shop/pay/mnd475208x')}
                         aria-label="Donate to GirlLEAD - opens in a new tab"
-                        className="bg-transparent border border-text-onBrand px-5 py-2 rounded-lg inline-block text-center cursor-pointer hover:bg-bg-mute hover:text-brand-deep transition"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
+                        variant="outline"
                     >
                         Donate Now
-                    </Motion.button>
+                    </Button>
                 </Motion.div>
                 <Motion.div
-                    className="bg-bg-card w-full md:w-4/5 text-text-main px-6 md:px-10 py-5 rounded-md border border-border-soft"
+                    className="bg-bg-card w-full md:w-4/5 text-text-main px-6 md:px-10 py-5 rounded-md border border-bg-card"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -94,17 +91,13 @@ const Actions = () => {
                     >
                         Ready to make an impact? Volunteer your time and skills to empower women in Africa -  Join our team today.
                     </Motion.p>
-                    <Motion.button
-                        type="button"
+                    <Button
                         onClick={() => openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSeQYaOkutAMgOrE-pXAUFOReqPbh7mysGV3_FN5rKTLB25Xpw/viewform?usp=pp_url')}
                         aria-label="Volunteer with GirlLEAD - opens in a new tab"
-                        className="bg-brand-deep text-text-onBrand px-5 py-2 rounded-lg inline-block text-center cursor-pointer hover:bg-brand-darker transition-colors"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
+                        variant="deep"
                     >
                         Join us
-                    </Motion.button>
+                    </Button>
                 </Motion.div>
             </div>
         </Motion.div>

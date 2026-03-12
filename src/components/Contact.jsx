@@ -3,6 +3,7 @@ import { motion as Motion, AnimatePresence } from "framer-motion";
 import { FaMedium, FaCheck } from "react-icons/fa";
 import { FaLinkedin, FaYoutube, FaSquareXTwitter } from "react-icons/fa6"
 import { BsSubstack } from "react-icons/bs"
+import Button from "./common/Button";
 
 const SuccessModal = ({ isOpen, onClose }) => {
   return (
@@ -22,12 +23,13 @@ const SuccessModal = ({ isOpen, onClose }) => {
             <p className="text-text-muted mb-8">
               Thank you for reaching out. We've received your message and will get back to you shortly.
             </p>
-            <button
+            <Button
               onClick={onClose}
-              className="w-full bg-brand-primary hover:bg-brand-deep text-text-onBrand font-semibold py-3 rounded-xl transition-colors shadow-lg shadow-brand-primary/20"
+              variant="primary"
+              className="w-full"
             >
               Close
-            </button>
+            </Button>
           </Motion.div>
         </div>
       )}
@@ -72,7 +74,7 @@ export default function Contact() {
   return (
     <section className="min-h-screen p-4 bg-bg-soft text-text-main transition-colors">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 border-t-2 border-dashed border-border-soft p-6 lg:grid-cols-[1fr_2fr] gap-12">
+        <div className="grid grid-cols-1 border-t-2 border-dashed border-brand-primary p-6 lg:grid-cols-[1fr_2fr] gap-12">
           {/* Contact Information */}
           <Motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -91,7 +93,7 @@ export default function Contact() {
                 Contact Us
               </Motion.h3>
               <Motion.p
-                className="text-text-muted text-16px leading-normal"
+                className="text-text-muted text-base leading-normal"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -102,7 +104,7 @@ export default function Contact() {
                 Interested in one of our programs? <br />
               </Motion.p>
               <Motion.p
-                className="text-text-muted text-16px leading-normal"
+                className="text-text-muted text-base leading-normal"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
@@ -113,59 +115,45 @@ export default function Contact() {
                 </a>
               </Motion.p>
             </div>
-            <Motion.div
+            <div
               className="flex items-center text-xl text-text-main space-x-3"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              viewport={{ once: true }}
             >
-              <Motion.span
-                className="custom-shadow p-3 border-border-soft rounded-full bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand transition-colors"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="http://www.linkedin.com/company/girlleadproject/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin />
-                </a>
-              </Motion.span>
-              <Motion.span
-                className="custom-shadow p-3 rounded-full bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand transition-colors"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="https://medium.com/the-girllead-project" target="_blank" rel="noopener noreferrer">
-                  <FaMedium />
-                </a>
-              </Motion.span>
-              <Motion.span
-                className="custom-shadow p-3 rounded-full bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand transition-colors"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="https://www.youtube.com/@girlleadproject" target="_blank" rel="noopener noreferrer">
-                  <FaYoutube />
-                </a>
-              </Motion.span>
-              <Motion.span
-                className="custom-shadow p-3 rounded-full bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand transition-colors"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="https://twitter.com/girlleadproject" target="_blank" rel="noopener noreferrer">
-                  <FaSquareXTwitter />
-                </a>
-              </Motion.span>
-              <Motion.span
-                className="custom-shadow p-3 rounded-full bg-bg-mute hover:bg-brand-primary hover:text-text-onBrand transition-colors"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a href="https://substack.com/@girlleadproject" target="_blank" rel="noopener noreferrer">
-                  <BsSubstack />
-                </a>
-              </Motion.span>
-            </Motion.div>
+              <Button
+                href="http://www.linkedin.com/company/girlleadproject/"
+                variant="icon"
+                icon={FaLinkedin}
+                className="bg-bg-white custom-shadow"
+                aria-label="LinkedIn"
+              />
+              <Button
+                href="https://medium.com/the-girllead-project"
+                variant="icon"
+                icon={FaMedium}
+                className="bg-bg-white custom-shadow"
+                aria-label="Medium"
+              />
+              <Button
+                href="https://www.youtube.com/@girlleadproject"
+                variant="icon"
+                icon={FaYoutube}
+                className="bg-bg-white custom-shadow"
+                aria-label="YouTube"
+              />
+              <Button
+                href="https://twitter.com/girlleadproject"
+                variant="icon"
+                icon={FaSquareXTwitter}
+                className="bg-bg-white custom-shadow"
+                aria-label="X (Twitter)"
+              />
+              <Button
+                href="https://substack.com/@girlleadproject"
+                variant="icon"
+                icon={BsSubstack}
+                className="bg-bg-white custom-shadow"
+                aria-label="Substack"
+              />
+            </div>
           </Motion.div>
 
           {/* Contact Form */}
@@ -188,7 +176,7 @@ export default function Contact() {
                     required
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-2 py-3 border border-border-soft rounded-lg outline:none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-mute text-text-main"
+                    className="w-full px-2 py-3 border border-border-soft rounded-lg outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-white text-text-main"
                     placeholder="Your first name"
                   />
                 </div>
@@ -204,14 +192,14 @@ export default function Contact() {
                     required
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-2 py-3 border border-border-soft rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-mute text-text-main"
+                    className="w-full px-2 py-3 border border-border-soft rounded-lg outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-white text-text-main"
                     placeholder="Your last name"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Add your Email Address
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -220,7 +208,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-2 py-3 border border-border-soft rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-mute text-text-main"
+                    className="w-full px-2 py-3 border border-border-soft rounded-lg outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-white text-text-main"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -235,7 +223,7 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-2 py-3 border border-border-soft rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-mute text-text-main"
+                    className="w-full px-2 py-3 border border-border-soft rounded-lg outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-white text-text-main"
                     placeholder="Your subject here"
                   />
                 </div>
@@ -252,20 +240,15 @@ export default function Contact() {
                   rows="6"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-border-soft rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-mute text-text-main resize-none"
+                  className="w-full px-4 py-3 border border-border-soft rounded-lg outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-bg-white text-text-main resize-none"
                   placeholder="Write details here..."
                 ></textarea>
               </div>
-              <Motion.button
+              <Button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-fit-to-content bg-brand-primary text-text-onBrand py-3 px-6 rounded-lg mt-3 hover:bg-brand-deep transition-colors font-medium flex items-center justify-center min-w-[120px] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={!isSubmitting ? { scale: 1.05, boxShadow: "0 5px 15px var(--color-shadow-brand-strong)" } : {}}
-                whileTap={!isSubmitting ? { scale: 0.95 } : {}}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
+                variant="primary"
+                className="mt-3 min-w-[120px]"
               >
                 {isSubmitting ? (
                   <>
@@ -276,7 +259,7 @@ export default function Contact() {
                     Sending...
                   </>
                 ) : 'Submit'}
-              </Motion.button>
+              </Button>
             </form>
           </Motion.div>
 

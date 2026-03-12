@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion as Motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Button from "./common/Button";
 
 const testimonials = [
   {
@@ -151,24 +152,22 @@ const Testimonial = ({ className }) => {
 
             {/* Navigation Arrows */}
             <div className="flex justify-between items-center absolute top-1/2 -translate-y-1/2 w-full px-2 pointer-events-none z-10">
-              <button
+              <Button
                 onClick={prevSlide}
                 disabled={activeIndex === 0}
-                className={`p-3 rounded-full bg-bg-mute shadow-lg pointer-events-auto transition-all ${activeIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-brand-primary hover:text-text-onBrand active:scale-95'
-                  }`}
+                variant="icon"
+                icon={FaChevronLeft}
                 aria-label="Previous testimonial"
-              >
-                <FaChevronLeft size={18} />
-              </button>
-              <button
+                className="pointer-events-auto shadow-lg"
+              />
+              <Button
                 onClick={nextSlide}
                 disabled={activeIndex === testimonials.length - 1}
-                className={`p-3 rounded-full bg-bg-mute shadow-lg pointer-events-auto transition-all ${activeIndex === testimonials.length - 1 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-brand-primary hover:text-text-onBrand active:scale-95'
-                  }`}
+                variant="icon"
+                icon={FaChevronRight}
                 aria-label="Next testimonial"
-              >
-                <FaChevronRight size={18} />
-              </button>
+                className="pointer-events-auto shadow-lg"
+              />
             </div>
 
             {/* Pagination Dots */}
@@ -188,24 +187,17 @@ const Testimonial = ({ className }) => {
           </div>
         )}
 
-        <Motion.div
+        <div
           className="flex justify-center mt-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
         >
-          <Motion.button
-            className="px-8 py-4 bg-brand-primary text-text-onBrand text-sm md:text-base font-semibold rounded-2xl shadow-xl shadow-brand-primary/20 hover:bg-brand-deep transition-all hover:-translate-y-1 block md:inline-block"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            viewport={{ once: true }}
+          <Button
+            variant="primary"
+            size="lg"
+            className="block md:inline-block"
           >
             Start Your Journey
-          </Motion.button>
-        </Motion.div>
+          </Button>
+        </div>
       </div>
     </div>
   );
