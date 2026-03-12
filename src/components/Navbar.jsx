@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FiX, FiMenu } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
-import { NavLink, Link } from "react-router-dom";
 import Button from "./common/Button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  // Helper for active link styling
   const navLinkClass = ({ isActive }) =>
     `transition-colors ${isActive
       ? "text-brand-primary font-semibold"
@@ -26,14 +27,19 @@ export default function Navbar() {
     };
   }, [open]);
 
+  const handleDonate = () => {
+    alert('Donation functionality coming soon');
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full bg-bg-white shadow-sm z-50">
+    <nav className="fixed top-0 left-0 w-full bg-bg-white shadow-sm z-50 transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <Link to="/">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
           <img
             src="/girl-lead-logo.png"
             alt="GirlLead Logo"
-            className="w-14 h-10 scale-150 object-contain"
+            className="h-10 w-auto object-contain transition-transform hover:opacity-80"
           />
         </Link>
 
@@ -52,27 +58,31 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center space-x-4">
+          {/* Theme toggle */}
           <ThemeToggle />
 
+          {/* Donate button */}
           <Button
-            href="#donate"
+            onClick={handleDonate}
             variant="primary"
             className="hidden md:inline-flex"
           >
             Donate Now
           </Button>
 
-          {/* Mobile toggle */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-text-main z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded={open}
+            className="md:hidden text-text-main z-50 relative p-2 rounded hover:bg-bg-mute transition-colors"
           >
-            {open ? <FiX size={28} /> : <FiMenu size={28} />}
+            {open ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* MOBILE BLUR OVERLAY */}
+      {/* Mobile Menu */}
       {open && (
         <div
           className="
@@ -95,16 +105,6 @@ export default function Navbar() {
           <ul className="flex flex-col items-center space-y-6 font-medium">
             <li>
               <NavLink
-                to="/"
-                onClick={() => setOpen(false)}
-                className={navLinkClass}
-              >
-                Home
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
                 to="/programs"
                 onClick={() => setOpen(false)}
                 className={navLinkClass}
@@ -112,7 +112,6 @@ export default function Navbar() {
                 Programs
               </NavLink>
             </li>
-
             <li>
               <NavLink
                 to="/about"
@@ -122,12 +121,13 @@ export default function Navbar() {
                 About Us
               </NavLink>
             </li>
-
             <li>
               <Button
-                href="#donate"
+                onClick={() => {
+                  setOpen(false);
+                  handleDonate();
+                }}
                 variant="primary"
-                onClick={() => setOpen(false)}
                 className="w-full text-center"
               >
                 Donate Now

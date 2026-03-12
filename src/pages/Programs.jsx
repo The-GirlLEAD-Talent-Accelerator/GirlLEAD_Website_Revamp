@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import TechnologySection from "../components/programs/TechnologySection";
@@ -15,10 +14,6 @@ export default function Programs() {
 
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
-      <div className="h-[7vh]">
-        <Navbar />
-      </div>
-
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
         {/* Lazy-loaded background image */}
@@ -61,7 +56,7 @@ export default function Programs() {
       <section className="md:py-20 py-10 px-6">
         <div className="md:max-w-7xl w-full mx-auto">
           <h2 className="text-xl sm:text-4xl md:text-3xl font-bold mb-6">
-            Interested In Joining The Programs
+            Interested In Joining The Programs?
           </h2>
 
           <p className="text-sm sm:text-lg text-text-muted">
