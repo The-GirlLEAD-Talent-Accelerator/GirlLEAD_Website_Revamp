@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import Programs from "./pages/Programs";
-import "./App.css";
+import "./index.css";
 
 // 404 Not Found component
 function NotFound() {
