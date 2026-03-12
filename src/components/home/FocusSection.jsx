@@ -150,7 +150,7 @@ const FocusSection = () => {
     <section className="w-full lg:px-4 py-20 flex flex-col items-center overflow-hidden bg-bg-soft transition-colors duration-700">
       {/* Title */}
       <Motion.h2
-        className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center"
+        className="text-2xl md:text-4xl lg:text-5xl font-bold text-text-main mb-12 text-center"
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -207,27 +207,27 @@ const FocusSection = () => {
             </Motion.div>
 
             <div className="bg-brand-darker md:h-32 w-full lg:p-5 p-3 rounded-b-2xl text-text-onBrand relative z-10 transition-colors duration-700">
-              <h3 className="text-xl lg:text-2xl font-semibold mb-2 group-hover:text-teal-300 transition-colors duration-300 leading-tight">
+              <h3 className="text-xl lg:text-2xl font-semibold mb-2 group-hover:text-brand-primary transition-colors duration-300 leading-tight">
                 {item.title}
               </h3>
-              <p className="text-[12px] lg:text-base font-light leading-relaxed text-gray-100">
+              <p className="text-[12px] lg:text-base font-light leading-relaxed text-text-onBrand opacity-90">
                 {item.text}
               </p>
             </div>
 
             {/* Glow Effect */}
-            <div className="absolute inset-0 rounded-b-2xl bg-linear-to-br from-teal-400/20 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition duration-700 blur-lg" />
+            <div className="absolute inset-0 rounded-b-2xl bg-linear-to-br from-brand-primary/20 to-brand-deep/10 opacity-0 group-hover:opacity-100 transition duration-700 blur-lg" />
           </Motion.div>
         ))}
       </div>
 
       <Motion.button
-        className="mt-16 px-8 py-3 bg-teal-600 dark:bg-teal-500 text-white text-sm md:text-base font-medium rounded-full shadow-md hover:bg-teal-700 dark:hover:bg-teal-400 transition-transform"
+        className="mt-16 px-8 py-3 bg-brand-primary text-text-onBrand text-sm md:text-base font-medium rounded-full shadow-md hover:bg-brand-deep transition-all"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         whileHover={{
           scale: 1.07,
-          boxShadow: "0 10px 20px rgba(13,148,136,0.3)",
+          boxShadow: "0 10px 20px var(--color-shadow-brand-strong)",
         }}
         transition={{ duration: 0.5, delay: 0.6 }}
         viewport={{ once: true }}

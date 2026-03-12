@@ -14,9 +14,9 @@ const Main = () => {
         <section className="max-w-4xl mx-auto w-full flex flex-col items-center">
           <div
             ref={ref}
-            className="md:hidden relative my-10 w-[70%] dark:bg-gray-900 rounded-xl shadow-lg overflow-visible transition-colors"
+            className="md:hidden relative my-10 w-[70%] bg-bg-mute dark:bg-bg-card rounded-xl shadow-lg overflow-visible transition-colors"
           >
-            <div className="grid grid-cols-1 gap-1 text-gray-800 dark:text-gray-200">
+            <div className="grid grid-cols-1 gap-1 text-text-main">
               {/* CARD 1 */}
               <div className="bg-brand-deep text-text-onBrand py-5 px-4 flex items-center gap-6 rounded-t-lg">
                 <div className="shrink-0 bg-bg-soft w-10 h-10 rounded-full flex items-center justify-center">
@@ -24,7 +24,7 @@ const Main = () => {
                 </div>
 
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-left font-bold dark:text-gray-800">
+                  <h3 className="text-left font-bold">
                     {inView && (
                       <CountUp start={500} end={2000} duration={7} suffix="+" />
                     )}
@@ -62,7 +62,7 @@ const Main = () => {
                 </div>
 
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-left font-bold dark:text-gray-800">
+                  <h3 className="text-left font-bold">
                     {inView && (
                       <CountUp start={0} end={5} duration={7} suffix="+" />
                     )}
@@ -79,7 +79,7 @@ const Main = () => {
             <div className="self-start sm:block h-0.5 w-[345px] text-left border-t-2 border-dashed border-brand-primary dark:border-brand-primary/50 animate-[slideLeft_1s_ease-in-out_forwards]"></div>
 
           <div className="flex items-center justify-center text-center w-[300px] md:w-full max-w-5xl my-6 px-2">
-            <p className="text-gray-700 dark:text-white text-sm md:text-base lg:text-[20px] font-medium leading-relaxed max-w-[800px]">
+            <p className="text-text-main text-sm md:text-base lg:text-[20px] font-medium leading-relaxed max-w-[800px]">
               "We provide women and girls in Africa professional opportunities
               in tech, leadership and social entrepreneurship to build
               transformative careers and drive impactful changes in their
@@ -102,7 +102,7 @@ const Main = () => {
             className="hidden lg:block absolute top-[450px] md:top-80 -left-36 md:-left-24 -translate-y-20 md:-translate-y-28 
                     w-[250px] sm:w-[300px] md:w-[400px] 
                     h-[250px] sm:h-[300px] md:h-[400px] 
-                    border-2 border-teal-600 dark:border-teal-400 border-dashed rounded-full 
+                    border-2 border-brand-primary dark:border-brand-primary/50 border-dashed rounded-full 
                     animate-spinSlow blur-[0.5px]"
           ></div>
 
