@@ -36,17 +36,17 @@ export default function HowWeWork() {
   }, []);
 
   return (
-    <section className="bg-[#F4FBFB] py-16 md:py-28 px-4 overflow-hidden">
+    <section className="bg-bg-mute py-16 md:py-28 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          <h2 className="text-3xl sm:text-4xl md:text-[42px] font-bold text-[#1a2f3a] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-[42px] font-bold text-text-main mb-4">
             How we work
           </h2>
-          <p className="text-xs sm:text-sm text-gray-500 mb-6 uppercase tracking-[0.2em] font-bold">
+          <p className="text-xs sm:text-sm text-text-muted mb-6 uppercase tracking-[0.2em] font-bold">
             The Process
           </p>
-          <p className="text-[#3b4c56] text-sm md:text-[16px] leading-[1.8] max-w-3xl mx-auto">
+          <p className="text-text-muted text-sm md:text-[16px] leading-[1.8] max-w-3xl mx-auto">
             Every GirlLEAD fellow embarks on a transformative journey - starting
             with an immersive technical and leadership learning experience,
             enriched by mentorship, real-world exposure through internships and
@@ -65,14 +65,14 @@ export default function HowWeWork() {
               {/* Path from A to B */}
               <path
                 d="M320 180 C 450 180, 450 280, 580 280"
-                stroke="white"
+                stroke="var(--color-bg-white)"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
               {/* Path from B to C */}
               <path
                 d="M620 280 C 750 280, 750 180, 880 180"
-                stroke="white"
+                stroke="var(--color-bg-white)"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
@@ -101,26 +101,26 @@ export default function HowWeWork() {
                     {/* The Indent/Cutout side part */}
                     <div className="absolute top-0 left-[-40px] w-10 h-full overflow-hidden pointer-events-none">
                       {/* Upper teal block */}
-                      <div className="absolute top-0 left-0 w-full h-[35%] bg-[#045C6A] rounded-tl-[2rem]" />
+                      <div className="absolute top-0 left-0 w-full h-[35%] bg-brand-deep rounded-tl-4xl" />
                       {/* Cutout area background-colored semi-circle */}
-                      <div className="absolute top-[45%] left-[-20px] -translate-y-1/2 w-16 h-16 bg-[#F4FBFB] rounded-full z-20" />
+                      <div className="absolute top-[45%] left-[-20px] -translate-y-1/2 w-16 h-16 bg-bg-mute rounded-full z-20" />
                       {/* Lower teal block */}
-                      <div className="absolute bottom-0 left-0 w-full h-[35%] bg-[#045C6A] rounded-bl-[2rem]" />
+                      <div className="absolute bottom-0 left-0 w-full h-[35%] bg-brand-deep rounded-bl-4xl" />
 
                       {/* Smoothing curves for the indent (Inner curves) */}
-                      <div className="absolute top-[calc(45%-32px-8px)] left-0 w-8 h-8 bg-[#045C6A] z-10">
-                        <div className="w-full h-full bg-[#F4FBFB] rounded-br-[1.5rem]" />
+                      <div className="absolute top-[calc(45%-32px-8px)] left-0 w-8 h-8 bg-brand-deep z-10">
+                        <div className="w-full h-full bg-bg-mute rounded-br-3xl" />
                       </div>
-                      <div className="absolute top-[calc(45%+32px)] left-0 w-8 h-8 bg-[#045C6A] z-10">
-                        <div className="w-full h-full bg-[#F4FBFB] rounded-tr-[1.5rem]" />
+                      <div className="absolute top-[calc(45%+32px)] left-0 w-8 h-8 bg-brand-deep z-10">
+                        <div className="w-full h-full bg-bg-mute rounded-tr-3xl" />
                       </div>
                     </div>
 
                     {/* Main Card Content */}
-                    <div className="bg-[#045C6A] text-white p-10 rounded-[2rem] rounded-tl-none rounded-bl-none shadow-[0_15px_45px_-10px_rgba(4,92,106,0.4)] min-h-[420px] flex flex-col items-start w-full">
+                    <div className="bg-brand-deep text-text-onBrand p-10 rounded-4xl rounded-tl-none rounded-bl-none shadow-[0_15px_45px_-10px_rgba(4,92,106,0.4)] min-h-[420px] flex flex-col items-start w-full">
 
                       {/* Letter Bubble - Centered vertically in the indent */}
-                      <div className="absolute top-[45%] -left-16 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#CFF3F3] flex items-center justify-center text-[#045C6A] font-bold text-2xl z-40 border-4 border-[#F4FBFB] shadow-md">
+                      <div className="absolute top-[45%] -left-16 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-pill flex items-center justify-center text-brand-deep font-bold text-2xl z-40 border-4 border-bg-mute shadow-md">
                         {step.key}
                       </div>
 
@@ -147,7 +147,7 @@ export default function HowWeWork() {
 
                   {/* Mobile Mobile normal stack vertical connectors */}
                   {index < steps.length - 1 && (
-                    <div className="block lg:hidden absolute -bottom-10 left-[18px] w-[3px] h-10 bg-white" />
+                    <div className="block lg:hidden absolute -bottom-10 left-[18px] w-[3px] h-10 bg-bg-white" />
                   )}
                 </div>
               );

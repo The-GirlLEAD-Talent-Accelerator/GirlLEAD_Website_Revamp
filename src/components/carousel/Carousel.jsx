@@ -1,6 +1,7 @@
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useCarousel } from "../../hooks/useCarousel";
 import CarouselDots from "./CarouselDots";
+import Button from "../common/Button";
 
 
 export default function Carousel({ images }) {
@@ -20,20 +21,25 @@ export default function Carousel({ images }) {
 
 
         {/* Controls */}
-        <button
-          onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full transition"
-        >
-          <FiChevronLeft size={20} />
-        </button>
+        <div className="absolute left-3 top-1/2 -translate-y-1/2 z-20">
+          <Button
+            onClick={prev}
+            variant="icon"
+            icon={FiChevronLeft}
+            className="bg-bg-mute/70"
+            aria-label="Previous Slide"
+          />
+        </div>
 
-
-        <button
-          onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full transition"
-        >
-          <FiChevronRight size={20} />
-        </button>
+        <div className="absolute right-3 top-1/2 -translate-y-1/2 z-20">
+          <Button
+            onClick={next}
+            variant="icon"
+            icon={FiChevronRight}
+            className="bg-bg-mute/70"
+            aria-label="Next Slide"
+          />
+        </div>
       </div>
 
 

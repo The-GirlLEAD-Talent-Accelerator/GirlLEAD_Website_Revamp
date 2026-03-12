@@ -196,21 +196,21 @@ import {
 
 export default function TechnologySection() {
   const [activeTab, setActiveTab] = useState("Technology");
-  const { description, programs } =
-    TAB_CONTENT[activeTab as keyof typeof TAB_CONTENT];
+  const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
+  const { description, programs } = currentTab;
 
   return (
-    <section className="bg-[#F4FBFB] py-16 px-4">
+    <section className="bg-bg-mute py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
 
-        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 text-sm sm:text-base">
+        <p className="text-center text-text-muted max-w-3xl mx-auto mb-10 text-sm sm:text-base">
           {description}
         </p>
 
         <Carousel images={CAROUSEL_IMAGES} />
 
-        <h3 className="text-center text-gray-700 mb-8 text-sm sm:text-base">
+        <h3 className="text-center text-text-muted mb-8 text-sm sm:text-base">
           These are the programs under this track:
         </h3>
 

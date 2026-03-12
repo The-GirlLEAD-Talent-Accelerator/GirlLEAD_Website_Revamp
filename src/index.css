@@ -1,10 +1,112 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Backgrounds */
+  --color-bg-white: #FFFFFF;
+  --color-bg-mute: #F4FBFB;
+  --color-bg-soft: #EDFAFA;
+  --color-bg-alt: #EBF7F7;
+  --color-bg-card: #D5F5F6;
+  --color-bg-pill: #CFF3F3;
+
+  /* Brand / accent (light) */
+  --color-brand-primary: #047481;
+  --color-brand-deep: #045C6A;
+  --color-brand-darker: #014451;
+  --color-brand-hero: #05505C;
+
+  /* Text (light) */
+  --color-text-main: #1a2f3a;
+  --color-text-muted: #3b4c56;
+  --color-text-onBrand: #F9FBFB;
+  --color-text-accent: #0D5B66;
+  --color-text-accentTeal: #0D9488;
+  --color-icon-accent: #137D89;
+
+  /* Borders / shadows (light) */
+  --color-border-soft: #7EDCE2;
+  --color-shadow-brand-strong: #0474811A;
+  --color-shadow-brand-soft: #04748105;
+
+  /* Hover states (light) */
+  --color-hover-bg-light: #f0fdfa;
+  --color-hover-text-light: #0f766e;
+  --color-hover-bg-dark: #0f172a;
+
+  /* Animations & Keyframes from tailwind.config.js */
+  --animate-spin-slow: spinSlow 60s linear infinite;
+  --animate-spin-reverse: spinReverse 60s linear infinite;
+
+  @keyframes spinSlow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinReverse {
+    from {
+      transform: rotate(360deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
+  }
+}
 
 @layer base {
-  body { font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+  .dark {
+    /* Backgrounds (dark) */
+    --color-bg-white: #0f172a;
+    --color-bg-mute: #020617;
+    /* slate-950 */
+    --color-bg-soft: #020617;
+    --color-bg-alt: #020617;
+    --color-bg-card: #0f172a;
+    /* slate-900 */
+    --color-bg-pill: #0f172a;
+
+    /* Brand / accent (dark) */
+    --color-brand-primary: #14b8a6;
+    --color-brand-deep: #0f766e;
+    --color-brand-darker: #0f766e;
+    --color-brand-hero: #0f766e;
+
+    /* Text (dark) */
+    --color-text-main: #e5e7eb;
+    --color-text-muted: #9ca3af;
+    --color-text-onBrand: #f9fbfb;
+    --color-text-accent: #22c55e;
+    --color-text-accentTeal: #5eead4;
+    --color-icon-accent: #5eead4;
+
+    /* Borders / shadows (dark) */
+    --color-border-soft: #1f2937;
+    --color-shadow-brand-strong: rgba(4, 116, 129, 0.4);
+    --color-shadow-brand-soft: rgba(4, 116, 129, 0.2);
+
+    /* Hover states (dark) */
+    --color-hover-bg-light: #0f172a;
+    --color-hover-text-light: #f0fdfa;
+    --color-hover-bg-dark: #0f172a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
 }
 
 @keyframes slideLeft {
@@ -12,6 +114,7 @@
     transform: scaleX(0);
     transform-origin: right;
   }
+
   to {
     transform: scaleX(1);
     transform-origin: right;
@@ -23,6 +126,7 @@
     transform: scaleX(0);
     transform-origin: left;
   }
+
   to {
     transform: scaleX(1);
     transform-origin: left;
@@ -39,15 +143,24 @@
 
 @layer utilities {
   .custom-shadow {
-    box-shadow: 0px 7px 10px 0px #0474811A, 0px -7px 10px 0px #04748105;
+    box-shadow: 0px 7px 10px 0px var(--color-shadow-brand-strong),
+      0px -7px 10px 0px var(--color-shadow-brand-soft);
   }
 }
 
 /* HOW TO WORK SECTION */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
