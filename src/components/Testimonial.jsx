@@ -80,7 +80,11 @@ const TestimonialCard = ({ testimonial, index, isMobile }) => (
   </Motion.div>
 );
 
-const Testimonial = ({ className }) => {
+const Testimonial = ({ 
+  title = "Testimonials", 
+  showButton = true, 
+  className = "bg-bg-soft" 
+}) => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -100,7 +104,7 @@ const Testimonial = ({ className }) => {
   };
 
   return (
-    <div className={`${className || "bg-bg-soft"} w-full m-auto py-12 overflow-hidden transition-colors`}>
+    <div className={`${className} w-full m-auto py-12 overflow-hidden transition-colors`}>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <Motion.h2
           className="text-3xl font-extrabold text-center text-text-main mb-12"
@@ -109,7 +113,7 @@ const Testimonial = ({ className }) => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Testimonials
+          {title}
         </Motion.h2>
 
         {!isMobile ? (
@@ -187,17 +191,17 @@ const Testimonial = ({ className }) => {
           </div>
         )}
 
-        <div
-          className="flex justify-center mt-12"
-        >
-          <Button
-            variant="primary"
-            size="lg"
-            className="block md:inline-block"
-          >
-            Start Your Journey
-          </Button>
-        </div>
+        {showButton && (
+          <div className="flex justify-center mt-12">
+            <Button
+              variant="primary"
+              size="lg"
+              className="block md:inline-block"
+            >
+              Start Your Journey
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

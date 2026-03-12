@@ -273,7 +273,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 1.2 }}
           viewport={{ once: true }}
         >
-          All rights reserved, GirlLEAD Talent Accelerator, 2025
+          All rights reserved, GirlLEAD Talent Accelerator, {new Date().getFullYear()}
         </Motion.div>
       </div>
 

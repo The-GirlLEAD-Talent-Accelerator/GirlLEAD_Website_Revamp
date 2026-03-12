@@ -77,7 +77,11 @@ export default function Programs() {
       <WhatWeDo />
       <HowWeWork />
       <FaqSection />
-      <Testimonial className="bg-bg-pill" />
+      <Testimonial 
+        title="What our fellows say" 
+        showButton={false} 
+        className="bg-bg-card" 
+      />
       <MapSection />
       <Contact />
     </main>
