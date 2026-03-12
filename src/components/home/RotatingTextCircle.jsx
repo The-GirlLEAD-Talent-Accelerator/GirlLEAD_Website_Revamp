@@ -18,7 +18,7 @@ export default function RotatingTextCircle({
       <Motion.div
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-        className="absolute inset-0 text-[10px] md:text-[12px] uppercase font-medium text-white"
+        className="absolute inset-0 text-[10px] md:text-[12px] uppercase font-medium text-text-onBrand"
         style={{
           transformOrigin: "center",
           fontFamily: "sans-serif",
@@ -48,7 +48,7 @@ export default function RotatingTextCircle({
       <Motion.div
         animate={{ rotate: -360 }}
         transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
-        className="absolute rounded-full border-[3px] border-white"
+        className="absolute rounded-full border-[3px] border-bg-white"
         style={{
           width: size * 0.68,
           height: size * 0.68,
@@ -57,7 +57,7 @@ export default function RotatingTextCircle({
 
       {/* Center circle */}
       <div
-        className="rounded-full bg-white text-teal-700 flex items-center justify-center shadow-md"
+        className="rounded-full bg-bg-white text-brand-primary flex items-center justify-center shadow-md"
         style={{
           width: size * 0.35,
           height: size * 0.35,

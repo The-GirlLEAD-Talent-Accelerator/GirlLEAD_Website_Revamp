@@ -43,7 +43,7 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
           className="mt-8"
         >
-          <Button href="#about" variant="primary">
+          <Button to="/about" variant="primary">
             About Us
           </Button>
         </Motion.div>

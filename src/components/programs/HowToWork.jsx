@@ -43,7 +43,7 @@ export default function HowWeWork() {
           <h2 className="text-3xl sm:text-4xl md:text-[42px] font-bold text-text-main mb-4">
             How we work
           </h2>
-          <p className="text-xs sm:text-sm text-gray-500 mb-6 uppercase tracking-[0.2em] font-bold">
+          <p className="text-xs sm:text-sm text-text-muted mb-6 uppercase tracking-[0.2em] font-bold">
             The Process
           </p>
           <p className="text-text-muted text-sm md:text-[16px] leading-[1.8] max-w-3xl mx-auto">
@@ -65,14 +65,14 @@ export default function HowWeWork() {
               {/* Path from A to B */}
               <path
                 d="M320 180 C 450 180, 450 280, 580 280"
-                stroke="white"
+                stroke="var(--color-bg-white)"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
               {/* Path from B to C */}
               <path
                 d="M620 280 C 750 280, 750 180, 880 180"
-                stroke="white"
+                stroke="var(--color-bg-white)"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
@@ -147,7 +147,7 @@ export default function HowWeWork() {
 
                   {/* Mobile Mobile normal stack vertical connectors */}
                   {index < steps.length - 1 && (
-                    <div className="block lg:hidden absolute -bottom-10 left-[18px] w-[3px] h-10 bg-white" />
+                    <div className="block lg:hidden absolute -bottom-10 left-[18px] w-[3px] h-10 bg-bg-white" />
                   )}
                 </div>
               );

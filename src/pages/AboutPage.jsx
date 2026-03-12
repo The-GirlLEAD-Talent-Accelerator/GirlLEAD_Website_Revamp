@@ -5,7 +5,7 @@ export default function AboutPage() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-[7vh]">
+    <main className="min-h-screen bg-bg-white text-text-main pt-[7vh] transition-colors">
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
                 {/* Lazy-loaded background image */}

@@ -10,7 +10,7 @@ const Main = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
   return (
     <>
-      <section className="bg-bg-soft relative w-full flex flex-col justify-center items-center md:pt-64 pb-10 px-4 ">
+      <section id="about" className="bg-bg-soft relative w-full flex flex-col justify-center items-center md:pt-64 pb-10 px-4 ">
         <section className="max-w-4xl mx-auto w-full flex flex-col items-center">
           <div
             ref={ref}
@@ -76,7 +76,7 @@ const Main = () => {
             </div>
           </div>
 
-            <div className="self-start sm:block h-0.5 w-[345px] text-left border-t-2 border-dashed border-brand-primary dark:border-brand-primary/50 animate-[slideLeft_1s_ease-in-out_forwards]"></div>
+          <div className="self-start sm:block h-0.5 w-[345px] text-left border-t-2 border-dashed border-brand-primary dark:border-brand-primary/50 animate-[slideLeft_1s_ease-in-out_forwards]"></div>
 
           <div className="flex items-center justify-center text-center w-[300px] md:w-full max-w-5xl my-6 px-2">
             <p className="text-text-main text-sm md:text-base lg:text-[20px] font-medium leading-relaxed max-w-[800px]">
