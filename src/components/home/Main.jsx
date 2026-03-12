@@ -20,7 +20,7 @@ const Main = () => {
               {/* CARD 1 */}
               <div className="bg-brand-deep text-text-onBrand py-5 px-4 flex items-center gap-6 rounded-t-lg">
                 <div className="shrink-0 bg-bg-soft w-10 h-10 rounded-full flex items-center justify-center">
-                  <HiMiniGift className="text-text-iconAccent w-5 h-5" />
+                  <HiMiniGift className="text-icon-accent w-5 h-5" />
                 </div>
 
                 <div className="flex flex-col justify-center">
@@ -30,34 +30,34 @@ const Main = () => {
                     )}
                   </h3>
 
-                  <p className="text-xs font-medium dark:text-gray-800">
+                  <p className="text-xs font-medium">
                     Women and Girls Trained
                   </p>
                 </div>
               </div>
 
               {/* CARD 2 */}
-              <div className="bg-bg-card text-teal-800 py-5 px-4 flex items-center gap-6">
-                <div className="shrink-0 bg-teal-900 w-10 h-10 rounded-full flex items-center justify-center">
+              <div className="bg-bg-card text-text-main py-5 px-4 flex items-center gap-6">
+                <div className="shrink-0 bg-brand-hero w-10 h-10 rounded-full flex items-center justify-center">
                   <LuGraduationCap className="text-text-onBrand w-5 h-5" />
                 </div>
 
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-left font-bold dark:text-gray-800">
+                  <h3 className="text-left font-bold ">
                     {inView && (
                       <CountUp start={1} end={10} duration={3} suffix="+" />
                     )}
                   </h3>
 
-                  <p className="text-xs font-medium dark:text-gray-800">
+                  <p className="text-xs font-medium ">
                     Program Cohorts
                   </p>
                 </div>
               </div>
 
               {/* CARD 3 */}
-              <div className="bg-bg-card text-teal-800 py-5 px-4 flex items-center gap-6 rounded-b-lg">
-                <div className="shrink-0 bg-teal-900 w-10 h-10 rounded-full flex items-center justify-center">
+              <div className="bg-bg-card text-text-main py-5 px-4 flex items-center gap-6 rounded-b-lg">
+                <div className="shrink-0 bg-brand-hero w-10 h-10 rounded-full flex items-center justify-center">
                   <PiHandshakeLight className="text-text-onBrand w-5 h-5" />
                 </div>
 
@@ -68,7 +68,7 @@ const Main = () => {
                     )}
                   </h3>
 
-                  <p className="text-xs font-medium dark:text-gray-800">
+                  <p className="text-xs font-medium text-text-main">
                     Partners
                   </p>
                 </div>
@@ -76,7 +76,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="self-start sm:block h-0.5 w-[345px] text-left border-t-2 border-dashed border-teal-600 dark:border-teal-400 animate-[slideLeft_1s_ease-in-out_forwards]"></div>
+            <div className="self-start sm:block h-0.5 w-[345px] text-left border-t-2 border-dashed border-brand-primary dark:border-brand-primary/50 animate-[slideLeft_1s_ease-in-out_forwards]"></div>
 
           <div className="flex items-center justify-center text-center w-[300px] md:w-full max-w-5xl my-6 px-2">
             <p className="text-gray-700 dark:text-white text-sm md:text-base lg:text-[20px] font-medium leading-relaxed max-w-[800px]">
@@ -88,7 +88,7 @@ const Main = () => {
           </div>
 
           {/* Bottom dashed line */}
-          <div className="self-end sm:block w-[345px] h-0.5 border-t-2 border-dashed border-teal-600 dark:border-teal-400 animate-[slideRight_1s_ease-in-out_forwards]"></div>
+          <div className="self-end sm:block w-[345px] h-0.5 border-t-2 border-dashed border-brand-primary dark:border-brand-primary/50 animate-[slideRight_1s_ease-in-out_forwards]"></div>
         </section>
 
         {/* Decorative Circles */}
@@ -111,7 +111,7 @@ const Main = () => {
             className="hidden lg:block absolute top-[450px] md:top-96 -left-20 md:-left-32 -translate-y-20 md:-translate-y-28 
                   w-[150px] sm:w-[240px] md:w-[300px] 
                   h-[150px] sm:h-[240px] md:h-[300px] 
-                  border-2 border-teal-600 dark:border-teal-400 border-dashed rounded-full 
+                  border-2 border-brand-primary dark:border-brand-primary/50 border-dashed rounded-full 
                   animate-spinReverse blur-[0.5px]"
           ></div>
 

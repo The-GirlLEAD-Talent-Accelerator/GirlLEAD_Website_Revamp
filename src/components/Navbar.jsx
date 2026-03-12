@@ -26,7 +26,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-bg-mute shadow-sm z-50">
+    <nav className="fixed top-0 left-0 w-full bg-bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/">
           <img

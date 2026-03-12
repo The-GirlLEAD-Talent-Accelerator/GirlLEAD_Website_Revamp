@@ -62,7 +62,7 @@ export default function Hero() {
         <div className="grid md:grid-cols-3 grid-cols-1  text-center text-text-main">
           <div className="bg-brand-deep text-text-onBrand py-8 px-4 items-center flex-col flex gap-[10px]">
             <div className="bg-bg-soft md:w-16 md:h-16 w-10 h-10 rounded-full flex items-center justify-center">
-              <HiMiniGift className="text-text-iconAccent md:w-10 md:h-10 w-5 h-5" />
+              <HiMiniGift className="text-icon-accent md:w-10 md:h-10 w-5 h-5" />
             </div>
             <h3 className="lg:text-3xl font-bold">
               {inView && (
@@ -93,7 +93,7 @@ export default function Hero() {
             <h3 className="lg:text-3xl font-bold text-brand-primary">
               {inView && <CountUp start={1} end={5} duration={5} suffix="+" />}
             </h3>
-            <p className="text-xs md:text-base font-medium md:mt-1">Partners</p>
+            <p className="text-xs md:text-base font-medium md:mt-1 text-text-main">Partners</p>
           </div>
         </div>
       </div>

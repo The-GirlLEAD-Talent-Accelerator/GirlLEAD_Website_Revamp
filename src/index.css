@@ -4,6 +4,7 @@
   --font-montserrat: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
 
   /* Backgrounds */
+  --color-bg-white: #FFFFFF;
   --color-bg-mute: #F4FBFB;
   --color-bg-soft: #EDFAFA;
   --color-bg-alt: #EBF7F7;
@@ -62,6 +63,7 @@
 @layer base {
   .dark {
     /* Backgrounds (dark) */
+    --color-bg-white: #0f172a;
     --color-bg-mute: #020617;
     /* slate-950 */
     --color-bg-soft: #020617;
@@ -79,7 +81,7 @@
     /* Text (dark) */
     --color-text-main: #e5e7eb;
     --color-text-muted: #9ca3af;
-    --color-text-onBrand: #0f172a;
+    --color-text-onBrand: #f9fbfb;
     --color-text-accent: #22c55e;
     --color-text-accentTeal: #5eead4;
     --color-icon-accent: #5eead4;
