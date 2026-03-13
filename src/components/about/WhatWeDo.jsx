@@ -111,7 +111,7 @@ export default function WhatWeDo() {
           color: #4fd1c5;
         }
 
-        h2[class*='dark:text-'] {
+        h2.dark\:text-\[\#e0f2f1\] {
           color: #1a2e2a;
         }
 

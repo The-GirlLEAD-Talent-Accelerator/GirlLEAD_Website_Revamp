@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const PartnersSection = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [slidesPerView, setSlidesPerView] = useState(4);
   const [itemWidth, setItemWidth] = useState(0);
   const scrollRef = useRef(null);
   const animationRef = useRef(null);
@@ -27,10 +28,14 @@ const PartnersSection = () => {
   // Triple the partners for seamless infinite scroll
   const infinitePartners = [...partners, ...partners, ...partners];
 
-  // Handle responsive item width
+  // Handle responsive slides per view and item width
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
+      if (width < 640) setSlidesPerView(1);
+      else if (width < 768) setSlidesPerView(2);
+      else if (width < 1024) setSlidesPerView(3);
+      else setSlidesPerView(4);
 
       if (scrollRef.current) {
         setItemWidth(scrollRef.current.offsetWidth / (width < 640 ? 1 : width < 768 ? 2 : width < 1024 ? 3 : 4));
@@ -54,7 +59,8 @@ const PartnersSection = () => {
         scrollPositionRef.current += scrollSpeed;
         
         // Reset position when we've scrolled through one full set
-        if (scrollPositionRef.current >= container.scrollWidth / 3) {
+        const containerWidth = container.scrollWidth / 3;
+        if (scrollPositionRef.current >= containerWidth) {
           scrollPositionRef.current = 0;
         }
         
