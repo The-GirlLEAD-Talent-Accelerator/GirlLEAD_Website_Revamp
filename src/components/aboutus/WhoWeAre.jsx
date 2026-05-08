@@ -1,10 +1,10 @@
 export default function WhoWeAre() {
   return (
-    <section style={{ position: "relative", height: "80vh" }}>
+    <section style={{ position: "relative", height: "70vh" }}>
       <img
         src="/WhoWeAre.png"
         alt="Who We Are"
-        style={{ width: "100%", height: "100%", objectFit: "contain", filter: "brightness(150%)" }}
+        style={{ width: "100%", height: "100%", objectFit: "contain", filter: "brightness(100%)" }}
       />
       <div style={{
         position: "absolute", inset: 0,
