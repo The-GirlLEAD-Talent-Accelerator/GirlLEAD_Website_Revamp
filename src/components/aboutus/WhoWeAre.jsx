@@ -1,6 +1,6 @@
 export default function WhoWeAre() {
   return (
-    <section style={{ position: "relative", height: "60vh" }}>
+    <section style={{ position: "relative", height: "40vh" }}>
       <img
         src="/WhoWeAre.png"
         alt="Who We Are"
@@ -8,10 +8,9 @@ export default function WhoWeAre() {
       />
       <div style={{
         position: "absolute", inset: 0,
-        background: "rgba(0,0,0,0.5)",
+        background: "transparent linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)",
         display: "flex", alignItems: "center", justifyContent: "center"
       }}>
-        <h1 style={{ color: "#fff", fontSize: "3rem" }}>About Us</h1>
       </div>
     </section>
   );
