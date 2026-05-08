@@ -1,6 +1,6 @@
 export default function WhoWeAre() {
   return (
-    <section style={{ position: "relative", height: "40vh" }}>
+    <section style={{ position: "relative", height: "100vh" }}>
       <img
         src="/WhoWeAre.png"
         alt="Who We Are"
