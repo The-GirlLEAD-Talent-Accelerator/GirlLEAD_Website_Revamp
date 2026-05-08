@@ -4,7 +4,7 @@ export default function WhoWeAre() {
       <img
         src="/WhoWeAre.png"
         alt="Who We Are"
-        style={{ width: "100%", height: "100%", objectFit: "contain", filter: "brightness(100%)" }}
+        style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(100%)" }}
       />
       <div style={{
         position: "absolute", inset: 0,
