@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[90vh] md:min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[100vh] md:min-h-[100vh] flex items-center overflow-hidden">
         {/* Lazy-loaded background image */}
         <img
           src="/WhoWeAre.png"
