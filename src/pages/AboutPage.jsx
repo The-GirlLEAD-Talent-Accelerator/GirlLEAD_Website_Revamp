@@ -22,7 +22,7 @@ export default function AboutPage() {
         {/* Content */}
         <div className="relative z-10 w-full px-6">
   <div className="max-w-7xl mx-auto">
-    <div className="max-w-xl mt-10 sm:mt-5 md:mt-6 lg:mt-12">
+    <div className="max-w-xl mt-4 sm:mt-4 md:mt-6 lg:mt-8">
       <Motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
