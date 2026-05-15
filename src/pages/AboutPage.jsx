@@ -23,14 +23,17 @@ export default function AboutPage() {
         <div className="relative z-10 w-full px-6">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-xl mt-60 sm:mt-20 md:mt-24 lg:mt-72">
-              <Motion.h3
+              <Motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="text-xs md:text-base uppercase tracking-widest mb-4 text-text-onBrand opacity-80"
               >
-                Impact so far
-              </Motion.h3>
+                Who we are;
+              </Motion.h2>
+              <p>
+                At GirlLEAD, we create learning opportunities for women across Africa to learn more about the opportunities in STEM, Social entrepreneurship and leadership, providing them with access to guidance after their training to properly develop and apply all they have learnt to effect meaningful changes in their worlds.
+              </p>
 
             </div>
           </div>
