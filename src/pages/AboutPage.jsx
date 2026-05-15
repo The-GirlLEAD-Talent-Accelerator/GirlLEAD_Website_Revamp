@@ -8,15 +8,12 @@ export default function AboutPage() {
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        {/* Lazy-loaded background image */}
-        <img
-          src="/WhoWeAre.png"
-          alt="Programs hero"
-          loading="lazy"
-          onLoad={() => setHeroLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"
-            }`}
-        />
+       className="relative w-full h-[95vh] flex flex-col justify-center text-text-onBrand transition-colors bg-center bg-cover bg-no-repeat"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/WhoWeAre.png')",
+      }}
+        
 
         {/* Content */}
         <div className="relative z-10 w-full px-6">
