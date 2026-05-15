@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[100vh] md:min-h-[100vh] flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[100vh] md:min-h-[80vh] flex items-center overflow-hidden">
         {/* Lazy-loaded background image */}
         <img
           src="/WhoWeAre.png"
@@ -22,7 +22,7 @@ export default function AboutPage() {
         {/* Content */}
         <div className="relative z-10 w-full px-6">
   <div className="max-w-7xl mx-auto">
-    <div className="max-w-xl mt-20 sm:mt-10 md:mt-12 lg:mt-24">
+    <div className="max-w-xl mt-20 sm:mt-10 md:mt-12 lg:mt-14">
       <Motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
