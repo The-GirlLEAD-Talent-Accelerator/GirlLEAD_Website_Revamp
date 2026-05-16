@@ -86,7 +86,7 @@ function StepOne({ onNext }) {
         </div>
 
         <div style={s.field}>
-          <label style={s.label}>Amount (USD)</label>
+          <label style={s.label}>Amount</label>
           <input
             style={s.input}
             type="number"
