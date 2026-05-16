@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import Programs from "./pages/Programs";
+import DonatePage from "./pages/DonatePage";
 import ScrollToTop from "./components/common/ScrollToTop";
 import "./index.css";
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/donate" element={<DonatePage />} /> 
         </Routes>
       </main>
     </>

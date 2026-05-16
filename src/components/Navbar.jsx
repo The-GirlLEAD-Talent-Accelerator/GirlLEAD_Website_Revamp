@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiX, FiMenu } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 import Button from "./common/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,8 +28,10 @@ export default function Navbar() {
     };
   }, [open]);
 
+  const navigate = useNavigate();
+
   const handleDonate = () => {
-    alert('Donation functionality coming soon');
+    navigate("/donate");
   };
 
   return (
