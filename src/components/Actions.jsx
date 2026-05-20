@@ -1,14 +1,14 @@
 import { motion as Motion } from "framer-motion";
 import { FaUsers, FaGift } from "react-icons/fa";
 import Button from "./common/Button";
-import { useNavigate } from "react-router-dom";
+
 const Actions = () => {
     // helper to open a URL in a new tab safely
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
         if (newWindow) newWindow.opener = null;
     };
-    const navigate = useNavigate();
+    
     return (
         <Motion.div
             className="bg-bg-soft py-4"
@@ -52,7 +52,7 @@ const Actions = () => {
                         With your gift, we can do more. Support a woman to begin her tech journey today.
                     </Motion.p>
                     <Button
-                        onClick={() => navigate("/donate")}
+                        onClick={() => openInNewTab('https://paystack.shop/pay/eefmjuc6s1')}
                         aria-label="Donate to GirlLEAD - opens in a new tab"
                         variant="outline"
                     >

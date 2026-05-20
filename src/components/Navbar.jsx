@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FiX, FiMenu } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 import Button from "./common/Button";
-import { useNavigate } from "react-router-dom";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -30,9 +30,7 @@ export default function Navbar() {
 
   const navigate = useNavigate();
 
-  const handleDonate = () => {
-    navigate("/donate");
-  };
+  
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-bg-white shadow-sm z-50 transition-colors">
@@ -66,7 +64,7 @@ export default function Navbar() {
 
           {/* Donate button */}
           <Button
-            onClick={handleDonate}
+            onClick={openInNewTab}
             variant="primary"
             className="hidden md:inline-flex"
           >
@@ -126,13 +124,10 @@ export default function Navbar() {
             </li>
             <li>
               <Button
-                onClick={() => {
-                  setOpen(false);
-                  handleDonate();
-                }}
-                variant="primary"
-                className="w-full text-center"
-              >
+                onClick={() => openInNewTab('https://paystack.shop/pay/eefmjuc6s1')}
+                        aria-label="Donate to GirlLEAD - opens in a new tab"
+                        variant="outline"
+                    >
                 Donate Now
               </Button>
             </li>
