@@ -27,9 +27,6 @@ export default function Navbar() {
     };
   }, [open]);
 
-  const handleDonate = () => {
-    alert('Donation functionality coming soon');
-  };
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-bg-white shadow-sm z-50 transition-colors">
@@ -63,7 +60,7 @@ export default function Navbar() {
 
           {/* Donate button */}
           <Button
-            onClick={handleDonate}
+            onClick={() => window.open('https://paystack.shop/pay/eefmjuc6s1', '_blank')}
             variant="primary"
             className="hidden md:inline-flex"
           >
@@ -124,9 +121,9 @@ export default function Navbar() {
             <li>
               <Button
                 onClick={() => {
-                  setOpen(false);
-                  handleDonate();
-                }}
+    setOpen(false);
+    window.open('https://paystack.shop/pay/eefmjuc6s1', '_blank');
+  }}
                 variant="primary"
                 className="w-full text-center"
               >

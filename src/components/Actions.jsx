@@ -51,7 +51,7 @@ const Actions = () => {
                         With your gift, we can do more. Support a woman to begin her tech journey today.
                     </Motion.p>
                     <Button
-                        onClick={() => openInNewTab('https://paystack.shop/pay/mnd475208x')}
+                        onClick={() => openInNewTab('https://paystack.shop/pay/eefmjuc6s1')}
                         aria-label="Donate to GirlLEAD - opens in a new tab"
                         variant="outline"
                     >
