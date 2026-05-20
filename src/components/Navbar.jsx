@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-8 font-medium">
           <li>
-            <NavLink to="/" className={navLinkClass}>        {/* ← added */}
+            <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
           </li>
@@ -87,7 +87,7 @@ export default function Navbar() {
           <ul className="flex flex-col items-center space-y-6 font-medium">
             <li>
               <NavLink
-                to="/"                                        {/* ← added */}
+                to="/"
                 onClick={() => setOpen(false)}
                 className={navLinkClass}
               >
