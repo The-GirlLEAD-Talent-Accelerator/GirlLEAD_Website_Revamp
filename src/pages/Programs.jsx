@@ -1,5 +1,6 @@
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
 import TechnologySection from "../components/programs/TechnologySection";
 import HowWeWork from "../components/programs/HowToWork";
 // import ProgramCard from "../components/programs/ProgramCard";
