@@ -16,42 +16,39 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        {/* Lazy-loaded background image */}
-        <img
-          src="/programs-hero.png"
-          alt="Programs hero"
-          loading="lazy"
-          onLoad={() => setHeroLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"
-            }`}
-        />
+      <section className="relative w-full min-h-[90vh] md:min-h-[80vh] flex items-start overflow-hidden">
+  {/* Dark overlay for better text readability */}
+  <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-        {/* Content */}
-        <div className="relative z-10 w-full px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-xl mt-60 sm:mt-20 md:mt-24 lg:mt-72">
-              <Motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-xs md:text-base uppercase tracking-widest mb-4 text-text-onBrand opacity-80"
-              >
-                Impact so far
-              </Motion.h3>
+  {/* Lazy-loaded background image */}
+  <img
+    src="/WhoWeAre.png"
+    alt="Who we are"
+    loading="lazy"
+    onLoad={() => setHeroLoaded(true)}
+    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+      heroLoaded ? "opacity-100" : "opacity-0"
+    }`}
+  />
 
-              <Motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-text-onBrand"
-              >
-                Our Programs
-              </Motion.h1>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Content */}
+  <div className="relative z-10 w-full px-6 pt-10 md:pt-14">
+    <div className="max-w-7xl mx-auto">
+      <div className="max-w-xl">
+        <h3 className="text-white font-bold text-sm md:text-base uppercase tracking-widest mb-4">
+          Who We Are;
+        </h3>
+        <p className="text-white font-semibold text-sm md:text-base leading-relaxed">
+          At GirlLEAD, we create learning opportunities for women across
+          Africa to learn more about the opportunities in STEM, Social
+          entrepreneurship and leadership, providing them with access to
+          guidance after their training to properly develop and apply all
+          they have learnt to effect meaningful changes in their worlds.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* PROGRAMS CONTENT */}
       <section className="md:py-20 py-10 px-6">
