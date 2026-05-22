@@ -53,6 +53,7 @@ export default function AboutPage() {
       src="/Vision_and_Values.png"
       alt="Our Vision, Mission and Values"
       className="w-full h-auto object-contain"
+      style={{ imageRendering: "crisp-edges" }}
     />
   </div>
 </section>
