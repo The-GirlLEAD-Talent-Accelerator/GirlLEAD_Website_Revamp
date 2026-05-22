@@ -16,7 +16,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[100vh] md:min-h-[100vh] flex items-start overflow-hidden">
+      <section className="relative w-full min-h-[90vh] md:min-h-[80vh] flex items-start overflow-hidden">
   {/* Dark overlay for better text readability */}
   <div className="absolute inset-0 bg-black/40 z-[1]" />
 
@@ -36,10 +36,10 @@ export default function AboutPage() {
     <div className="relative z-10 w-full px-6 pt-10 md:pt-14">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-xl">
-          <h1 className="text-white font-bold text-sm md:text-base uppercase tracking-widest mb-4">
+          <h3 className="text-white font-bold text-lg md:text-2xl uppercase tracking-widest mb-4">
             Who We Are;
-          </h1>
-          <p className="text-white font-semibold text-sm md:text-base leading-relaxed">
+          </h3>
+          <p className="text-white font-semibold text-base md:text-lg leading-relaxed">
             At GirlLEAD, we create learning opportunities for women across
             Africa to learn more about the opportunities in STEM, Social
             entrepreneurship and leadership, providing them with access to
