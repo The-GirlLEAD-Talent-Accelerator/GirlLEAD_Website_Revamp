@@ -16,15 +16,13 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[90vh] md:min-h-[80vh] flex items-start overflow-hidden">
+      <section className="relative w-full min-h-[100vh] md:min-h-[80vh] flex items-start overflow-hidden">
   {/* Dark overlay for better text readability */}
   <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-  {/* Lazy-loaded background image */}
   <img
     src="/WhoWeAre.png"
     alt="Who we are"
-    loading="lazy"
     onLoad={() => setHeroLoaded(true)}
     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
       heroLoaded ? "opacity-100" : "opacity-0"
@@ -35,9 +33,9 @@ export default function AboutPage() {
   <div className="relative z-10 w-full px-6 pt-10 md:pt-14">
     <div className="max-w-7xl mx-auto">
       <div className="max-w-xl">
-        <h3 className="text-white font-bold text-sm md:text-base uppercase tracking-widest mb-4">
+        <h2 className="text-white font-bold text-sm md:text-base uppercase tracking-widest mb-4">
           Who We Are;
-        </h3>
+        </h2>
         <p className="text-white font-semibold text-sm md:text-base leading-relaxed">
           At GirlLEAD, we create learning opportunities for women across
           Africa to learn more about the opportunities in STEM, Social
