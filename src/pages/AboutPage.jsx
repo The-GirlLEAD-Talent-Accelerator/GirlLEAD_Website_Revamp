@@ -48,7 +48,7 @@ export default function AboutPage() {
 
 {/* Vision & Values — seamlessly follows the hero section */}
 <section className="w-full bg-[#dff2f2] py-16 px-6">
-  <div className="max-w-7xl mx-auto">
+  <div className="w-full">
     <img
       src="/Vision_and_Values.png"
       alt="Our Vision, Mission and Values"
