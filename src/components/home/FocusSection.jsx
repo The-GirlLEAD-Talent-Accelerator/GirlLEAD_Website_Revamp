@@ -121,9 +121,11 @@
 
 "use client";
 import { motion as Motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Button from "../common/Button";
 
 const FocusSection = () => {
+  const navigate = useNavigate();
   const floatingAnimation = {
     y: [0, -10, 0],
     transition: {
@@ -227,6 +229,7 @@ const FocusSection = () => {
         size="lg"
         className="mt-16"
         animate={true}
+        onClick={() => navigate("/Programs")}
       >
         Start Your Journey
       </Button>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion as Motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Button from "./common/Button";
@@ -85,6 +86,7 @@ const Testimonial = ({
   showButton = true, 
   className = "bg-bg-soft" 
 }) => {
+  const navigate = useNavigate(); 
   const [isMobile, setIsMobile] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -197,6 +199,7 @@ const Testimonial = ({
               variant="primary"
               size="lg"
               className="block md:inline-block"
+              onClick={() => navigate("/Programs")}
             >
               Start Your Journey
             </Button>
