@@ -4,6 +4,7 @@ import { useState } from "react";
 import MeetTheTeam from "../components/MeetTheTeam";
 import JoinAndRecruitment from "../components/JoinAndRecruitment";
 import ImpactAssociateAlumniStories from "../components/ImpactAssociateAlumniStories";
+import FriendsOfGirlLEAD from "../components/FriendsOfGirlLEAD";
 import Contact from "../components/Contact";
 
 export default function AboutPage() {
@@ -67,6 +68,7 @@ export default function AboutPage() {
         showButton={false} 
         className="bg-bg-card" 
       />
+      <FriendsOfGirlLEAD />
       <Contact />
     </main>
   );
