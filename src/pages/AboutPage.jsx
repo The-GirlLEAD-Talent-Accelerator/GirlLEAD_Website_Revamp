@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import MeetTheTeam from "../components/MeetTheTeam";
+import JoinAndRecruitment from "../components/JoinAndRecruitment";
 import Testimonial from "../components/Testimonial";
 import Contact from "../components/Contact";
 
@@ -60,6 +61,7 @@ export default function AboutPage() {
 
       
       <MeetTheTeam />
+      <JoinAndRecruitment />
       <Testimonial 
         title="What our fellows say" 
         showButton={false} 
