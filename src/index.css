@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-inter: 'Inter', Lato, ui-sans-serif, system-ui, sans-serif;
+  --font-inter: 'Inter', Lato,g ui-sans-serif, system-ui, sans-serif;
   
 
   /* Backgrounds */
