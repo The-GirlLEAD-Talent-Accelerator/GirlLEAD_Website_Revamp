@@ -1,10 +1,10 @@
 const teamMembers = [
   { name: "Gabriel Onyebuolise",  role: "Lead, Marketing and Communications",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
-  { name: "Ada Okafor",      role: "Program Manager",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/ada.png" },
-  { name: "Kemi Adeyemi",    role: "Data Analyst",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/kemi.png" },
-  { name: "Ngozi Eze",       role: "Community Lead",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/ngozi.png" },
-  { name: "Amaka Nwosu",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/amaka.png" },
-  { name: "Nneka Nwosu",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/amaka.png" },
+  { name: "Glamour Idiagi",      role: "Program Manager",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.png" },
+  { name: "Joy Okeh",    role: "Data Analyst",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/Team/Joy.png" },
+  { name: "Blessing Aluge",       role: "Community Lead",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.png" },
+  { name: "Innocent Bayila Solomon",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.png" },
+  { name: "Precious Ihire",     role: "Software Engineer, Product and Tech",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.png" },
 ];
 
 export default function MeetTheTeam() {
