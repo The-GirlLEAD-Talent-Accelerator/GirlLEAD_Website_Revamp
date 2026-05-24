@@ -3,7 +3,7 @@ import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import MeetTheTeam from "../components/MeetTheTeam";
 import JoinAndRecruitment from "../components/JoinAndRecruitment";
-import Testimonial from "../components/Testimonial";
+import ImpactAssociateAlumniStories from "../components/ImpactAssociateAlumniStories";
 import Contact from "../components/Contact";
 
 export default function AboutPage() {
@@ -62,8 +62,8 @@ export default function AboutPage() {
       
       <MeetTheTeam />
       <JoinAndRecruitment />
-      <Testimonial 
-        title="What our fellows say" 
+      <ImpactAssociateAlumniStories
+        title="Impact Associate Alumni Stories" 
         showButton={false} 
         className="bg-bg-card" 
       />
