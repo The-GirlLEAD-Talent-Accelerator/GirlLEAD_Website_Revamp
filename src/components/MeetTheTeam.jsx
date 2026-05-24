@@ -1,0 +1,68 @@
+const teamMembers = [
+  { name: "Gabriel Onyebuolise", role: "Team Lead, Marketing and Communications", flag: "NG", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
+  { name: "Jane Doe",        role: "Product Designer",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/jane.png" },
+  { name: "Ada Okafor",      role: "Program Manager",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/ada.png" },
+  { name: "Kemi Adeyemi",    role: "Data Analyst",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/kemi.png" },
+  { name: "Ngozi Eze",       role: "Community Lead",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/ngozi.png" },
+  { name: "Amaka Nwosu",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/amaka.png" },
+];
+
+export default function MeetTheTeam() {
+  return (
+    <section className="w-full bg-[#dff2f2] py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Heading */}
+        <h2 className="text-center text-2xl font-bold text-gray-800 mb-3">
+          Meet Some of the Team
+        </h2>
+        <p className="text-center text-sm text-gray-500 mb-16 max-w-xl mx-auto">
+          These are our Impact Associates. They are the brains behind the work we do at GirlLEAD Accelerators Program
+        </p>
+
+        {/* Team Grid — single row, staggered */}
+        <div className="flex justify-center gap-8 flex-wrap md:flex-nowrap items-end pb-10">
+          {teamMembers.map((member, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center gap-2 flex-shrink-0"
+              style={{ transform: i % 2 === 0 ? "translateY(30px)" : "translateY(0px)" }}
+            >
+              {/* Circular photo */}
+              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[#c0ae90]">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover grayscale sepia"
+                />
+              </div>
+
+              {/* Name + flag */}
+              <p className="text-sm font-bold text-gray-800 text-center">
+                {member.name} {member.flag}
+              </p>
+
+              {/* Role + LinkedIn */}
+              <div className="flex items-center gap-1.5">
+                <p className="text-xs text-gray-500">{member.role}</p>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0a66c2] hover:text-[#004182] transition-colors"
+                  aria-label={`${member.name} LinkedIn`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

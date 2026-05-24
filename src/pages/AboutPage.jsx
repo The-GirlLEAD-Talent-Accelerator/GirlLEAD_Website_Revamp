@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
+import MeetTheTeam from "../components/MeetTheTeam";
 import Testimonial from "../components/Testimonial";
 import Contact from "../components/Contact";
 
@@ -58,7 +59,7 @@ export default function AboutPage() {
 </section>
 
       
-      
+      <MeetTheTeam />
       <Testimonial 
         title="What our fellows say" 
         showButton={false} 
