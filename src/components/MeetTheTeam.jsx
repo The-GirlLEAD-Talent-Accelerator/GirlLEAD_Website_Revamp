@@ -1,10 +1,10 @@
 const teamMembers = [
-  { name: "Gabriel Onyebuolise", role: "Team Lead, Marketing and Communications", flag: "NG", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
-  { name: "Jane Doe",        role: "Product Designer",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/jane.png" },
+  { name: "Gabriel Onyebuolise",  role: "Lead, Marketing and Communications",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
   { name: "Ada Okafor",      role: "Program Manager",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/ada.png" },
   { name: "Kemi Adeyemi",    role: "Data Analyst",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/kemi.png" },
   { name: "Ngozi Eze",       role: "Community Lead",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/ngozi.png" },
   { name: "Amaka Nwosu",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/amaka.png" },
+  { name: "Nneka Nwosu",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/team/amaka.png" },
 ];
 
 export default function MeetTheTeam() {
@@ -33,13 +33,13 @@ export default function MeetTheTeam() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale sepia"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Name + flag */}
+              {/* Name + flag icon */}
               <p className="text-sm font-bold text-gray-800 text-center">
-                {member.name} {member.flag}
+                {member.name} <span className="text-base">{member.flag}</span>
               </p>
 
               {/* Role + LinkedIn */}
