@@ -10,17 +10,17 @@ const WhatWeDo = () => {
   return (
     <>
       <section className="bg-bg-mute py-16 px-7">
-        <section className="w-full max-w-6xl mx-auto ">
+        <section className="w-full max-w-6xl mx-auto">
           <h2 className="text-xl sm:text-4xl md:text-3xl font-bold mb-6 text-center">
             What We Do
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="px-6 py-12 bg-brand-hero rounded-2xl border border-border-soft hover:shadow-lg transition-shadow">
-              <HiOutlineAcademicCap className="text-bg-soft text-2xl mb-9 w-10 h-10" />
-              <h3 className="text-xl text-text-onBrand font-semibold my-3">
+            <div className="p-6 py-12 rounded-2xl border border-border-soft hover:shadow-lg transition-shadow bg-bg-card">  {/* ← changed */}
+              <HiOutlineAcademicCap className="text-brand-primary text-2xl mb-9 w-10 h-10" />  {/* ← changed */}
+              <h3 className="text-xl text-text-main font-semibold my-3">  {/* ← changed */}
                 Bootcamps
               </h3>
-              <p className="text-text-onBrand opacity-90">
+              <p className="text-text-muted">  {/* ← changed */}
                 Empowering girls with practical, hands-on tech and entrepreneurship skills through intensive training programs designed for real-world impact.
               </p>
             </div>
