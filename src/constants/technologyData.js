@@ -31,14 +31,14 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD x European Business Institute",
-        image: "/programs/EBU.png",
+        image: "/programs/EBU.jpg",
         description: "A partnership program that provides training and mentorship in business management and entrepreneurship.",
         applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSekr70puumhKrxV-oJyEwqmRHCAMrCkUPQjFOvWmdbZkFQv9g/viewform",
 
       },
       {
         title: "Women in IT BootCamp",
-        image: "/programs/IT",
+        image: "/programs/IT.jpg",
         description: "A program that provides training and mentorship in IT skills and entrepreneurship.",
         applyLink: "",
       },
@@ -50,7 +50,7 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD Leadership Bootcamp",
-        image: "programs/Leadership",
+        image: "/programs/Leadership.jpg",
       },
       // {
       //   title: "Future Leaders Academy",
