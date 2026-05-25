@@ -8,15 +8,20 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD Bootcamp",
-        image: "/programs/tech-image1.jpg",
+        image: "/programs/Bootcamp.jpg",
+        description: "A program that equips young women with tech, digital, and leadership skills.",
+        applyLink: ""
       },
       {
         title: "GirlLEAD x DataCamp Scholarship programme (WiD)",
         image: "/programs/tech-image2.jpg",
+        description: "A scholarship programme supporting women in data science and analytics.",
+        applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSe5i-iIjHUoaa2b2YEwOjNNI2OKQWrXHMv_J2oCHBLtzEQy6A/viewform"
       },
       {
         title: "Girls in STEM",
-        image: "/programs/tech-image3.jpg",
+        image: "/programs/STEM.jpg",
+        description: "A program that encourages young women to pursue careers in science, technology, engineering, and mathematics.",
       },
     ],
   },
@@ -26,11 +31,16 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD x European Business Institute",
-        image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d",
+        image: "/programs/EBU.png",
+        description: "A partnership program that provides training and mentorship in business management and entrepreneurship.",
+        applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSekr70puumhKrxV-oJyEwqmRHCAMrCkUPQjFOvWmdbZkFQv9g/viewform",
+
       },
       {
         title: "Women in IT BootCamp",
-        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad",
+        image: "/programs/IT",
+        description: "A program that provides training and mentorship in IT skills and entrepreneurship.",
+        applyLink: "",
       },
     ],
   },
@@ -40,7 +50,7 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD Leadership Bootcamp",
-        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+        image: "programs/Leadership",
       },
       // {
       //   title: "Future Leaders Academy",
