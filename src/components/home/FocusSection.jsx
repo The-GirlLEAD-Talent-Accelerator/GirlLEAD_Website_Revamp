@@ -124,6 +124,8 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Button from "../common/Button";
 
+const navigate = useNavigate();
+
 const FocusSection = () => {
   const navigate = useNavigate();
   const floatingAnimation = {
@@ -172,20 +174,24 @@ const FocusSection = () => {
             img: "/focus-image1.png",
             title: "Tech Skills",
             text: "Digital literacy, coding, and data analytics.",
+            tab: "Technology",
           },
           {
             img: "/focus-image2.png",
             title: "Social Entrepreneurship",
             text: "Empowering innovators with business building and financial literacy.",
+            tab: "SocialEntrepreneurship",
           },
           {
             img: "/focus-image3.png",
             title: "Leadership",
             text: "Communication, mentoring, and personal growth for impactful leadership.",
+            tab: "Leadership",
           },
         ].map((item, i) => (
           <Motion.div
             key={i}
+            onClick={() => navigate("/Programs", { state: { tab: item.tab } })}
             className="group relative rounded-b-2xl overflow-hidden shadow-md hover:shadow-2xl transform-gpu cursor-pointer transition-all duration-500 bg-bg-card border border-border-soft"
             style={{ perspective: "1000px" }}
             initial="hidden"

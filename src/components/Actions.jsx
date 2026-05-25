@@ -92,7 +92,7 @@ const Actions = () => {
                         Ready to make an impact? Volunteer your time and skills to empower women in Africa -  Join our team today.
                     </Motion.p>
                     <Button
-                        onClick={() => openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSeQYaOkutAMgOrE-pXAUFOReqPbh7mysGV3_FN5rKTLB25Xpw/viewform?usp=pp_url')}
+                        onClick={() => openInNewTab('https://forms.gle/JVMGbYwFWZBK9ZvBA')}
                         aria-label="Volunteer with GirlLEAD - opens in a new tab"
                         variant="deep"
                     >

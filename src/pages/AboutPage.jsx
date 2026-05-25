@@ -13,9 +13,9 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[90vh] md:min-h-[80vh] flex items-start overflow-hidden">
-  {/* Dark overlay for better text readability */}
-  <div className="absolute inset-0 bg-black/40 z-[1]" />
+      <section className="relative w-full min-h-[60vh] md:min-h-[55vh] flex items-start overflow-hidden">  {/* ← reduced min-h */}
+  {/* Darker overlay */}
+  <div className="absolute inset-0 bg-black/60 z-[1]" />  {/* ← /40 → /60 */}
 
   {/* Lazy-loaded background image */}
   <img
@@ -39,7 +39,7 @@ export default function AboutPage() {
           <p className="text-white font-semibold text-base md:text-lg leading-relaxed">
             At GirlLEAD, we create learning opportunities for women across
             Africa to learn more about the opportunities in STEM, Social
-            entrepreneurship and leadership, providing them with access to
+            Entrepreneurship and Leadership, providing them with access to
             guidance after their training to properly develop and apply all
             they have learnt to effect meaningful changes in their worlds.
           </p>
@@ -49,13 +49,13 @@ export default function AboutPage() {
   )}
 </section>
 
-{/* Vision & Values — seamlessly follows the hero section */}
+{/* Vision & Values */}
 <section className="w-full bg-[#dff2f2] py-16 px-6">
   <div className="max-w-7xl mx-auto">
     <img
       src="/Vision.png"
       alt="Our Vision, Mission and Values"
-      className="w-full h-auto object-contain"
+      className="w-full h-auto object-contain scale-110 md:scale-125 origin-center"  
     />
   </div>
 </section>
