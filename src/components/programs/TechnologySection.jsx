@@ -185,6 +185,8 @@
 // }
 
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Tabs from "../../components/tabs/Tabs";
 import Carousel from "../carousel/Carousel";
 import ProgramCard from "../programs/ProgramCard";
@@ -196,8 +198,15 @@ import {
 
 export default function TechnologySection() {
   const [activeTab, setActiveTab] = useState("Technology");
+  const location = useLocation();
   const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
   const { description, programs } = currentTab;
+
+  useEffect(() => {
+    if (location.state?.tab) {
+      setActiveTab(location.state.tab);
+    }
+  }, [location.state]);
 
 
   return (

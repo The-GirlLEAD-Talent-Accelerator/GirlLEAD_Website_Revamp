@@ -124,7 +124,6 @@ import { motion as Motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Button from "../common/Button";
 
-const navigate = useNavigate();
 
 const FocusSection = () => {
   const navigate = useNavigate();
