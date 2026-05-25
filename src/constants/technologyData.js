@@ -1,4 +1,4 @@
-export const TABS = ["Technology", "Social Entrepreneur", "Leadership"];
+export const TABS = ["Technology", "Social Entrepreneurship", "Leadership"];
 
 
 export const TAB_CONTENT = {
@@ -20,7 +20,7 @@ export const TAB_CONTENT = {
       },
     ],
   },
-  "Social Entrepreneur": {
+  "Social Entrepreneurship": {
     description:
       "We support aspiring social entrepreneurs with tools, mentorship, and resources to build sustainable ventures that solve community problems.",
     programs: [

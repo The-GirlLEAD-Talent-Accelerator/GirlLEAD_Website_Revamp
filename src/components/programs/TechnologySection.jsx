@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 // import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-// const tabs = ["Technology", "Social Entrepreneur", "Leadership"];
+// const tabs = ["Technology", "Social Entrepreneurship", "Leadership"];
 
 // const tabContent: Record<string, { description: string; programs: { title: string; image: string }[] }> = {
 //   Technology: {
@@ -25,7 +25,7 @@
 //       },
 //     ],
 //   },
-//   "Social Entrepreneur": {
+//   "Social Entrepreneurship": {
 //     description:
 //       "We support aspiring social entrepreneurs with tools, mentorship, and resources to build sustainable ventures that solve community problems.",
 //     programs: [
