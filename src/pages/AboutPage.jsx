@@ -13,9 +13,9 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[60vh] md:min-h-[55vh] flex items-start overflow-hidden">  {/* ← reduced min-h */}
+      <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-start overflow-hidden">  {/* ← md increased back up */}
   {/* Darker overlay */}
-  <div className="absolute inset-0 bg-black/60 z-[1]" />  {/* ← /40 → /60 */}
+  <div className="absolute inset-0 bg-black/60 z-[1]" />
 
   {/* Lazy-loaded background image */}
   <img
@@ -55,7 +55,7 @@ export default function AboutPage() {
     <img
       src="/Vision.png"
       alt="Our Vision, Mission and Values"
-      className="w-full h-auto object-contain scale-110 md:scale-125 origin-center"  
+      className="w-full h-auto object-contain scale-110 md:scale-100 origin-center"  
     />
   </div>
 </section>

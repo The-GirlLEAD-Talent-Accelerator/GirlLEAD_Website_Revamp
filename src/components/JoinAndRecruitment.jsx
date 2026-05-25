@@ -1,4 +1,4 @@
-const joinUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeQYaOkutAMgOrE-pXAUFOReqPbh7mysGV3_FN5rKTLB25Xpw/closedform";
+const joinUrl = "https://forms.gle/JVMGbYwFWZBK9ZvBA";
 
 const benefits = [
   "Opportunity to work with an international and multicultural teams on real time projects",
