@@ -1,9 +1,9 @@
 const teamMembers = [
-  { name: "Gabriel Onyebuolise",  role: "Lead, Marketing and Communications",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
-  { name: "Glamour Idiagi",      role: "Program Manager",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.png" },
-  { name: "Joy Okeh",    role: "Data Analyst",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/Team/Joy.png" },
-  { name: "Blessing Aluge",       role: "Community Lead",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.png" },
-  { name: "Innocent Bayila Solomon",     role: "Operations Lead",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.png" },
+  { name: "Gabriel Onyebuolise",  role: "Head of Marketing and Communications",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
+  { name: "Glamour Idiagi",      role: "Programs Associate, Programs and Partnerships",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.png" },
+  { name: "Joy Okeh",    role: "People Operations Officer, People and Operations",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/Team/Joy.png" },
+  { name: "Blessing Aluge",       role: "Operations Assistant, People and Operations",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.png" },
+  { name: "Innocent Bayila Solomon",     role: "Graphics Designer, Marketing and Communications",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.png" },
   { name: "Precious Ihire",     role: "Software Engineer, Product and Tech",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.png" },
 ];
 
