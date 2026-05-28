@@ -62,7 +62,6 @@ export const TAB_CONTENT = {
 
 
 export const CAROUSEL_IMAGES = [
-  "https://youtu.be/cfxTjbVpOao?si=QUaQsI_LTbhdlSj1",
   "/programs/carousel-image.png",
   "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
   "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
