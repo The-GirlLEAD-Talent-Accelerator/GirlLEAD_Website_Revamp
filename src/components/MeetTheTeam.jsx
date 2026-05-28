@@ -1,10 +1,10 @@
 const teamMembers = [
-  { name: "Gabriel Onyebuolise",  role: "Head of Marketing and Communications",  flag: "🇳🇬", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
-  { name: "Glamour Idiagi",      role: "Programs Associate, Programs and Partnerships",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.png" },
-  { name: "Joy Okeh",    role: "People Operations Officer, People and Operations",      flag: "🇳🇬", linkedin: "https://linkedin.com/in/...", image: "/Team/Joy.png" },
-  { name: "Blessing Aluge",       role: "Operations Assistant, People and Operations",    flag: "🇳🇬", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.png" },
-  { name: "Innocent Bayila Solomon",     role: "Graphics Designer, Marketing and Communications",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.png" },
-  { name: "Precious Ihire",     role: "Software Engineer, Product and Tech",   flag: "🇳🇬", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.png" },
+  { name: "Gabriel Onyebuolise",  role: "Head of Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
+  { name: "Glamour Idiagi",       role: "Programs Associate, Programs and Partnerships", countryCode: "ng", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.png" },
+  { name: "Joy Okeh",             role: "People Operations Officer, People and Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/...", image: "/Team/Joy.png" },
+  { name: "Blessing Aluge",       role: "Operations Assistant, People and Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.png" },
+  { name: "Innocent Bayila Solomon", role: "Graphics Designer, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.png" },
+  { name: "Precious Ihire",       role: "Software Engineer, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.png" },
 ];
 
 export default function MeetTheTeam() {
@@ -20,7 +20,7 @@ export default function MeetTheTeam() {
           These are our Impact Associates. They are the brains behind the work we do at GirlLEAD Accelerators Program
         </p>
 
-        {/* Team Grid — single row, staggered */}
+        {/* Team Grid */}
         <div className="flex justify-center gap-8 flex-wrap md:flex-nowrap items-end pb-10">
           {teamMembers.map((member, i) => (
             <div
@@ -37,9 +37,16 @@ export default function MeetTheTeam() {
                 />
               </div>
 
-              {/* Name + flag icon */}
-              <p className="text-sm font-bold text-gray-800 text-center">
-                {member.name} <span className="text-base">{member.flag}</span>
+              {/* Name + flag image */}
+              <p className="text-sm font-bold text-gray-800 text-center flex items-center gap-1.5 justify-center">
+                {member.name}
+                <img
+                  src={`https://flagcdn.com/20x15/${member.countryCode}.png`}  
+                  alt={member.countryCode.toUpperCase()}
+                  width="20"
+                  height="15"
+                  className="inline-block rounded-sm"
+                />
               </p>
 
               {/* Role + LinkedIn */}
@@ -57,7 +64,6 @@ export default function MeetTheTeam() {
                   </svg>
                 </a>
               </div>
-
             </div>
           ))}
         </div>
