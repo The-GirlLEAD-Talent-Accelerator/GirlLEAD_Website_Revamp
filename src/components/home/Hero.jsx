@@ -64,7 +64,7 @@ export default function Hero() {
             </div>
             <h3 className="lg:text-3xl font-bold">
               {inView && (
-                <CountUp start={500} end={2000} duration={7} suffix="+" />
+                <CountUp start={1000} end={4000} duration={7} suffix="+" />
               )}
             </h3>
             <p className="text-xs md:text-base font-medium md:mt-1">
