@@ -15,7 +15,7 @@ export default function Hero() {
       className="relative w-full h-[95vh] flex flex-col justify-center text-text-onBrand transition-colors bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero.png')",
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero.webp')",
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 mt-30 md:mt-36">
