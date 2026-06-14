@@ -184,9 +184,9 @@
 //   );
 // }
 
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import Tabs from "../../components/tabs/Tabs";
 import Carousel from "../carousel/Carousel";
 import ProgramCard from "../programs/ProgramCard";
@@ -199,20 +199,24 @@ import {
 export default function TechnologySection() {
   const [activeTab, setActiveTab] = useState("Technology");
   const location = useLocation();
-  const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
-  const { description, programs } = currentTab;
 
   useEffect(() => {
     if (location.state?.tab) {
       setActiveTab(location.state.tab);
     }
-  }, [location.state]);
+  }, [location]);
 
+  const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
+  const { description, programs } = currentTab;
 
   return (
     <section className="bg-bg-mute py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
+        <Tabs
+          tabs={TABS}
+          activeTab={activeTab}
+          onChange={setActiveTab}
+        />
 
         <p className="text-center text-text-muted max-w-3xl mx-auto mb-10 text-sm sm:text-base">
           {description}
@@ -225,14 +229,75 @@ export default function TechnologySection() {
         </h3>
 
         <div
-          className={`grid gap-6 ${programs.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
-            }`}
+          className={`grid gap-6 ${
+            programs.length === 3
+              ? "md:grid-cols-3"
+              : "md:grid-cols-2"
+          }`}
         >
           {programs.map((program) => (
-            <ProgramCard key={program.title} {...program} />
+            <ProgramCard
+              key={program.title}
+              {...program}
+            />
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+
+
+// import { useState } from "react";
+// import { useLocation } from "react-router-dom";
+// import { useEffect } from "react";
+// import Tabs from "../../components/tabs/Tabs";
+// import Carousel from "../carousel/Carousel";
+// import ProgramCard from "../programs/ProgramCard";
+// import {
+//   TABS,
+//   TAB_CONTENT,
+//   CAROUSEL_IMAGES,
+// } from "../../constants/technologyData";
+
+// export default function TechnologySection() {
+//   const [activeTab, setActiveTab] = useState("Technology");
+//   const location = useLocation();
+//   const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
+//   const { description, programs } = currentTab;
+
+//   useEffect(() => {
+//     if (location.state?.tab) {
+//       setActiveTab(location.state.tab);
+//     }
+//   }, [location.state]);
+
+
+//   return (
+//     <section className="bg-bg-mute py-16 px-4">
+//       <div className="max-w-6xl mx-auto">
+//         <Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
+
+//         <p className="text-center text-text-muted max-w-3xl mx-auto mb-10 text-sm sm:text-base">
+//           {description}
+//         </p>
+
+//         <Carousel images={CAROUSEL_IMAGES} />
+
+//         <h3 className="text-center text-text-muted mb-8 text-sm sm:text-base">
+//           These are the programs under this track:
+//         </h3>
+
+//         <div
+//           className={`grid gap-6 ${programs.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+//             }`}
+//         >
+//           {programs.map((program) => (
+//             <ProgramCard key={program.title} {...program} />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }

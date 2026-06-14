@@ -1,5 +1,6 @@
 import { motion as Motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import TechnologySection from "../components/programs/TechnologySection";
 import HowWeWork from "../components/programs/HowToWork";
@@ -12,19 +13,42 @@ import Contact from "../components/Contact";
 
 export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 150);
+      }
+    }
+  }, [location]);
 
   return (
     <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        {/* Lazy-loaded background image */}
+        {/* Pre-load background image */}
+        {!heroLoaded && (
+          <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
+        )}
         <img
-          src="/programs-hero.png"
-          alt="Programs hero"
-          loading="lazy"
+          src="/programs-hero.webp"
+          alt="Programs Hero"
+          width="2560"
+          height="910"
+          fetchPriority="high"
+          decoding="async"
           onLoad={() => setHeroLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+            heroLoaded ? "opacity-100" : "opacity-0"
+          }`}
         />
 
         {/* Content */}
@@ -74,14 +98,16 @@ export default function Programs() {
         </div>
       </section>
 
-      <TechnologySection />
+      <section id="program-tabs">
+        <TechnologySection />
+      </section>
       <WhatWeDo />
       <HowWeWork />
       <FaqSection />
-      <Testimonial 
-        title="What our fellows say" 
-        showButton={false} 
-        className="bg-bg-card" 
+      <Testimonial
+        title="What our fellows say"
+        showButton={false}
+        className="bg-bg-card"
       />
       <MapSection />
       <Contact />
