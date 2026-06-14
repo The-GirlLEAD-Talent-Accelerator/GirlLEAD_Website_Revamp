@@ -12,7 +12,7 @@ const COUNTRIES = [
   { name: "Ghana",            x: "37.4%", y: "46.2%" },
   { name: "Togo",             x: "39.0%", y: "45.5%" },
   { name: "Benin Republic",   x: "40.2%", y: "44.9%" },
-  { name: "Nigeria",  hq: true, x: "42.8%", y: "43.6%" },
+  { name: "Nigeria",  hq: true, x: "43.2%", y: "59.5%" },
   { name: "Cameroon",         x: "45.5%", y: "45.2%" },
   { name: "Sudan",            x: "56.4%", y: "33.7%" },
   { name: "South Sudan",      x: "55.3%", y: "40.4%" },
