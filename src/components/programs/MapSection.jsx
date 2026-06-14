@@ -1,3 +1,5 @@
+import { useState, useRef } from "react";
+
 const COUNTRIES = [
   { name: "Morocco",          x: "39.9%", y: "43.9%" },
   { name: "Tunisia",          x: "48.1%", y: "41.2%" },
@@ -32,3 +34,131 @@ const COUNTRIES = [
   { name: "South Africa",     x: "49.4%", y: "81.9%" },
   { name: "United Kingdom", uk: true, x: "42.3%", y: "30.0%" },
 ];
+/* Teardrop SVG path centered at top, pointing downward */
+const Teardrop = ({ size = 18, color = "#0d5c5c", border = "#fff" }) => (
+  <svg
+    width={size}
+    height={size * 1.4}
+    viewBox="0 0 20 28"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: "block", filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))" }}
+  >
+    <path
+      d="M10 0 C4.477 0 0 4.477 0 10 C0 17 10 28 10 28 C10 28 20 17 20 10 C20 4.477 15.523 0 10 0 Z"
+      fill={color}
+      stroke={border}
+      strokeWidth="1.5"
+    />
+    <circle cx="10" cy="10" r="4" fill="rgba(255,255,255,0.4)" />
+  </svg>
+);
+
+export default function MapSection() {
+  const containerRef = useRef(null);
+  const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0, hq: false });
+
+  const handleEnter = (e, c) => {
+    const cRect = containerRef.current.getBoundingClientRect();
+    const pRect = e.currentTarget.getBoundingClientRect();
+    setTooltip({
+      visible: true,
+      text: c.hq ? `${c.name} (Headquarters)` : c.name,
+      x: pRect.left - cRect.left + pRect.width / 2,
+      y: pRect.top - cRect.top,
+      hq: !!c.hq,
+    });
+  };
+
+  const handleLeave = () => setTooltip(t => ({ ...t, visible: false }));
+
+  return (
+    <section className="bg-bg-alt py-16 px-4 md:px-6 md:py-24">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+
+        {/* Text */}
+        <div className="md:w-5/12 text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-hero leading-tight">
+            We operate in<br />
+            multiple countries<br />
+            in Africa
+          </h2>
+        </div>
+
+        {/* Map */}
+        <div className="md:w-7/12 w-full">
+          <div ref={containerRef} className="relative w-full rounded-xl overflow-hidden">
+
+            {/* World Map SVG */}
+            <img
+              src="/World_Map.svg"
+              alt="World map showing GirlLEAD operational countries"
+              className="w-full h-auto block"
+              loading="lazy"
+              decoding="async"
+            />
+
+            {/* Tooltip */}
+            {tooltip.visible && (
+              <div
+                className="absolute z-20 text-white text-xs font-semibold px-3 py-1.5 rounded-md pointer-events-none whitespace-nowrap -translate-x-1/2"
+                style={{
+                  left: tooltip.x,
+                  top: tooltip.y - 10,
+                  transform: "translateX(-50%) translateY(-100%)",
+                  background: tooltip.hq ? "#c0392b" : "#0d4a4a",
+                }}
+              >
+                {tooltip.text}
+                <span
+                  className="absolute left-1/2 top-full w-0 h-0 block"
+                  style={{
+                    transform: "translateX(-50%)",
+                    borderLeft: "5px solid transparent",
+                    borderRight: "5px solid transparent",
+                    borderTop: `5px solid ${tooltip.hq ? "#c0392b" : "#0d4a4a"}`,
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Markers */}
+            {COUNTRIES.map((c, i) => (
+              <div
+                key={i}
+                className="absolute cursor-pointer transition-transform duration-150 hover:scale-125"
+                style={{
+                  left: c.x,
+                  top: c.y,
+                  transform: "translate(-50%, -100%)", /* anchor tip to coordinate */
+                  zIndex: c.hq ? 10 : c.uk ? 9 : 1,
+                }}
+                onMouseEnter={e => handleEnter(e, c)}
+                onMouseLeave={handleLeave}
+              >
+                {/* HQ pulse ring behind teardrop */}
+                {c.hq && (
+                  <span
+                    className="absolute animate-ping rounded-full"
+                    style={{
+                      width: 28, height: 28,
+                      top: -4, left: -4,
+                      background: "rgba(192,57,43,0.3)",
+                    }}
+                  />
+                )}
+
+                <Teardrop
+                  size={c.hq ? 22 : c.uk ? 20 : 14}
+                  color={c.hq ? "#c0392b" : c.uk ? "#1a7a7a" : "#0d5c5c"}
+                  border={c.hq ? "#fff" : c.uk ? "#0d4a4a" : "#fff"}
+                />
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
