@@ -5,7 +5,7 @@ export default function CarouselDots({ count, activeIndex }) {
         <span
           key={i}
           className={`h-2 rounded-full transition-all duration-300 ${
-            i === activeIndex ? "w-6 bg-teal-700" : "w-2 bg-gray-300"
+            i === activeIndex ? "w-6 bg-brand-primary" : "w-2 bg-border-soft"
           }`}
         />
       ))}

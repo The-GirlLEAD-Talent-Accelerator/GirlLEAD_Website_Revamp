@@ -1,20 +1,20 @@
-import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
-import TechnologySection from "../components/pragrams/TechnologySection";
-import HowWeWork from "../components/pragrams/HowToWork";
-import ProgramCard from "../components/pragrams/ProgramCard";
-import WhatWeDo from "../components/pragrams/WhatWeDo";
+import Navbar from "../components/Navbar";
+import TechnologySection from "../components/programs/TechnologySection";
+import HowWeWork from "../components/programs/HowToWork";
+// import ProgramCard from "../components/programs/ProgramCard";
+import WhatWeDo from "../components/programs/WhatWeDo";
+import FaqSection from "../components/programs/FaqSection";
+import Testimonial from "../components/Testimonial";
+import MapSection from "../components/programs/MapSection";
+import Contact from "../components/Contact";
 
 export default function Programs() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
-      <div className="h-[7vh]">
-        <Navbar />
-      </div>
-
+    <main className="min-h-screen bg-bg-mute text-text-main transition-colors">
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
         {/* Lazy-loaded background image */}
@@ -23,9 +23,8 @@ export default function Programs() {
           alt="Programs hero"
           loading="lazy"
           onLoad={() => setHeroLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            heroLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${heroLoaded ? "opacity-100" : "opacity-0"
+            }`}
         />
 
         {/* Content */}
@@ -36,7 +35,7 @@ export default function Programs() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-xs md:text-base uppercase tracking-widest mb-4 text-gray-200"
+                className="text-xs md:text-base uppercase tracking-widest mb-4 text-text-onBrand opacity-80"
               >
                 Impact so far
               </Motion.h3>
@@ -45,7 +44,7 @@ export default function Programs() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-text-onBrand"
               >
                 Our Programs
               </Motion.h1>
@@ -58,10 +57,10 @@ export default function Programs() {
       <section className="md:py-20 py-10 px-6">
         <div className="md:max-w-7xl w-full mx-auto">
           <h2 className="text-xl sm:text-4xl md:text-3xl font-bold mb-6">
-            Interested In Joining The Programs
+            Interested In Joining The Programs?
           </h2>
 
-          <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-sm sm:text-lg text-text-muted">
             Our programs equip women and girls with leadership, entrepreneurial,
             and technology skills through practical training, mentorship, and
             opportunities that help them unlock their potential, create
@@ -78,6 +77,14 @@ export default function Programs() {
       <TechnologySection />
       <WhatWeDo />
       <HowWeWork />
+      <FaqSection />
+      <Testimonial 
+        title="What our fellows say" 
+        showButton={false} 
+        className="bg-bg-card" 
+      />
+      <MapSection />
+      <Contact />
     </main>
   );
 }
