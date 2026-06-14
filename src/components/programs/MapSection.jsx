@@ -1,173 +1,58 @@
-import { useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 const COUNTRIES = [
-  { name: "Nigeria", hq: true,  coords: [8.6753, 9.0820] },
-  { name: "Benin Republic",    coords: [2.3158, 9.3077] },
-  { name: "Botswana",          coords: [24.6849, -22.3285] },
-  { name: "Burundi",           coords: [29.9189, -3.3731] },
-  { name: "Cameroon",          coords: [12.3547, 5.9631] },
-  { name: "Egypt",             coords: [30.8025, 26.8206] },
-  { name: "Eswatini",          coords: [31.4659, -26.5225] },
-  { name: "Ethiopia",          coords: [40.4897, 9.1450] },
-  { name: "Gambia",            coords: [-15.3101, 13.4432] },
-  { name: "Ghana",             coords: [-1.0232, 7.9465] },
-  { name: "Kenya",             coords: [37.9062, -0.0236] },
-  { name: "Lesotho",           coords: [28.2336, -29.6100] },
-  { name: "Liberia",           coords: [-9.4295, 6.4281] },
-  { name: "Libya",             coords: [17.2283, 26.3351] },
-  { name: "Madagascar",        coords: [46.8691, -18.7669] },
-  { name: "Malawi",            coords: [34.3015, -13.2543] },
-  { name: "Mauritania",        coords: [-10.9408, 21.0079] },
-  { name: "Morocco",           coords: [-7.0926, 31.7917] },
-  { name: "Mozambique",        coords: [35.5296, -18.6657] },
-  { name: "Namibia",           coords: [18.4904, -22.9576] },
-  { name: "Rwanda",            coords: [29.8739, -1.9403] },
-  { name: "Sierra Leone",      coords: [-11.7799, 8.4606] },
-  { name: "Somalia",           coords: [46.1996, 5.1521] },
-  { name: "South Africa",      coords: [25.0830, -28.8166] },
-  { name: "South Sudan",       coords: [31.3070, 6.8770] },
-  { name: "Sudan",             coords: [30.2176, 12.8628] },
-  { name: "Tanzania",          coords: [34.8888, -6.3690] },
-  { name: "Togo",              coords: [0.8248, 8.6195] },
-  { name: "Tunisia",           coords: [9.5375, 33.8869] },
-  { name: "United Kingdom", uk: true, coords: [-3.4360, 55.3781] },
-  { name: "Zambia",            coords: [27.8493, -13.1339] },
-  { name: "Zimbabwe",          coords: [29.1549, -19.0154] },
+  { name: "Nigeria",        hq: true,  x: "50.1%", y: "56.8%" },
+  { name: "Benin Republic",            x: "48.8%", y: "56.2%" },
+  { name: "Botswana",                  x: "52.8%", y: "70.2%" },
+  { name: "Burundi",                   x: "55.0%", y: "61.5%" },
+  { name: "Cameroon",                  x: "51.2%", y: "57.8%" },
+  { name: "Egypt",                     x: "54.5%", y: "43.8%" },
+  { name: "Eswatini",                  x: "54.0%", y: "73.5%" },
+  { name: "Ethiopia",                  x: "57.5%", y: "56.5%" },
+  { name: "Gambia",                    x: "44.0%", y: "53.5%" },
+  { name: "Ghana",                     x: "47.5%", y: "56.8%" },
+  { name: "Kenya",                     x: "57.0%", y: "60.5%" },
+  { name: "Lesotho",                   x: "53.2%", y: "74.2%" },
+  { name: "Liberia",                   x: "45.5%", y: "57.5%" },
+  { name: "Libya",                     x: "51.8%", y: "42.8%" },
+  { name: "Madagascar",                x: "58.8%", y: "67.5%" },
+  { name: "Malawi",                    x: "55.2%", y: "65.8%" },
+  { name: "Mauritania",                x: "45.0%", y: "49.5%" },
+  { name: "Morocco",                   x: "47.0%", y: "40.8%" },
+  { name: "Mozambique",                x: "55.8%", y: "68.5%" },
+  { name: "Namibia",                   x: "51.0%", y: "70.8%" },
+  { name: "Rwanda",                    x: "54.5%", y: "62.0%" },
+  { name: "Sierra Leone",              x: "44.8%", y: "57.2%" },
+  { name: "Somalia",                   x: "58.8%", y: "56.8%" },
+  { name: "South Africa",             x: "52.2%", y: "74.5%" },
+  { name: "South Sudan",              x: "55.0%", y: "57.5%" },
+  { name: "Sudan",                     x: "54.8%", y: "50.8%" },
+  { name: "Tanzania",                  x: "55.8%", y: "63.5%" },
+  { name: "Togo",                      x: "48.2%", y: "56.5%" },
+  { name: "Tunisia",                   x: "50.5%", y: "40.2%" },
+  { name: "United Kingdom", uk: true,  x: "47.8%", y: "24.5%" },
+  { name: "Zambia",                    x: "53.5%", y: "66.2%" },
+  { name: "Zimbabwe",                  x: "53.2%", y: "68.8%" },
 ];
 
 export default function MapSection() {
-  const svgRef = useRef(null);
-  const tooltipRef = useRef(null);
   const containerRef = useRef(null);
+  const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0, hq: false, uk: false });
 
-  useEffect(() => {
-    const W = 1010, H = 666;
-    const ns = "http://www.w3.org/2000/svg";
+  const handleEnter = (e, c) => {
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const pinRect = e.currentTarget.getBoundingClientRect();
+    setTooltip({
+      visible: true,
+      text: c.hq ? `${c.name} (Headquarters)` : c.name,
+      x: pinRect.left - containerRect.left + pinRect.width / 2,
+      y: pinRect.top - containerRect.top,
+      hq: !!c.hq,
+      uk: !!c.uk,
+    });
+  };
 
-    async function loadDeps() {
-      // Load TopoJSON and D3-geo from CDN
-      await Promise.all([
-        loadScript("https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"),
-        loadScript("https://cdn.jsdelivr.net/npm/d3-geo@3/dist/d3-geo.min.js"),
-      ]);
-
-      const res = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json");
-      const worldData = await res.json();
-
-      const land = window.topojson.feature(worldData, worldData.objects.countries);
-      const projection = window.d3.geoNaturalEarth1()
-        .scale(155)
-        .translate([W / 2 - 30, H / 2 + 40]);
-      const pathGen = window.d3.geoPath().projection(projection);
-
-      const svg = svgRef.current;
-      svg.innerHTML = "";
-
-      // Background
-      const bg = document.createElementNS(ns, "rect");
-      bg.setAttribute("width", W); bg.setAttribute("height", H);
-      bg.setAttribute("fill", "#c8e6e6");
-      svg.appendChild(bg);
-
-      // Land
-      const landG = document.createElementNS(ns, "g");
-      land.features.forEach(f => {
-        const el = document.createElementNS(ns, "path");
-        el.setAttribute("d", pathGen(f));
-        el.setAttribute("fill", "#b8d4d4");
-        el.setAttribute("stroke", "#8ab8b8");
-        el.setAttribute("stroke-width", "0.4");
-        landG.appendChild(el);
-      });
-      svg.appendChild(landG);
-
-      // Markers
-      const markersG = document.createElementNS(ns, "g");
-      COUNTRIES.forEach(c => {
-        const proj = projection(c.coords);
-        if (!proj) return;
-        const [x, y] = proj;
-        const g = document.createElementNS(ns, "g");
-        g.style.cursor = "pointer";
-
-        // UK gets a larger outer ring to make it prominent
-        if (c.uk) {
-          const outer = document.createElementNS(ns, "circle");
-          outer.setAttribute("cx", x); outer.setAttribute("cy", y);
-          outer.setAttribute("r", "11");
-          outer.setAttribute("fill", "#1a7a7a");
-          outer.setAttribute("stroke", "#0d4a4a");
-          outer.setAttribute("stroke-width", "2.5");
-          g.appendChild(outer);
-        }
-
-        // HQ pulse ring
-        if (c.hq) {
-          const pulse = document.createElementNS(ns, "circle");
-          pulse.setAttribute("cx", x); pulse.setAttribute("cy", y);
-          pulse.setAttribute("r", "15");
-          pulse.setAttribute("fill", "none");
-          pulse.setAttribute("stroke", "#c0392b");
-          pulse.setAttribute("stroke-width", "1.5");
-          pulse.setAttribute("opacity", "0.4");
-          g.appendChild(pulse);
-        }
-
-        // Main pin
-        const circle = document.createElementNS(ns, "circle");
-        circle.setAttribute("cx", x); circle.setAttribute("cy", y);
-        circle.setAttribute("r", c.hq ? "9" : c.uk ? "5" : "5");
-        circle.setAttribute("fill", c.hq ? "#c0392b" : "#0d5c5c");
-        circle.setAttribute("stroke", "#fff");
-        circle.setAttribute("stroke-width", c.hq ? "2" : "1.5");
-        g.appendChild(circle);
-
-        // Tooltip on hover
-        g.addEventListener("mouseenter", () => {
-          const tip = tooltipRef.current;
-          const containerRect = containerRef.current.getBoundingClientRect();
-          const gRect = g.getBoundingClientRect();
-          tip.textContent = c.hq ? `${c.name} (Headquarters)` : c.name;
-          tip.style.left = `${gRect.left - containerRect.left + gRect.width / 2}px`;
-          tip.style.top = `${gRect.top - containerRect.top}px`;
-          tip.style.opacity = "1";
-          tip.style.background = c.hq ? "#c0392b" : "#0d4a4a";
-        });
-        g.addEventListener("mouseleave", () => {
-          tooltipRef.current.style.opacity = "0";
-        });
-
-        markersG.appendChild(g);
-      });
-      svg.appendChild(markersG);
-
-      // Legend
-      const legG = document.createElementNS(ns, "g");
-      const legBg = document.createElementNS(ns, "rect");
-      legBg.setAttribute("x", "12"); legBg.setAttribute("y", H - 60);
-      legBg.setAttribute("width", "320"); legBg.setAttribute("height", "48");
-      legBg.setAttribute("rx", "6"); legBg.setAttribute("fill", "#d4ecec");
-      legG.appendChild(legBg);
-
-      [
-        { label: "Headquarters (Nigeria)", color: "#c0392b", x: 24 },
-        { label: "Operational country",    color: "#0d5c5c", x: 180 },
-      ].forEach(({ label, color, x }) => {
-        const dot = document.createElementNS(ns, "circle");
-        dot.setAttribute("cx", x); dot.setAttribute("cy", H - 36);
-        dot.setAttribute("r", "5"); dot.setAttribute("fill", color);
-        legG.appendChild(dot);
-        const txt = document.createElementNS(ns, "text");
-        txt.setAttribute("x", x + 10); txt.setAttribute("y", H - 32);
-        txt.setAttribute("font-size", "11"); txt.setAttribute("fill", "#0d4a4a");
-        txt.textContent = label;
-        legG.appendChild(txt);
-      });
-      svg.appendChild(legG);
-    }
-
-    loadDeps().catch(console.error);
-  }, []);
+  const handleLeave = () => setTooltip(t => ({ ...t, visible: false }));
 
   return (
     <section className="bg-bg-alt py-16 px-4 md:px-6 md:py-24">
@@ -183,35 +68,107 @@ export default function MapSection() {
         </div>
 
         {/* Map */}
-        <div className="md:w-7/12 w-full flex justify-center">
-          <div ref={containerRef} className="relative w-full max-w-2xl rounded-xl overflow-hidden">
+        <div className="md:w-7/12 w-full">
+          <div ref={containerRef} className="relative w-full rounded-xl overflow-hidden">
+
+            {/* SVG map from public folder */}
+            <img
+              src="/World_Map.svg"
+              alt="World map showing GirlLEAD operational countries"
+              className="w-full h-auto block"
+              loading="lazy"
+              decoding="async"
+            />
 
             {/* Tooltip */}
-            <div
-              ref={tooltipRef}
-              className="absolute z-10 text-white text-xs font-medium px-3 py-1.5 rounded-md pointer-events-none whitespace-nowrap opacity-0 transition-opacity duration-150 -translate-x-1/2 -translate-y-full"
-              style={{ background: "#0d4a4a" }}
-            />
+            {tooltip.visible && (
+              <div
+                className="absolute z-20 text-white text-xs font-semibold px-3 py-1.5 rounded-md pointer-events-none whitespace-nowrap -translate-x-1/2 -translate-y-full"
+                style={{
+                  left: tooltip.x,
+                  top: tooltip.y - 8,
+                  background: tooltip.hq ? "#c0392b" : "#0d4a4a",
+                }}
+              >
+                {tooltip.text}
+                <span
+                  className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 block"
+                  style={{
+                    borderLeft: "5px solid transparent",
+                    borderRight: "5px solid transparent",
+                    borderTop: `5px solid ${tooltip.hq ? "#c0392b" : "#0d4a4a"}`,
+                  }}
+                />
+              </div>
+            )}
 
-            <svg
-              ref={svgRef}
-              viewBox="0 0 1010 666"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-auto block"
-            />
+            {/* Markers */}
+            {COUNTRIES.map((c, i) => (
+              <div
+                key={i}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{ left: c.x, top: c.y }}
+                onMouseEnter={e => handleEnter(e, c)}
+                onMouseLeave={handleLeave}
+              >
+                {/* HQ pulse ring */}
+                {c.hq && (
+                  <span
+                    className="absolute rounded-full animate-ping"
+                    style={{
+                      width: 22, height: 22,
+                      top: -5, left: -5,
+                      background: "rgba(192,57,43,0.35)",
+                    }}
+                  />
+                )}
+
+                {/* UK outer ring */}
+                {c.uk && (
+                  <span
+                    className="absolute rounded-full"
+                    style={{
+                      width: 20, height: 20,
+                      top: -5, left: -5,
+                      background: "#1a7a7a",
+                      border: "2.5px solid #0d4a4a",
+                    }}
+                  />
+                )}
+
+                {/* Pin */}
+                <span
+                  className="block rounded-full cursor-pointer transition-transform duration-150 hover:scale-125 relative z-10"
+                  style={{
+                    width:  c.hq ? 14 : c.uk ? 8 : 8,
+                    height: c.hq ? 14 : c.uk ? 8 : 8,
+                    background: c.hq ? "#c0392b" : "#0d5c5c",
+                    border: "2px solid #fff",
+                  }}
+                />
+              </div>
+            ))}
+
+            {/* Legend */}
+            <div className="absolute bottom-3 left-3 bg-white/85 rounded-lg px-3 py-2 flex flex-col gap-1.5 text-xs font-medium text-[#0d4a4a]">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#c0392b] border-2 border-white flex-shrink-0" />
+                Headquarters (Nigeria)
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#0d5c5c] border-2 border-white flex-shrink-0" />
+                Operational country
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#1a7a7a] border-2 border-[#0d4a4a] flex-shrink-0" />
+                United Kingdom
+              </div>
+            </div>
+
           </div>
         </div>
 
       </div>
     </section>
   );
-}
-
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) return resolve();
-    const s = document.createElement("script");
-    s.src = src; s.onload = resolve; s.onerror = reject;
-    document.head.appendChild(s);
-  });
 }
