@@ -31,7 +31,7 @@ const COUNTRIES = [
   { name: "Namibia",          x: "50.4%", y: "85.0%" },
   { name: "Eswatini",         x: "54.7%", y: "78.1%" },
   { name: "Lesotho",          x: "51.8%", y: "80.0%" },
-  { name: "South Africa",     x: "54.9%", y: "88.0%" },
+  { name: "South Africa",     x: "54.9%", y: "94.0%" },
   { name: "United Kingdom", uk: true, x: "42.3%", y: "30.0%" },
 ];
 /* Teardrop SVG path centered at top, pointing downward */
