@@ -32,7 +32,7 @@ const COUNTRIES = [
   { name: "Eswatini",         x: "61.3%", y: "93.2%" },
   { name: "Lesotho",          x: "59.3%", y: "94.7%" },
   { name: "South Africa",     x: "54.9%", y: "94.0%" },
-  { name: "United Kingdom", uk: true, x: "34.7%", y: "11.0%" },
+  { name: "United Kingdom", uk: true, x: "35.7%", y: "12.0%" },
 ];
 
 const Teardrop = ({ size = 14, color = "#0d5c5c", border = "#fff" }) => (
