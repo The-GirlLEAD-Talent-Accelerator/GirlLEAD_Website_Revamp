@@ -26,7 +26,7 @@ const Main = () => {
                 <div className="flex flex-col justify-center">
                   <h3 className="text-left font-bold">
                     {inView && (
-                      <CountUp start={500} end={2000} duration={7} suffix="+" />
+                      <CountUp start={1000} end={4000} duration={7} suffix="+" />
                     )}
                   </h3>
 
