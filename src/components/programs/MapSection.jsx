@@ -34,7 +34,7 @@ const COUNTRIES = [
   { name: "South Africa",     x: "54.9%", y: "94.0%" },
   { name: "United Kingdom", uk: true, x: "34.7%", y: "11.0%" },
 ];
-/* Teardrop SVG path centered at top, pointing downward */
+
 const Teardrop = ({ size = 14, color = "#0d5c5c", border = "#fff" }) => (
   <svg
     width={size}
@@ -58,7 +58,6 @@ export default function MapSection() {
   const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0, hq: false });
   const [containerWidth, setContainerWidth] = useState(600);
 
-  // Track container width to scale pins responsively
   useEffect(() => {
     const update = () => {
       if (containerRef.current) {
@@ -71,45 +70,33 @@ export default function MapSection() {
     return () => ro.disconnect();
   }, []);
 
-  // Scale factor: 1.0 at 600px+, scales down proportionally below that
-  const scale = Math.min(1, containerWidth / 600);
+  const scale     = Math.min(1, containerWidth / 600);
+  const pinSize   = Math.max(6,  Math.round(14 * scale));
+  const pinSizeHQ = Math.max(10, Math.round(22 * scale));
+  const pinSizeUK = Math.max(8,  Math.round(18 * scale));
 
-  const pinSize      = Math.max(6,  Math.round(14 * scale));
-  const pinSizeHQ    = Math.max(10, Math.round(22 * scale));
-  const pinSizeUK    = Math.max(8,  Math.round(18 * scale));
-
-  const handleEnter = (e, c) => {
+  const showTooltip = (e, c) => {
     const cRect = containerRef.current.getBoundingClientRect();
     const pRect = e.currentTarget.getBoundingClientRect();
-    setTooltip({
-      visible: true,
-      text: c.hq ? `${c.name} (Headquarters)` : c.name,
-      x: pRect.left - cRect.left + pRect.width / 2,
-      y: pRect.top - cRect.top,
-      hq: !!c.hq,
-    });
+    const newText = c.hq ? `${c.name} (Headquarters)` : c.name;
+    const rawX = pRect.left - cRect.left + pRect.width / 2;
+    const clampedX = Math.max(60, Math.min(rawX, containerWidth - 60));
+    setTooltip({ visible: true, text: newText, x: clampedX, y: pRect.top - cRect.top, hq: !!c.hq });
   };
 
-  const handleLeave = () => setTooltip(t => ({ ...t, visible: false }));
+  const hideTooltip = () => setTooltip(t => ({ ...t, visible: false }));
 
-  const handleTouch = (e, c) => {
+  const handleClick = (e, c) => {
     e.stopPropagation();
     const cRect = containerRef.current.getBoundingClientRect();
     const pRect = e.currentTarget.getBoundingClientRect();
     const newText = c.hq ? `${c.name} (Headquarters)` : c.name;
+    const rawX = pRect.left - cRect.left + pRect.width / 2;
+    const clampedX = Math.max(60, Math.min(rawX, containerWidth - 60));
     setTooltip(prev =>
       prev.visible && prev.text === newText
         ? { ...prev, visible: false }
-        : {
-            visible: true,
-            text: newText,
-            x: Math.max(60, Math.min(
-              pRect.left - cRect.left + pRect.width / 2,
-              containerWidth - 60
-            )),
-            y: pRect.top - cRect.top,
-            hq: !!c.hq,
-          }
+        : { visible: true, text: newText, x: clampedX, y: pRect.top - cRect.top, hq: !!c.hq }
     );
   };
 
@@ -147,10 +134,7 @@ export default function MapSection() {
                 className="absolute z-20 text-white text-xs font-semibold px-2 py-1 rounded-md pointer-events-none whitespace-nowrap"
                 style={{
                   background: tooltip.hq ? "#c0392b" : "#0d4a4a",
-                  left: Math.max(
-                    60,
-                    Math.min(tooltip.x, containerWidth - 60)
-                  ),
+                  left: tooltip.x,
                   top: tooltip.y - 8,
                   transform: "translateX(-50%) translateY(-100%)",
                 }}
@@ -178,10 +162,12 @@ export default function MapSection() {
                   top: c.y,
                   transform: "translate(-50%, -100%)",
                   zIndex: c.hq ? 10 : c.uk ? 9 : 1,
+                  padding: "6px",
+                  margin: "-6px",
                 }}
-                onMouseEnter={e => handleEnter(e, c)}
-                onMouseLeave={handleLeave}
-                onTouchEnd={e => handleTouch(e, c)}
+                onMouseEnter={(e) => showTooltip(e, c)}   // ← hover on desktop
+                onMouseLeave={hideTooltip}                 // ← hide on mouse-out desktop
+                onClick={(e) => handleClick(e, c)}         // ← tap toggle on mobile
               >
                 {c.hq && (
                   <span
@@ -195,7 +181,6 @@ export default function MapSection() {
                     }}
                   />
                 )}
-
                 <Teardrop
                   size={c.hq ? pinSizeHQ : c.uk ? pinSizeUK : pinSize}
                   color={c.hq ? "#c0392b" : c.uk ? "#1a7a7a" : "#0d5c5c"}

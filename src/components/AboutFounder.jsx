@@ -144,12 +144,13 @@ export default function AboutFounder() {
             About the Founder
           </h2>
 
-          {/* Founder image – original shape */}
-          <div className="w-full max-w-xs sm:max-w-sm overflow-hidden border-4 border-[#c0ae90] shadow-md mb-6">
+          {/* Founder image – reduced, original shape, high quality */}
+          <div className="w-48 sm:w-56 md:w-64 overflow-hidden border-4 border-[#c0ae90] shadow-md mb-6 mx-auto">
             <img
               src="/Founder.png"
               alt="Augustine Enodiana"
               className="w-full h-auto object-contain"
+              style={{ imageRendering: "auto" }}
             />
           </div>
 
@@ -184,7 +185,7 @@ export default function AboutFounder() {
 
             {/* Modal content */}
             <Motion.div
-              className="relative bg-white rounded-2xl shadow-xl w-full max-w-lg max-h-[85vh] overflow-y-auto z-10 p-6 sm:p-8"
+              className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto z-10 p-8 sm:p-12"  
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
@@ -199,12 +200,13 @@ export default function AboutFounder() {
                 ✕
               </button>
 
-              {/* Founder image in modal – original shape */}
-              <div className="w-full overflow-hidden border-4 border-[#c0ae90] shadow-md mx-auto mb-6">
+              {/* Founder image in modal – compact, original shape */}
+              <div className="w-40 sm:w-48 overflow-hidden border-4 border-[#c0ae90] shadow-md mx-auto mb-6">
                 <img
                   src="/Founder.png"
                   alt="Augustine Enodiana"
                   className="w-full h-auto object-contain"
+                  style={{ imageRendering: "auto" }}
                 />
               </div>
 
