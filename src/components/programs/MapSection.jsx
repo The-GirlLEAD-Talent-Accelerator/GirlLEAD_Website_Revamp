@@ -27,11 +27,11 @@ const COUNTRIES = [
   { name: "Madagascar",       x: "72.5%", y: "84.0%" },
   { name: "Zambia",           x: "56.7%", y: "80.0%" },
   { name: "Zimbabwe",         x: "60.3%", y: "83.0%" },
-  { name: "Botswana",         x: "49.9%", y: "76.5%" },
-  { name: "Namibia",          x: "46.8%", y: "74.9%" },
+  { name: "Botswana",         x: "54.9%", y: "85.0%" },
+  { name: "Namibia",          x: "50.4%", y: "85.0%" },
   { name: "Eswatini",         x: "54.7%", y: "78.1%" },
   { name: "Lesotho",          x: "51.8%", y: "80.0%" },
-  { name: "South Africa",     x: "49.4%", y: "81.9%" },
+  { name: "South Africa",     x: "54.9%", y: "88.0%" },
   { name: "United Kingdom", uk: true, x: "42.3%", y: "30.0%" },
 ];
 /* Teardrop SVG path centered at top, pointing downward */
