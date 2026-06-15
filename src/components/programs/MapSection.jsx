@@ -12,7 +12,7 @@ const COUNTRIES = [
   { name: "Ghana",            x: "37.0%", y: "59.1%" },
   { name: "Togo",             x: "38.8%", y: "59.4%" },
   { name: "Benin Republic",   x: "39.8%", y: "59.1%" },
-  { name: "Nigeria",  hq: true, x: "43.2%", y: "59.5%" },
+  { name: "Nigeria", hq: true, x: "43.2%", y: "59.5%" },
   { name: "Cameroon",         x: "46.5%", y: "61.1%" },
   { name: "Sudan",            x: "59.8%", y: "49.6%" },
   { name: "South Sudan",      x: "59.8%", y: "58.5%" },
@@ -34,7 +34,7 @@ const COUNTRIES = [
   { name: "South Africa",     x: "54.9%", y: "94.0%" },
   { name: "United Kingdom", uk: true, x: "34.7%", y: "11.0%" },
 ];
-/* Teardrop SVG path centered at top, pointing downward */
+
 const Teardrop = ({ size = 14, color = "#0d5c5c", border = "#fff" }) => (
   <svg
     width={size}
@@ -55,33 +55,48 @@ const Teardrop = ({ size = 14, color = "#0d5c5c", border = "#fff" }) => (
 
 export default function MapSection() {
   const containerRef = useRef(null);
-  const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0, hq: false });
   const [containerWidth, setContainerWidth] = useState(600);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Track container width to scale pins responsively
+  // Desktop tooltip state
+  const [desktopTooltip, setDesktopTooltip] = useState({
+    visible: false, text: "", x: 0, y: 0, hq: false,
+  });
+
+  // Mobile tooltip state — shows country name in a pill below the map
+  const [mobileLabel, setMobileLabel] = useState({ visible: false, text: "", hq: false });
+
   useEffect(() => {
     const update = () => {
       if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
+        const w = containerRef.current.offsetWidth;
+        setContainerWidth(w);
+        setIsMobile(window.innerWidth < 768);
       }
     };
     update();
     const ro = new ResizeObserver(update);
     if (containerRef.current) ro.observe(containerRef.current);
-    return () => ro.disconnect();
+    window.addEventListener("resize", update);
+    return () => { ro.disconnect(); window.removeEventListener("resize", update); };
   }, []);
 
-  // Scale factor: 1.0 at 600px+, scales down proportionally below that
-  const scale = Math.min(1, containerWidth / 600);
+  // Desktop: full size pins
+  const desktopPinSize   = 14;
+  const desktopPinSizeHQ = 22;
+  const desktopPinSizeUK = 18;
 
-  const pinSize      = Math.max(6,  Math.round(14 * scale));
-  const pinSizeHQ    = Math.max(10, Math.round(22 * scale));
-  const pinSizeUK    = Math.max(8,  Math.round(18 * scale));
+  // Mobile: aggressively scaled pins
+  const mobileScale    = Math.min(1, containerWidth / 500);
+  const mobilePinSize   = Math.max(4, Math.round(9  * mobileScale));
+  const mobilePinSizeHQ = Math.max(7, Math.round(13 * mobileScale));
+  const mobilePinSizeUK = Math.max(5, Math.round(11 * mobileScale));
 
+  // Desktop hover handlers — unchanged
   const handleEnter = (e, c) => {
     const cRect = containerRef.current.getBoundingClientRect();
     const pRect = e.currentTarget.getBoundingClientRect();
-    setTooltip({
+    setDesktopTooltip({
       visible: true,
       text: c.hq ? `${c.name} (Headquarters)` : c.name,
       x: pRect.left - cRect.left + pRect.width / 2,
@@ -89,49 +104,44 @@ export default function MapSection() {
       hq: !!c.hq,
     });
   };
+  const handleLeave = () => setDesktopTooltip(t => ({ ...t, visible: false }));
 
-  const handleLeave = () => setTooltip(t => ({ ...t, visible: false }));
-
+  // Mobile tap handler — shows label pill below map, tap same pin to dismiss
   const handleTouch = (e, c) => {
+    e.preventDefault();
     e.stopPropagation();
-    const cRect = containerRef.current.getBoundingClientRect();
-    const pRect = e.currentTarget.getBoundingClientRect();
     const newText = c.hq ? `${c.name} (Headquarters)` : c.name;
-    setTooltip(prev =>
+    setMobileLabel(prev =>
       prev.visible && prev.text === newText
-        ? { ...prev, visible: false }
-        : {
-            visible: true,
-            text: newText,
-            x: Math.max(60, Math.min(
-              pRect.left - cRect.left + pRect.width / 2,
-              containerWidth - 60
-            )),
-            y: pRect.top - cRect.top,
-            hq: !!c.hq,
-          }
+        ? { visible: false, text: "", hq: false }
+        : { visible: true, text: newText, hq: !!c.hq }
     );
   };
 
   return (
-    <section className="bg-bg-alt py-16 px-4 md:px-6 md:py-24">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+    <section className="bg-bg-alt py-12 px-4 md:px-6 md:py-24">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
 
         {/* Text */}
         <div className="md:w-5/12 text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-hero leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-brand-hero leading-tight">
             We operate in<br />
             multiple countries<br />
             in Africa
           </h2>
         </div>
 
-        {/* Map */}
-        <div className="md:w-7/12 w-full">
+        {/* Map column */}
+        <div className="w-full md:w-7/12">
+
+          {/* Map container */}
           <div
             ref={containerRef}
             className="relative w-full rounded-xl overflow-hidden"
-            onClick={() => setTooltip(t => ({ ...t, visible: false }))}
+            onClick={() => {
+              setDesktopTooltip(t => ({ ...t, visible: false }));
+              setMobileLabel({ visible: false, text: "", hq: false });
+            }}
           >
             <img
               src="/World_Map.svg"
@@ -141,72 +151,87 @@ export default function MapSection() {
               decoding="async"
             />
 
-            {/* Tooltip */}
-            {tooltip.visible && (
+            {/* Desktop tooltip — hover only, hidden on mobile */}
+            {!isMobile && desktopTooltip.visible && (
               <div
-                className="absolute z-20 text-white text-xs font-semibold px-2 py-1 rounded-md pointer-events-none whitespace-nowrap"
+                className="absolute z-20 text-white text-xs font-semibold px-2 py-1 rounded-md pointer-events-none whitespace-nowrap hidden md:block"
                 style={{
-                  background: tooltip.hq ? "#c0392b" : "#0d4a4a",
-                  left: Math.max(
-                    60,
-                    Math.min(tooltip.x, containerWidth - 60)
-                  ),
-                  top: tooltip.y - 8,
+                  background: desktopTooltip.hq ? "#c0392b" : "#0d4a4a",
+                  left: Math.max(50, Math.min(desktopTooltip.x, containerWidth - 50)),
+                  top: desktopTooltip.y - 8,
                   transform: "translateX(-50%) translateY(-100%)",
                 }}
               >
-                {tooltip.text}
+                {desktopTooltip.text}
                 <span
                   className="absolute left-1/2 top-full w-0 h-0 block"
                   style={{
                     transform: "translateX(-50%)",
                     borderLeft: "5px solid transparent",
                     borderRight: "5px solid transparent",
-                    borderTop: `5px solid ${tooltip.hq ? "#c0392b" : "#0d4a4a"}`,
+                    borderTop: `5px solid ${desktopTooltip.hq ? "#c0392b" : "#0d4a4a"}`,
                   }}
                 />
               </div>
             )}
 
             {/* Markers */}
-            {COUNTRIES.map((c, i) => (
-              <div
-                key={i}
-                className="absolute cursor-pointer"
-                style={{
-                  left: c.x,
-                  top: c.y,
-                  transform: "translate(-50%, -100%)",
-                  zIndex: c.hq ? 10 : c.uk ? 9 : 1,
-                }}
-                onMouseEnter={e => handleEnter(e, c)}
-                onMouseLeave={handleLeave}
-                onTouchEnd={e => handleTouch(e, c)}
-              >
-                {c.hq && (
-                  <span
-                    className="absolute animate-ping rounded-full"
-                    style={{
-                      width: pinSizeHQ + 6,
-                      height: pinSizeHQ + 6,
-                      top: -(pinSizeHQ + 6) / 2 + pinSizeHQ / 2,
-                      left: -(pinSizeHQ + 6) / 2 + pinSizeHQ / 2,
-                      background: "rgba(192,57,43,0.3)",
-                    }}
+            {COUNTRIES.map((c, i) => {
+              const size = isMobile
+                ? (c.hq ? mobilePinSizeHQ : c.uk ? mobilePinSizeUK : mobilePinSize)
+                : (c.hq ? desktopPinSizeHQ : c.uk ? desktopPinSizeUK : desktopPinSize);
+
+              return (
+                <div
+                  key={i}
+                  className="absolute cursor-pointer"
+                  style={{
+                    left: c.x,
+                    top: c.y,
+                    transform: "translate(-50%, -100%)",
+                    zIndex: c.hq ? 10 : c.uk ? 9 : 1,
+                    // Larger invisible touch target on mobile
+                    padding: isMobile ? "4px" : "0px",
+                  }}
+                  onMouseEnter={!isMobile ? (e => handleEnter(e, c)) : undefined}
+                  onMouseLeave={!isMobile ? handleLeave : undefined}
+                  onTouchStart={isMobile ? (e => handleTouch(e, c)) : undefined}
+                >
+                  {c.hq && (
+                    <span
+                      className="absolute animate-ping rounded-full"
+                      style={{
+                        width: size + 6,
+                        height: size + 6,
+                        top: -(size + 6) / 2 + size / 2,
+                        left: -(size + 6) / 2 + size / 2,
+                        background: "rgba(192,57,43,0.3)",
+                      }}
+                    />
+                  )}
+                  <Teardrop
+                    size={size}
+                    color={c.hq ? "#c0392b" : c.uk ? "#1a7a7a" : "#0d5c5c"}
+                    border={c.hq ? "#fff" : c.uk ? "#0d4a4a" : "#fff"}
                   />
-                )}
-
-                <Teardrop
-                  size={c.hq ? pinSizeHQ : c.uk ? pinSizeUK : pinSize}
-                  color={c.hq ? "#c0392b" : c.uk ? "#1a7a7a" : "#0d5c5c"}
-                  border={c.hq ? "#fff" : c.uk ? "#0d4a4a" : "#fff"}
-                />
-              </div>
-            ))}
-
+                </div>
+              );
+            })}
           </div>
-        </div>
 
+          {/* Mobile label pill — rendered BELOW the map, never overlaps pins */}
+          <div className="md:hidden mt-3 flex justify-center min-h-[32px]">
+            {mobileLabel.visible && (
+              <div
+                className="text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-md"
+                style={{ background: mobileLabel.hq ? "#c0392b" : "#0d4a4a" }}
+              >
+                {mobileLabel.text}
+              </div>
+            )}
+          </div>
+
+        </div>
       </div>
     </section>
   );
