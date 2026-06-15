@@ -1,12 +1,12 @@
 import { useState, useRef } from "react";
 
 const COUNTRIES = [
-  { name: "Morocco",          x: "39.9%", y: "43.9%" },
-  { name: "Tunisia",          x: "48.1%", y: "41.2%" },
+  { name: "Morocco",          x: "33.1%", y: "32.5%" },
+  { name: "Tunisia",          x: "45.9%", y: "31.5%" },
   { name: "Libya",            x: "51.8%", y: "41.9%" },
-  { name: "Egypt",            x: "57.1%", y: "41.2%" },
-  { name: "Mauritania",       x: "36.2%", y: "50.8%" },
-  { name: "Gambia",           x: "33.1%", y: "57.9%" },
+  { name: "Egypt",            x: "59.1%", y: "41.2%" },
+  { name: "Mauritania",       x: "33.2%", y: "48.8%" },
+  { name: "Gambia",           x: "26.1%", y: "53.9%" },
   { name: "Sierra Leone",     x: "33.3%", y: "61.1%" },
   { name: "Liberia",          x: "34.4%", y: "63.3%" },
   { name: "Ghana",            x: "37.8%", y: "62.1%" },
