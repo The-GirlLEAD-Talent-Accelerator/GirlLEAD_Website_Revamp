@@ -29,8 +29,8 @@ const COUNTRIES = [
   { name: "Zimbabwe",         x: "60.3%", y: "83.0%" },
   { name: "Botswana",         x: "54.9%", y: "85.0%" },
   { name: "Namibia",          x: "50.4%", y: "85.0%" },
-  { name: "Eswatini",         x: "54.7%", y: "78.1%" },
-  { name: "Lesotho",          x: "58.8%", y: "95.0%" },
+  { name: "Eswatini",         x: "61.3%", y: "93.5%" },
+  { name: "Lesotho",          x: "60.0%", y: "94.7%" },
   { name: "South Africa",     x: "54.9%", y: "94.0%" },
   { name: "United Kingdom", uk: true, x: "42.3%", y: "30.0%" },
 ];
