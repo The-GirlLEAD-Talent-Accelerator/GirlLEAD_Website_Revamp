@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
+import AboutFounder from "../components/AboutFounder";
 import MeetTheTeam from "../components/MeetTheTeam";
 import JoinAndRecruitment from "../components/JoinAndRecruitment";
 import ImpactAssociateAlumniStories from "../components/ImpactAssociateAlumniStories";
@@ -62,6 +63,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      
+      <AboutFounder />
       <MeetTheTeam />
       <JoinAndRecruitment />
       <ImpactAssociateAlumniStories

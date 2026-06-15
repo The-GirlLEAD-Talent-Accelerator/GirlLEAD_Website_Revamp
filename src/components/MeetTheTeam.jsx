@@ -14,7 +14,7 @@ export default function MeetTheTeam() {
 
         {/* Heading */}
         <h2 className="text-center text-2xl font-bold text-gray-800 mb-3">
-          Meet Some of the Team
+          Meet the Team
         </h2>
         <p className="text-center text-sm text-gray-500 mb-16 max-w-xl mx-auto">
           These are our Impact Associates. They are the brains behind the work we do at GirlLEAD Accelerators Program
