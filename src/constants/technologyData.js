@@ -8,19 +8,19 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD Bootcamp",
-        image: "/programs/Bootcamp.jpg",
+        image: "/programs/Bootcamp.webp",
         description: "A program that equips young women with tech, digital, and leadership skills.",
         applyLink: ""
       },
       {
         title: "GirlLEAD x DataCamp Scholarship programme (WiD)",
-        image: "/programs/tech-image2.jpg",
+        image: "/programs/tech-image2.webp",
         description: "A scholarship programme supporting women in data science and analytics.",
         applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSe5i-iIjHUoaa2b2YEwOjNNI2OKQWrXHMv_J2oCHBLtzEQy6A/viewform"
       },
       {
         title: "Girls in STEM",
-        image: "/programs/STEM.jpg",
+        image: "/programs/STEM.webp",
         description: "A program that encourages young women to pursue careers in science, technology, engineering, and mathematics.",
       },
     ],
@@ -31,14 +31,14 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD x European Business Institute",
-        image: "/programs/EBU.jpg",
+        image: "/programs/EBU.webp",
         description: "A partnership program that provides training and mentorship in business management and entrepreneurship.",
         applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSekr70puumhKrxV-oJyEwqmRHCAMrCkUPQjFOvWmdbZkFQv9g/viewform",
 
       },
       {
         title: "Women in IT BootCamp",
-        image: "/programs/IT.jpg",
+        image: "/programs/IT.webp",
         description: "A program that provides training and mentorship in IT skills and entrepreneurship.",
         applyLink: "",
       },
@@ -50,7 +50,7 @@ export const TAB_CONTENT = {
     programs: [
       {
         title: "GirlLEAD Leadership Bootcamp",
-        image: "/programs/Leadership.jpg",
+        image: "/programs/Leadership.webp",
       },
       // {
       //   title: "Future Leaders Academy",

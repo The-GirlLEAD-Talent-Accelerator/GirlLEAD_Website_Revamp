@@ -1,10 +1,10 @@
 const teamMembers = [
-  { name: "Gabriel Onyebuolise",     role: "Head of Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.png" },
-  { name: "Glamour Idiagi",          role: "Programs Associate, Programs and Partnerships", countryCode: "ng", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.png" },
-  { name: "Joy Okeh",                role: "People Operations Officer, People and Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/...", image: "/Team/Joy.png" },
-  { name: "Blessing Aluge",          role: "Operations Assistant, People and Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.png" },
-  { name: "Innocent Bayila Solomon", role: "Graphics Designer, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.png" },
-  { name: "Precious Ihire",          role: "Software Engineer, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.png" },
+  { name: "Gabriel Onyebuolise",     role: "Head of Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.webp" },
+  { name: "Joy Okeh",                role: "Head, People Operations", countryCode: "ng", linkedin: "https://www.linkedin.com/in/joyokeh-acipm-hrpl/", image: "/Team/Joy.webp" },
+  { name: "Glamour Idiagi",          role: "Programs Associate, Programs and Partnerships", countryCode: "ng", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.webp" },
+  { name: "Blessing Aluge",          role: "Manager, People Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.webp" },
+  { name: "Innocent Bayila Solomon", role: "Graphics Design Impact Officer, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.webp" },
+  { name: "Precious Ihire",          role: "Software Engineer, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.webp" },
 ];
 
 export default function MeetTheTeam() {

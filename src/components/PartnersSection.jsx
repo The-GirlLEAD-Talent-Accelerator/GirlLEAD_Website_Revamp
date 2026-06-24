@@ -23,6 +23,7 @@ const PartnersSection = () => {
     { name: 'Opolo Hub', logo: 'https://i.postimg.cc/ydc1LFsX/image7.png' },
     { name: 'Leap Africa', logo: 'https://i.postimg.cc/bJkymQpV/image18.png' },
     { name: 'eMobilis', logo: 'https://i.postimg.cc/3wPrjL5C/image2.png' },
+    { name: 'TheTechOga', logo: 'https://i.postimg.cc/KzWndfVb/TechOga.png' },
   ];
 
   // Triple the partners for seamless infinite scroll

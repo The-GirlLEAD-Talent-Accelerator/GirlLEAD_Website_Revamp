@@ -48,19 +48,19 @@ const FocusSection = () => {
       >
         {[
           {
-            img: "/focus-image1.png",
+            img: "/focus-image1.webp",
             title: "Tech Skills",
             text: "Digital literacy, coding, and data analytics.",
             tab: "Technology",
           },
           {
-            img: "/focus-image2.png",
+            img: "/focus-image2.webp",
             title: "Social Entrepreneurship",
             text: "Empowering innovators with business building and financial literacy.",
             tab: "Social Entrepreneurship",
           },
           {
-            img: "/focus-image3.png",
+            img: "/focus-image3.webp",
             title: "Leadership",
             text: "Communication, mentoring, and personal growth for impactful leadership.",
             tab: "Leadership",

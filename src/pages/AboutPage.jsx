@@ -56,7 +56,7 @@ export default function AboutPage() {
       <section className="w-full bg-[#dff2f2] py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <img
-            src="/Vision.png"
+            src="/Vision.webp"
             alt="Our Vision, Mission and Values"
             className="w-full h-auto object-contain scale-110 md:scale-100 origin-center"
           />
