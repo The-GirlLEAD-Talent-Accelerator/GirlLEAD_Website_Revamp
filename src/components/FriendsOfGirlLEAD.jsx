@@ -17,7 +17,7 @@ const friends = [
 
 function Card({ person }) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden">
+    <div className="bg-bg-white rounded-2xl overflow-hidden">
 
       {/* Photo */}
       <div
@@ -33,8 +33,8 @@ function Card({ person }) {
 
       {/* Info */}
       <div className="px-4 py-3">
-        <p className="font-bold text-gray-800 text-sm">{person.name}</p>
-        <p className="text-xs text-gray-500 mt-0.5 mb-2">{person.role}</p>
+        <p className="font-bold text-text-main text-sm">{person.name}</p>
+        <p className="text-xs text-text-muted mt-0.5 mb-2">{person.role}</p>
         <a
           href={person.linkedin}
           target="_blank"
@@ -52,7 +52,7 @@ function Card({ person }) {
 
 export default function FriendsOfGirlLEAD() {
   return (
-    <section className="w-full bg-[#0d4a4a] py-16 px-6">
+    <section className="w-full bg-brand-hero py-16 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}

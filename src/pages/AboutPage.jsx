@@ -53,7 +53,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Values */}
-      <section className="w-full bg-[#dff2f2] py-16 px-6">
+      <section className="w-full bg-bg-soft py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <img
             src="/Vision.webp"

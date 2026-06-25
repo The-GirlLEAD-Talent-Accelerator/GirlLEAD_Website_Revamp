@@ -30,7 +30,7 @@ function MemberCard({ member, staggerUp }) {
       style={{ transform: staggerUp ? "translateY(-30px)" : "translateY(0px)" }}
     >
       {/* Photo */}
-      <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-[#c0ae90] flex-shrink-0">
+      <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-border-soft flex-shrink-0">
         <img
           src={member.image}
           alt={member.name}
@@ -39,7 +39,7 @@ function MemberCard({ member, staggerUp }) {
       </div>
 
       {/* Name + flag */}
-      <p className="text-xs md:text-sm font-bold text-gray-800 text-center leading-snug">
+      <p className="text-xs md:text-sm font-bold text-text-main text-center leading-snug">
         {member.name}{" "}
         <img
           src={`https://flagcdn.com/20x15/${member.countryCode}.png`}
@@ -51,7 +51,7 @@ function MemberCard({ member, staggerUp }) {
       </p>
 
       {/* Role */}
-      <p className="text-[11px] text-gray-500 text-center leading-snug px-1">
+      <p className="text-[11px] text-text-muted text-center leading-snug px-1">
         {member.role}
       </p>
 
@@ -87,14 +87,14 @@ export default function MeetTheTeam() {
   const row2 = teamMembers.slice(6, 12);
 
   return (
-    <section className="w-full bg-[#dff2f2] py-16 px-6">
+    <section className="w-full bg-bg-soft py-16 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
-        <h2 className="text-center text-2xl font-bold text-gray-800 mb-3">
+        <h2 className="text-center text-2xl font-bold text-text-main mb-3">
           Meet the Team
         </h2>
-        <p className="text-center text-sm text-gray-500 mb-12 max-w-xl mx-auto">
+        <p className="text-center text-sm text-text-muted mb-12 max-w-xl mx-auto">
           These are our Impact Associates. They are the brains behind the work we do at GirlLEAD Accelerators Program
         </p>
 
