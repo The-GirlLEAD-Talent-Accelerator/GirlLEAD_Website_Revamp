@@ -140,7 +140,7 @@ export default function AboutFounder() {
         <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
 
           {/* Heading */}
-          <h2 className="text-2xl font-bold text-gray-800 mb-8">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-8">
             About the Founder
           </h2>
 
@@ -155,7 +155,7 @@ export default function AboutFounder() {
           </div>
 
           {/* Short preview text */}
-          <p className="text-sm sm:text-base text-gray-600 max-w-xl leading-relaxed text-left sm:text-center">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-white max-w-xl leading-relaxed text-left sm:text-center">
             {founderShort}{" "}
             <button
               onClick={() => setOpen(true)}
