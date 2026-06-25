@@ -1,19 +1,44 @@
 const teamMembers = [
   // Row 1
-  { name: "Faith Donwa",            role: "Executive Director", countryCode: "ng", linkedin: "https://linkedin.com/in/faith-eloho-donwa-9574b5187", image: "/Team/Faith.webp" },
-  { name: "Gabriel Onyebuolise",     role: "Lead, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.webp" },
-   { name: "Chidinma Douglas-Chukwu",            role: "Lead, Programs", countryCode: "ng", linkedin: "https://linkedin.com/in/chidinma-douglas-chukwu-916390199", image: "/Team/Chidinma.webp" },
-  { name: "Joy Okeh",                role: "Lead, People Operations", countryCode: "ng", linkedin: "https://www.linkedin.com/in/joyokeh-acipm-hrpl/", image: "/Team/Joy.webp" },
-  { name: "Ezighode Fredrick",              role: "Lead, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/ezighode-fredrick", image: "/Team/Ezi.webp" },
+  { name: "Faith Eloho Donwa",             role: "Executive Director", countryCode: "ng", linkedin: "https://linkedin.com/in/faith-eloho-donwa-9574b5187", image: "/Team/Faith.webp" },
+  { name: "Udoka Gabriel Onyebuolise",     role: "Lead, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/gabrielonyebuolise", image: "/Team/Gabriel.webp" },
+  { name: "Chidinma Esther Douglas-Chukwu", role: "Lead, Programs", countryCode: "ng", linkedin: "https://linkedin.com/in/chidinma-douglas-chukwu-916390199", image: "/Team/Chidinma.webp" },
+  { name: "Joy Chiemeka-Peter",                role: "Lead, People Operations", countryCode: "ng", linkedin: "https://www.linkedin.com/in/joyokeh-acipm-hrpl/", image: "/Team/Joy.webp" },
+  { name: "Ezighode Fredrick",       role: "Lead, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/ezighode-fredrick", image: "/Team/Ezi.webp" },
+  { name: "Jobina Arinze",  role: "Lead, Relationship Management", countryCode: "ng", linkedin: "http://www.linkedin.com/in/jobina-arinze", image: "/Team/Jobina.webp" },
+
+  // Row 2
+  { name: "Opeyemi Christianah De Campos", role: "Lead, Programs", countryCode: "ng", linkedin: "https://www.linkedin.com/in/opeyemi-de-campos/", image: "/Team/Opeyemi.webp" },
   { name: "Blessing Aluge",          role: "Manager, People Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/blessing-aluge", image: "/Team/Blessing.webp" },
+  { name: "Excel Chukwuma", role: "Community & Social Media Manager, Marketing and Communications/Relationship Management", countryCode: "ng", linkedin: "https://www.linkedin.com/in/chukwuma-excel/", image: "/Team/Excel.webp" },
+  { name: "Precious Oseihioria Ihire",          role: "Software Engineer, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.webp" },
+  { name: "Glamour Idiagi",          role: "Programs Associate, Programs", countryCode: "ng", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.webp" },
+  { name: "Peace Opemipo Akinlayo",          role: "Intern, People Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/peaceakinlayo", image: "/Team/Peace.webp" },
   
-  // Row 2 — replace with actual members
-  { name: "Precious Ihire",         role: "Software Engineer, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/preciousihire", image: "/Team/Precious.webp" },
-  { name: "Glamour Idiagi",          role: "Associate, Programs", countryCode: "ng", linkedin: "https://linkedin.com/in/glamour-idiagi-4265b11ab", image: "/Team/Glamour.webp" },
-  { name: "Peace Akinlayo",             role: "Intern, People Operations", countryCode: "ng", linkedin: "https://linkedin.com/in/peaceakinlayo", image: "/Team/Peace.webp" },
-  { name: "Mhanrobosa Enodiana",           role: "Intern, Relationship Management/Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/enodiana", image: "/Team/Mhanrobosa.webp" },
-  { name: "Francesca Osigwe",           role: "Product Owner, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/chi-osigwe/", image: "/Team/Francesca.webp" },
-  { name: "Innocent Bayila Solomon", role: "Graphics Design Impact Officer, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.webp" },
+  
+  // Row 3
+  { name: "Innocent Solomon", role: "Graphics Design Impact Officer, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/bayilasolomon", image: "/Team/Solomon.webp" },
+  { name: "Francesca Osigwe",        role: "Product Owner, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/chi-osigwe/", image: "/Team/Francesca.webp" },
+  { name: "Francisca Hayford",  role: "Programs Officer, Programs", countryCode: "gh", linkedin: "https://www.linkedin.com/in/francisca-hayford/", image: "/Team/Francisca.webp" },
+  { name: "Rachael Ng'ang'a",  role: "Manager, Marketing and Communications", countryCode: "ke", linkedin: "https://www.linkedin.com/in/nganga-wanjira/", image: "/Team/Rachael.webp" },
+  { name: "Folake Blessing Salako",  role: "Community Manager, Relationship Management", countryCode: "ng", linkedin: "https://www.linkedin.com/in/folake-salako", image: "/Team/Folake.webp" },
+  { name: "Chinenye Ibezim ",  role: "Graphics Designer, Marketing and Communications", countryCode: "ng", linkedin: "https://www.linkedin.com/in/chinenye-ibezim-3a1505201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", image: "/Team/Chineye.webp" },
+  
+
+  // Row 4
+  { name: "Chika Emmanuella Nwakwue ",  role: "Associate Content Writer, Marketing and Communications", countryCode: "ng", linkedin: "https://ng.linkedin.com/in/chika-nwakwue-99a809386", image: "/Team/Chika.webp" },
+  { name: "Amen Oyanameh Johnpraise ",  role: "Associate Content Writer, Marketing and Communications", countryCode: "ng", linkedin: "https://www.linkedin.com/in/amen-johnpraise-469007382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", image: "/Team/Amen.webp" },
+  { name: "Vera Nyagaka ",  role: "Backend Engineering Intern, Product and Tech", countryCode: "ke", linkedin: "https://linkedin.com/in/veranyagaka", image: "/Team/Vera.webp" },
+  { name: "Hasina Finoana Ratsarafahatra",  role: "Programs Assistant, Programs", countryCode: "mg", linkedin: "http://linkedin.com/in/hasina-ratsar", image: "/Team/Hasina.webp" },
+  { name: "Muminah  Adesola Abdulkadir ", role: "Programs Assistant, Programs", countryCode: "ng", linkedin: "http://www.linkedin.com/in/muminahabdulkadir/", image: "/Team/Mumina.webp" },
+  { name: "Vivian Ifediba ", role: "Officer, People Operations", countryCode: "ng", linkedin: "https://www.linkedin.com/in/Ifediba-vivian", image: "/Team/Vivian.webp" },
+
+  // Row 5
+  { name: "Chinonso Isaac Nwogu", role: "Social Media Intern, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/", image: "/Team/Chinonso.webp" },
+  { name: "Mhanrobosa Genevieve Enodiana",     role: "Intern, Relationship Management/Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/enodiana", image: "/Team/Mhanrobosa.webp" },
+  { name: "Praise Hope Effiom", role: "Frontend Engineering Intern, Product and Tech", countryCode: "ng", linkedin: "https://linkedin.com/in/praiseeffiom", image: "/Team/Praise.webp" },
+  { name: "Faith Muluu", role: "Community Management Intern, Relationship Management", countryCode: "ke", linkedin: "https://www.linkedin.com/in/faith-muluu/", image: "/Team/Muluu.webp" },
+  { name: "Chinaza Lovelyn Onyemachi", role: "Graphics Designer, Marketing and Communications", countryCode: "ng", linkedin: "https://linkedin.com/in/", image: "/Team/Chinaza.webp" },
 ];
 
 const LinkedInIcon = () => (
@@ -22,7 +47,6 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-// Reusable member card used in both mobile and desktop
 function MemberCard({ member, staggerUp }) {
   return (
     <div
@@ -69,12 +93,10 @@ function MemberCard({ member, staggerUp }) {
   );
 }
 
-// One staggered row of 6
 function StaggeredRow({ members, rowIndex }) {
   return (
     <div className="hidden md:grid grid-cols-6 gap-6 items-center py-6">
       {members.map((member, i) => {
-        // Alternate stagger: even items in row 0 go up, odd go down; flipped for row 1
         const staggerUp = rowIndex % 2 === 0 ? i % 2 === 0 : i % 2 !== 0;
         return <MemberCard key={i} member={member} staggerUp={staggerUp} />;
       })}
@@ -83,8 +105,11 @@ function StaggeredRow({ members, rowIndex }) {
 }
 
 export default function MeetTheTeam() {
-  const row1 = teamMembers.slice(0, 6);
-  const row2 = teamMembers.slice(6, 12);
+  // Dynamically split into rows of 6
+  const rows = [];
+  for (let i = 0; i < teamMembers.length; i += 6) {
+    rows.push(teamMembers.slice(i, i + 6));
+  }
 
   return (
     <section className="w-full bg-bg-soft py-16 px-6">
@@ -98,19 +123,23 @@ export default function MeetTheTeam() {
           These are our Impact Associates. They are the brains behind the work we do at GirlLEAD Accelerators Program
         </p>
 
-        {/* ── Mobile: 2-column grid, no stagger ── */}
+        {/* Mobile: 2-column grid, no stagger */}
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:hidden">
           {teamMembers.map((member, i) => (
             <MemberCard key={i} member={member} staggerUp={false} />
           ))}
         </div>
 
-        {/* ── Desktop: two staggered rows ── */}
+        {/* Desktop: dynamic staggered rows */}
         <div className="hidden md:block">
-          {/* Divider between rows */}
-          <StaggeredRow members={row1} rowIndex={0} />
-          <div className="border-t border-[#c0ae90]/30 mx-8" />
-          <StaggeredRow members={row2} rowIndex={1} />
+          {rows.map((rowMembers, rowIndex) => (
+            <div key={rowIndex}>
+              <StaggeredRow members={rowMembers} rowIndex={rowIndex} />
+              {rowIndex < rows.length - 1 && (
+                <div className="border-t border-border-soft/30 mx-8" />
+              )}
+            </div>
+          ))}
         </div>
 
       </div>
