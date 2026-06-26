@@ -66,7 +66,7 @@ const founderFull = (
     </p>
 
     {/* Subheader */}
-    <h4 className="text-lg font-bold text-text-main mb-4">Inspiration</h4>
+    <h4 className="text-lg font-bold text-gray-800 mb-4">Inspiration</h4>
 
     <p className="mb-4">
       His inspiration stems from personal experiences, societal observations, and a deep commitment
@@ -211,12 +211,12 @@ export default function AboutFounder() {
               </div>
 
               {/* Modal heading */}
-              <h3 className="text-xl font-bold text-text-main text-center mb-6">
+              <h3 className="text-xl font-bold text-gray-800 text-center mb-6">
                 About the Founder
               </h3>
 
               {/* Full biography */}
-              <div className="text-sm sm:text-base text-text-muted leading-relaxed">
+              <div className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {founderFull}
               </div>
             </Motion.div>
