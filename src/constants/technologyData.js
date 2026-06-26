@@ -51,6 +51,7 @@ export const TAB_CONTENT = {
       {
         title: "GirlLEAD Leadership Bootcamp",
         image: "/programs/Leadership.webp",
+        objectPosition: "center center",
       },
       // {
       //   title: "Future Leaders Academy",

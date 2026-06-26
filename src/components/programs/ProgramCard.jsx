@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function ProgramCard({ title, image, description, applyLink }) {
+export default function ProgramCard({ title, image, description, applyLink, objectPosition = "center top" }) {
   const [tapped, setTapped] = useState(false);
   const [autoShow, setAutoShow] = useState(false);
 
@@ -21,7 +21,7 @@ export default function ProgramCard({ title, image, description, applyLink }) {
       className="relative rounded-2xl overflow-hidden h-[220px] group"
       onClick={() => setTapped((prev) => !prev)}
     >
-      <img src={image} alt={title} className="w-full h-full object-cover" />
+      <img src={image} alt={title} className="w-full h-full object-cover" style={{ objectPosition }} />
 
       {/* Default overlay – title at bottom */}
       <div
