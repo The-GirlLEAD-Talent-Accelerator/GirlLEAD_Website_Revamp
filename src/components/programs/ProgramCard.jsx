@@ -4,12 +4,11 @@ export default function ProgramCard({ title, image, description, applyLink, obje
   const [tapped, setTapped] = useState(false);
   const [autoShow, setAutoShow] = useState(false);
 
-  // Auto-peek effect – briefly shows overlay every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setAutoShow(true);
-      setTimeout(() => setAutoShow(false), 1500); // show for 1.5s then hide
-    }, 4000); // triggers every 4 seconds
+      setTimeout(() => setAutoShow(false), 1500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -21,7 +20,15 @@ export default function ProgramCard({ title, image, description, applyLink, obje
       className="relative rounded-2xl overflow-hidden h-[220px] group"
       onClick={() => setTapped((prev) => !prev)}
     >
-      <img src={image} alt={title} className="w-full h-full object-cover" style={{ objectPosition }} />
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full"
+        style={{
+          objectFit: "cover",
+          objectPosition: objectPosition,
+        }}
+      />
 
       {/* Default overlay – title at bottom */}
       <div
