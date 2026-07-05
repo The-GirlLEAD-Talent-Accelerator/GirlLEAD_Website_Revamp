@@ -19,7 +19,7 @@ export default function TabVideo({ videoUrl }) {
   }
 
   const posterUrl = videoUrl
-    .replace("/video/upload/", "/video/upload/so_3,f_jpg/")
+    .replace("/video/upload/", "/video/upload/so_10,f_jpg/")
     .replace(".mp4", ".jpg");
 
   // Force H.264 baseline profile + AAC audio — guaranteed to play on MIUI/Redmi
