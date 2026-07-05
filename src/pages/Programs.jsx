@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import TechnologySection from "../components/programs/TechnologySection";
 import HowWeWork from "../components/programs/HowToWork";
-import { imgUrl } from "../../utils/cloudinary";
+import { imgUrl } from "../utils/cloudinary";
 // import ProgramCard from "../components/programs/ProgramCard";
 import WhatWeDo from "../components/programs/WhatWeDo";
 import FaqSection from "../components/programs/FaqSection";
