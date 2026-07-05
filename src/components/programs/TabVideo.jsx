@@ -19,14 +19,14 @@ export default function TabVideo({ videoUrl }) {
   }
 
   const posterUrl = videoUrl
-    .replace("/video/upload/", "/video/upload/so_10,f_jpg/")
-    .replace(".mp4", ".jpg");
+  .replace("/video/upload/", "/video/upload/so_3,f_jpg/")
+  .replace(/\/v\d+\//, "/")   
+  .replace(".mp4", ".jpg");
 
   // Force H.264 baseline profile + AAC audio — guaranteed to play on MIUI/Redmi
-  const mobileUrl = videoUrl.replace(
-    "/video/upload/",
-    "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/"
-  );
+  const mobileUrl = videoUrl
+  .replace("/video/upload/", "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/")
+  .replace(/\/v\d+\//, "/"); 
 
   return (
     <div className="w-full mb-10 rounded-2xl overflow-hidden shadow-md">
