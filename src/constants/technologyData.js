@@ -5,7 +5,7 @@ export const TAB_CONTENT = {
   Technology: {
     description:
       "We empower our fellows with cutting-edge technical skills in emerging technologies to create innovative solutions that address real human challenges.",
-      videoKey: "girllead/videos/technology-tab-video",
+      videoUrl: "https://res.cloudinary.com/srqgqnoj/video/upload/v1783241109/girllead/videos/technology-tab-video.mp4",
     programs: [
       {
         title: "GirlLEAD Bootcamp",
@@ -29,7 +29,7 @@ export const TAB_CONTENT = {
   "Social Entrepreneurship": {
     description:
       "We support aspiring social entrepreneurs with tools, mentorship, and resources to build sustainable ventures that solve community problems.",
-      videoKey: "girllead/videos/social-tab-video",
+      videoUrl: "https://res.cloudinary.com/srqgqnoj/video/upload/v1783242421/girllead/videos/social-tab-video.mp4",
     programs: [
       {
         title: "GirlLEAD x European Business Institute",
@@ -49,7 +49,7 @@ export const TAB_CONTENT = {
   Leadership: {
     description:
       "We develop confident, ethical leaders equipped with the skills to drive change across organizations and communities.",
-      videoKey: "girllead/videos/leadership-tab-video",
+      videoUrl: "https://res.cloudinary.com/srqgqnoj/video/upload/v1783244235/girllead/videos/leadership-tab-video.mp4",
     programs: [
       {
         title: "GirlLEAD Leadership Bootcamp",

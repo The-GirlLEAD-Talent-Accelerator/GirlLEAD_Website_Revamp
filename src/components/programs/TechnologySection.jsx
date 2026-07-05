@@ -207,7 +207,7 @@ export default function TechnologySection() {
   }, [location]);
 
   const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
-  const { description, videoKey, programs } = currentTab;
+  const { description, videoUrl, programs } = currentTab;
 
   return (
     <section className="bg-bg-mute py-16 px-4">
@@ -222,7 +222,7 @@ export default function TechnologySection() {
           {description}
         </p>
 
-        <TabVideo videoKey={videoKey} />
+        <TabVideo videoUrl={videoUrl} />
 
         <h3 className="text-center text-text-muted mb-8 text-sm sm:text-base">
           These are the programs under this track:
