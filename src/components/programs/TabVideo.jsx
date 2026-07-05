@@ -23,7 +23,7 @@ export default function TabVideo({ videoUrl }) {
   .replace(/\/v\d+\//, "/")   
   .replace(".mp4", ".jpg");
 
-  // Force H.264 baseline profile + AAC audio — guaranteed to play on MIUI/Redmi
+  // Force H.264 baseline profile + AAC audio for better compatibility with mobile devices
   const mobileUrl = videoUrl
   .replace("/video/upload/", "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/")
   .replace(/\/v\d+\//, "/"); 
@@ -48,7 +48,7 @@ export default function TabVideo({ videoUrl }) {
           display: "block",
         }}
       >
-        {/* MIUI/Redmi — H.264 baseline with AAC audio */}
+        {/* H.264 baseline with AAC audio */}
         <source src={`${mobileUrl}#t=0.001`} type="video/mp4" />
         {/* Fallback for all other browsers */}
         <source src={`${videoUrl}#t=0.001`} type="video/mp4" />
