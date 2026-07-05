@@ -18,15 +18,14 @@ export default function TabVideo({ videoUrl }) {
     );
   }
 
-  
+  // Unchanged — exactly as your working version
   const posterUrl = videoUrl
     .replace("/video/upload/", "/video/upload/so_3,f_jpg/")
     .replace(".mp4", ".jpg");
 
-  // Force H.264 baseline + AAC for mobile devices to ensure compatibility
+  // Keep version number intact — only insert transformation
   const mobileUrl = videoUrl
-    .replace("/video/upload/", "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/")
-    .replace(/\/v\d+\//, "/");
+    .replace("/video/upload/", "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/");
 
   return (
     <div className="w-full mb-10 rounded-2xl overflow-hidden shadow-md">
@@ -48,7 +47,7 @@ export default function TabVideo({ videoUrl }) {
           display: "block",
         }}
       >
-        {/*H.264 baseline with AAC audio */}
+        {/* Redmi/MIUI Chrome — H.264 baseline with AAC audio */}
         <source src={`${mobileUrl}#t=0.001`} type="video/mp4" />
         {/* Fallback for all other browsers */}
         <source src={`${videoUrl}#t=0.001`} type="video/mp4" />
