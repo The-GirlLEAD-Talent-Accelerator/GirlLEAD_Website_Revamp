@@ -183,41 +183,46 @@ export default function AboutFounder() {
               onClick={() => setOpen(false)}
             />
 
-            {/* Modal content */}
+            {/* Modal content – flex column so button stays outside scroll */}
             <Motion.div
-              className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto z-10 p-8 sm:p-12"  
+              className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] z-10 flex flex-col"
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              {/* Close button */}
+              {/* Close button – absolute to modal, never scrolls */}
               <button
                 onClick={() => setOpen(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold transition-colors"
+                className="absolute top-4 right-4 z-30 text-gray-400 hover:text-gray-700 text-xl font-bold transition-colors bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md"
                 aria-label="Close modal"
               >
                 ✕
               </button>
 
-              {/* Founder image in modal – compact, original shape */}
-              <div className="w-40 sm:w-48 overflow-hidden border-4 border-border-soft shadow-md mx-auto mb-6">
-                <img
-                  src="/Founder.png"
-                  alt="Augustine Enodiana"
-                  className="w-full h-auto object-contain"
-                  style={{ imageRendering: "auto" }}
-                />
-              </div>
+              {/* Scrollable content only */}
+              <div className="overflow-y-auto p-8 sm:p-12">
 
-              {/* Modal heading */}
-              <h3 className="text-xl font-bold text-gray-800 text-center mb-6">
-                About the Founder
-              </h3>
+                {/* Founder image in modal – compact, original shape */}
+                <div className="w-40 sm:w-48 overflow-hidden border-4 border-border-soft shadow-md mx-auto mb-6">
+                  <img
+                    src="/Founder.png"
+                    alt="Augustine Enodiana"
+                    className="w-full h-auto object-contain"
+                    style={{ imageRendering: "auto" }}
+                  />
+                </div>
 
-              {/* Full biography */}
-              <div className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                {founderFull}
+                {/* Modal heading */}
+                <h3 className="text-xl font-bold text-gray-800 text-center mb-6">
+                  About the Founder
+                </h3>
+
+                {/* Full biography */}
+                <div className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  {founderFull}
+                </div>
+
               </div>
             </Motion.div>
           </Motion.div>
