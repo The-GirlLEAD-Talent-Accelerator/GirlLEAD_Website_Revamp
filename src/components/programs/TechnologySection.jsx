@@ -188,7 +188,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Tabs from "../../components/tabs/Tabs";
-import Carousel from "../carousel/Carousel";
+import TabVideo from "../programs/TabVideo";  
 import ProgramCard from "../programs/ProgramCard";
 import {
   TABS,
@@ -207,7 +207,7 @@ export default function TechnologySection() {
   }, [location]);
 
   const currentTab = TAB_CONTENT[activeTab] || TAB_CONTENT["Technology"];
-  const { description, programs } = currentTab;
+  const { description, videoKey, programs } = currentTab;
 
   return (
     <section className="bg-bg-mute py-16 px-4">
@@ -222,7 +222,7 @@ export default function TechnologySection() {
           {description}
         </p>
 
-        <Carousel images={CAROUSEL_IMAGES} />
+        <TabVideo videoKey={videoKey} />
 
         <h3 className="text-center text-text-muted mb-8 text-sm sm:text-base">
           These are the programs under this track:
