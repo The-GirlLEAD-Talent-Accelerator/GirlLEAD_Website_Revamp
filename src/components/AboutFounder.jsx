@@ -185,21 +185,21 @@ export default function AboutFounder() {
 
             {/* Modal content */}
             <Motion.div
-              className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto z-10 p-8 sm:p-12"  
+              className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto z-10 p-8 sm:p-12"
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              {/* Close button */}
-              <div className="sticky top-0 flex justify-end mb-2 z-10">
-              <button
-                onClick={() => setOpen(false)}
-                className="text-gray-400 hover:text-gray-700 text-xl font-bold transition-colors bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm"
-                aria-label="Close modal"
-              >
-                ✕
-              </button>
+              {/* Close button – sticky in top-right, visible while scrolling */}
+              <div className="sticky top-0 z-20 flex justify-end -mt-2 -mr-2 mb-4">
+                <button
+                  onClick={() => setOpen(false)}
+                  className="text-gray-400 hover:text-gray-700 text-xl font-bold transition-colors bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md"
+                  aria-label="Close modal"
+                >
+                  ✕
+                </button>
               </div>
 
               {/* Founder image in modal – compact, original shape */}

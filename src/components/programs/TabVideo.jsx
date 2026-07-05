@@ -19,8 +19,14 @@ export default function TabVideo({ videoUrl }) {
   }
 
   const posterUrl = videoUrl
-    .replace("/video/upload/", "/video/upload/so_4,f_jpg/")
+    .replace("/video/upload/", "/video/upload/so_3,f_jpg/")
     .replace(".mp4", ".jpg");
+
+  // Force H.264 baseline profile + AAC audio — guaranteed to play on MIUI/Redmi
+  const mobileUrl = videoUrl.replace(
+    "/video/upload/",
+    "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/"
+  );
 
   return (
     <div className="w-full mb-10 rounded-2xl overflow-hidden shadow-md">
@@ -31,21 +37,21 @@ export default function TabVideo({ videoUrl }) {
         controls
         playsInline
         webkit-playsinline="true"
-        x5-playsinline="true"        
-        x5-video-player-type="h5"   
+        x5-playsinline="true"
+        x5-video-player-type="h5"
         preload="auto"
         poster={posterUrl}
         style={{
           objectFit: "contain",
           width: "100%",
           height: "100%",
-          display: "block",          
+          display: "block",
         }}
       >
-        {/* MP4 with fragment — forces first frame render on iOS */}
+        {/* MIUI/Redmi — H.264 baseline with AAC audio */}
+        <source src={`${mobileUrl}#t=0.001`} type="video/mp4" />
+        {/* Fallback for all other browsers */}
         <source src={`${videoUrl}#t=0.001`} type="video/mp4" />
-        {/* Fallback without fragment for Android */}
-        <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
