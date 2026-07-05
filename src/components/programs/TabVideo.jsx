@@ -9,7 +9,7 @@ export default function TabVideo({ videoUrl }) {
   }
 
   // Auto-generate poster from the same Cloudinary video URL
-  const posterUrl = videoUrl.replace("/video/upload/", "/video/upload/so_0,f_jpg/").replace(".mp4", ".jpg");
+  const posterUrl = videoUrl.replace("/video/upload/", "/video/upload/so_3,f_jpg/").replace(".mp4", ".jpg");
 
   return (
     <div className="w-full mb-10 rounded-2xl overflow-hidden shadow-md">
