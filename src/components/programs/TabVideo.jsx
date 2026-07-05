@@ -3,9 +3,9 @@ import { useEffect, useRef } from "react";
 export default function TabVideo({ videoUrl }) {
   const videoRef = useRef(null);
 
-  // Force video to reload when URL changes — fixes mobile frozen frame bug
   useEffect(() => {
     if (videoRef.current && videoUrl) {
+      videoRef.current.pause();
       videoRef.current.load();
     }
   }, [videoUrl]);
@@ -18,9 +18,8 @@ export default function TabVideo({ videoUrl }) {
     );
   }
 
-  // Auto-generate poster from the same Cloudinary video URL
   const posterUrl = videoUrl
-    .replace("/video/upload/", "/video/upload/so_1,f_jpg/")
+    .replace("/video/upload/", "/video/upload/so_4,f_jpg/")
     .replace(".mp4", ".jpg");
 
   return (
@@ -32,11 +31,21 @@ export default function TabVideo({ videoUrl }) {
         controls
         playsInline
         webkit-playsinline="true"
+        x5-playsinline="true"        
+        x5-video-player-type="h5"   
         preload="auto"
         poster={posterUrl}
-        style={{ objectFit: "contain" }}
+        style={{
+          objectFit: "contain",
+          width: "100%",
+          height: "100%",
+          display: "block",          
+        }}
       >
+        {/* MP4 with fragment — forces first frame render on iOS */}
         <source src={`${videoUrl}#t=0.001`} type="video/mp4" />
+        {/* Fallback without fragment for Android */}
+        <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

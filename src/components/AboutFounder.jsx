@@ -192,13 +192,15 @@ export default function AboutFounder() {
               transition={{ duration: 0.25 }}
             >
               {/* Close button */}
+              <div className="sticky top-0 flex justify-end mb-2 z-10">
               <button
                 onClick={() => setOpen(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold transition-colors"
+                className="text-gray-400 hover:text-gray-700 text-xl font-bold transition-colors bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm"
                 aria-label="Close modal"
               >
                 ✕
               </button>
+              </div>
 
               {/* Founder image in modal – compact, original shape */}
               <div className="w-40 sm:w-48 overflow-hidden border-4 border-border-soft shadow-md mx-auto mb-6">
