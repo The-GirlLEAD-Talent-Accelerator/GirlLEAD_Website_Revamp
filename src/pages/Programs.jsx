@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import TechnologySection from "../components/programs/TechnologySection";
 import HowWeWork from "../components/programs/HowToWork";
-import { imgUrl } from "../utils/cloudinary";
 // import ProgramCard from "../components/programs/ProgramCard";
 import WhatWeDo from "../components/programs/WhatWeDo";
 import FaqSection from "../components/programs/FaqSection";
@@ -40,7 +39,7 @@ export default function Programs() {
           <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
         )}
         <img
-          src={imgUrl("programs-hero")}
+          src="/programs-hero.webp"
           alt="Programs Hero"
           width="2560"
           height="910"

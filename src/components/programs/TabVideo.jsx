@@ -28,6 +28,11 @@ export default function TabVideo({ videoUrl }) {
   .replace("/video/upload/", "/video/upload/vc_h264:baseline:3.0,ac_aac,f_mp4/")
   .replace(/\/v\d+\//, "/"); 
 
+  // 👇 Add this temporarily
+console.log("videoUrl:", videoUrl);
+console.log("posterUrl:", posterUrl);
+console.log("mobileUrl:", mobileUrl);
+
   return (
     <div className="w-full mb-10 rounded-2xl overflow-hidden shadow-md">
       <video
@@ -57,3 +62,4 @@ export default function TabVideo({ videoUrl }) {
     </div>
   );
 }
+
