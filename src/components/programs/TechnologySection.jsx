@@ -193,7 +193,6 @@ import ProgramCard from "../programs/ProgramCard";
 import {
   TABS,
   TAB_CONTENT,
-  CAROUSEL_IMAGES,
 } from "../../constants/technologyData";
 
 export default function TechnologySection() {
@@ -232,6 +231,8 @@ export default function TechnologySection() {
           className={`grid gap-6 ${
             programs.length === 3
               ? "md:grid-cols-3"
+              : programs.length === 1
+              ? "w-full md:max-w-sm md:mx-auto"
               : "md:grid-cols-2"
           }`}
         >
